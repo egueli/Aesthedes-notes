@@ -14,7 +14,7 @@ From the HD image, I’ve tried to recover the password protecting the access to
 
 Then, I’ve tried to recover as many design files as possible, created by the previous owner(s):
 
-[Recovering design files from Aesthedes filesystem](Aesthedes%202%2085f7fd7209474298b3528148e30837ca/Recovering%20design%20files%20from%20Aesthedes%20filesystem%20110a44a734f080d582ede1e4f50f5207.md)
+[Recovering design files from Aesthedes filesystem](design-files-recovery.md)
 
 Now I’m trying to run the Aesthedes software on an emulated environment:
 
