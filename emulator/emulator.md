@@ -300,7 +300,7 @@ Although, running Windows XP from VirtualBox is a bit inconvenient. It takes a l
 
 Assuming there's a C source file called `main.c` in the SDK root.
 
-From the SDK root:
+From the SDK root, on a Linux or Mac terminal (tested on Mac):
 
 ```bash
 ln -s $(pwd) ~/.wine/dosdevices/m:
@@ -327,7 +327,7 @@ It could be possible to emulate an Aesthedes 2 with MAME. After all, it can emul
 - systems with the EF9365 video chip (i.e. same as the Aesthedes), e.g. [Apollo 7 Squale](http://hxc2001.free.fr/Squale/) ([other link](http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=squale))
 - systems with non-trivial keyboard, e.g. [VeriFone Tranz 330](http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=tranz330&lang=en) ([ROMs](https://wowroms.com/en/roms/mame/download-tranz-330/109258.html)). The MAME technical docs mention `tranz330.lay` as an [example MAME layout file](https://docs.mamedev.org/techspecs/layout_files.html#example-layout-files) with clickable buttons.
 
-## Building on Windows
+## Building MAME on Windows
 
 Remember to set `video` to `opengl`: default on Windows is `d3d` that doesn’t work.
 
@@ -353,5 +353,33 @@ Then, the image of a CD-i title like Hotel Mario: https://romsfun.com/download/h
 Then, follow the steps described in [https://www.youtube.com/watch?v=bmq_uifhYVc](https://www.youtube.com/watch?v=bmq_uifhYVc)
 
 ## Emulating an Aesthedes2-like machine on MAME
+
+While we wait for the Aesthedes ROMs to be dumped, we're going to emulate a machine that is a close as possible to the real Aesthedes. And see if it can boot OS-9, mount the AES2 image and run `fcontrol`; in other words, to get at the same level as we did with `os9exec`.
+
+Let's start from OS-9 itself. Can an OS-9 kernel run into MAME? Theoretically we know we do, because CD-i runs OS-9 under the hood. But how about OS-9 on a hardware we control?
+
+Fortunately there's [os9-m68k-ports](https://github.com/John-Titor/os9-m68k-ports), a GitHub repo with ports of OS-9 to various 68K systems. One of them is the [CB030](https://www.retrobrewcomputers.org/doku.php?id=builderpages:plasmo:cb030), a homebrew retrocomputer project. It might be possible to emulate the CB030's hardware in MAME then run OS-9 on top of it.
+
+os9-m68k-ports require the [OS-9 SDK v1.2 repo](https://github.com/John-Titor/os9_68k_sdk_v12) to be checked out in a sibling directory. And several other changes were required to make it build correctly. The contents have been copied as a subdirectory of our [os9-builder](https://github.com/biappi/os9-builder) repo, and the OS9-SDK has been linked as a submodule. To obtain it, remember to `git clone` it incl. submodules:
+
+```bash
+git clone --recurse-submodules git@github.com:biappi/os9-builder.git
+```
+
+From this repo, one can follow the instructions as in [`os9-m68k-ports/README.md`](https://github.com/biappi/os9-builder/tree/master/os9-m68k-ports#building) to build the SDK. They seem to work on Mac.
+To set up the M: drive, one can type this from the `os9-builder` directory:
+
+```bash
+os9_builder_root=$PWD; (cd ~/.wine/dosdevices/; rm -f m:; ln -s $os9_builder_root m:)
+```
+
+Then, start the build:
+
+```bash
+cd os9-m68k-ports/ports/CB030
+../make.sh build
+```
+
+TODO: link to MAME CB030 fork
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
