@@ -331,7 +331,7 @@ It could be possible to emulate an Aesthedes 2 with MAME. After all, it can emul
 
 Remember to set `video` to `opengl`: default on Windows is `d3d` that doesn’t work.
 
-## Running MAME
+## Running MAME on Windows
 
 Run in my desktop PC:
 
@@ -358,7 +358,9 @@ While we wait for the Aesthedes ROMs to be dumped, we're going to emulate a mach
 
 Let's start from OS-9 itself. Can an OS-9 kernel run into MAME? Theoretically we know we do, because CD-i runs OS-9 under the hood. But how about OS-9 on a hardware we control?
 
-Fortunately there's [os9-m68k-ports](https://github.com/John-Titor/os9-m68k-ports), a GitHub repo with ports of OS-9 to various 68K systems. One of them is the [CB030](https://www.retrobrewcomputers.org/doku.php?id=builderpages:plasmo:cb030), a homebrew retrocomputer project. It might be possible to emulate the CB030's hardware in MAME then run OS-9 on top of it.
+Fortunately there's [os9-m68k-ports](https://github.com/John-Titor/os9-m68k-ports), a GitHub repo with ports of OS-9 to various 68K systems. One of them is the [CB030](https://www.retrobrewcomputers.org/doku.php?id=builderpages:plasmo:cb030), a homebrew retrocomputer project. 
+
+It is somehow possible to emulate the CB030's hardware in MAME, then run OS-9 on top of it. In [this MAME fork](https://github.com/biappi/mame) there is a new machine, `fake68`, that aims to emulate a CB030.
 
 os9-m68k-ports require the [OS-9 SDK v1.2 repo](https://github.com/John-Titor/os9_68k_sdk_v12) to be checked out in a sibling directory. And several other changes were required to make it build correctly. The contents have been copied as a subdirectory of our [os9-builder](https://github.com/biappi/os9-builder) repo, and the OS9-SDK has been linked as a submodule. To obtain it, remember to `git clone` it incl. submodules:
 
@@ -380,6 +382,21 @@ cd os9-m68k-ports/ports/CB030
 ../make.sh build
 ```
 
-TODO: link to MAME CB030 fork
+The output file that is relevant to us, i.e. the OS-9 ROM image that can run on a CB030, is in `os9-m68k-ports/ports/CB030/CMDS/BOOTOBJS/ROMBUG/romimage.dev`. It can be copied in the MAME source tree in the `roms/fake68` directory of our MAME fork.
+
+Before running the emulator, you may need to edit the ROM table `src/mame/uilli/fake68.cpp` so it has the right file size. The CRC and tha SHA values may be all-zeros, e.g.:
+
+```c
+    ROM_LOAD("romimage.dev", 0x000000, 399910, CRC(00000000) SHA1(0000000000000000000000000000000000000000))
+```
+
+This is how one can rebuild and run MAME on Mac OS:
+
+```sh
+make -j5 TOOLS=1 SOURCES=src/mame/uilli/fake68.cpp SUBTARGET=fake68
+./fake68
+```
+
+While the emulator is running, it takes full control of the keyboard. Hit the Del key to enable the UI controls to e.g. exit.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
