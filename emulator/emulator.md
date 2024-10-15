@@ -394,9 +394,11 @@ This is how one can rebuild and run MAME on Mac OS:
 
 ```sh
 make -j5 TOOLS=1 SOURCES=src/mame/uilli/fake68.cpp SUBTARGET=fake68
-./fake68
+./fake68 -window fake68
 ```
 
 While the emulator is running, it takes full control of the keyboard. Hit the Del key to enable the UI controls to e.g. exit.
+
+The emulator starts with the boot ROM, and drop us into the RomBug prompt. Type `g` to start booting: OS-9 should start. It shows the error `pd: can't open current directory`, then the OS-9 shell prompt (`$`). With `mdir` one can see which commands are supported.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
