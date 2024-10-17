@@ -401,4 +401,18 @@ While the emulator is running, it takes full control of the keyboard. Hit the De
 
 The emulator starts with the boot ROM, and drop us into the RomBug prompt. Type `g` to start booting: OS-9 should start. It shows the error `pd: can't open current directory`, then the OS-9 shell prompt (`$`). With `mdir` one can see which commands are supported.
 
+But, OS-9 doesn't seem to know how to access external storage via CF. So it wouldn't be able to read an RBF image.
+
+The hardware provides CF registers at 0xffffe000 to 0xffffefff. Let's see if, at a minimum, OS-9 does actually try to read/write on these registers.
+
+The MAME debugger command for watchpoints is
+
+```
+wpset ffffe000,1000,rw
+```
+
+After some debugging, it looks like OS-9 doesn't read the CF registers itself. It looks like it doesn't have a driver of its own, or cannot find it. Maybe it requires the bootloader to somehow assist into getting the driver? The bootloader is indeed trying to read the CF regs, then complain with the error `CF: not a supported drive type`.
+
+Such string is defined at `os9-m68k-ports/ports/CB030/ROM_CBOOT/io_cf.c`.
+
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
