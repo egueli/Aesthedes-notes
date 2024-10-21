@@ -344,6 +344,26 @@ cd ..\..\..\mame
 mame
 ```
 
+## Building MAME on Mac
+
+
+```
+make -j5 TOOLS=1 SOURCES=src/mame/uilli/fake68.cpp SUBTARGET=fake68 REGENIE=1
+```
+
+## Running MAME on Mac
+
+```
+./fake68 fake68
+# Or, run with debugger:
+./fake68 fake68 -debug 
+```
+
+Note: if it crashes with segmentation fault, it might be the configuration being corrupted. Try with
+```
+rm cfg/fake68.cfg
+```
+
 ## Running a CD-i title in MAME
 
 We need CD-i BIOS ROMs first: [https://archive.org/details/cdibios](https://archive.org/details/cdibios)
@@ -411,8 +431,12 @@ The MAME debugger command for watchpoints is
 wpset ffffe000,1000,rw
 ```
 
-After some debugging, it looks like OS-9 doesn't read the CF registers itself. It looks like it doesn't have a driver of its own, or cannot find it. Maybe it requires the bootloader to somehow assist into getting the driver? The bootloader is indeed trying to read the CF regs, then complain with the error `CF: not a supported drive type`.
+After some debugging, it looks like OS-9 doesn't read the CF registers itself. I thought it needed assistance from the bootloader (and [I tried to debug that](bootrom-cfide.md)), but it just doesn't read anything automatically. Biappi noticed that it does when typing this to the OS-9 prompt:
 
-Such string is defined at `os9-m68k-ports/ports/CB030/ROM_CBOOT/io_cf.c`.
+```
+dir /c0_fmt
+```
+
+But it fails with `error #000:244`.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
