@@ -439,4 +439,59 @@ dir /c0_fmt
 
 But it fails with `error #000:244`.
 
+
+## Strorage driver 
+
+Trying to make the compact flash storage layer in the CB030 port is proving a
+bit difficult, as the custom drivers written in the port (which are not
+originally from Microware, but from the port's authors) seem to have bitrotten
+a bit.
+
+One solution to quickly get some storage in the mame emulator, is trying to use
+a big ramdisk, so we don't need to bother with unrelated hardware controllers,
+and we could use MAME's nvram machinery to save and persist the ramdisk.
+
+The ramdisk is mapped at `0xa000_0000` and is maxed out to what the OS9 ramdisk
+can support: about 16MBs, as the ramdisk size is defined by an uint16_t numbers
+of sectors, that by default are 256 bytes, so:
+
+    >>> (0xffff * 256) / 1024 / 1024
+    15.999755859375
+
+When the OS9 kernel will boot, if the ramdisk is empty (e.g. the first time
+starting a version of the emulator with the ramdisk support) it will be
+automatically formatted as an RBF filesystem.
+
+The file can be found in `mame/nvram/fake69/nvram` and it's just the raw dump
+of the memory region. As such, it can be used with `os9-toolshed` to be
+inspected or to copy files from and to the image.
+
+For example:
+
+    willy@Hitagi mame master$ export OS9_TOOLSHED="../../../../os9-toolshed/build/unix/os9/"
+    willy@Hitagi mame master$ export AE_DD="../../../../os9exec-git_code/dd/"
+    willy@Hitagi mame master$ export PATH="$OS9_TOOLSHED:$PATH"
+
+    willy@Hitagi fake68 master$ os9 dir nvram/fake68/nvram
+                               Directory of nvram/fake68/nvram
+    CMDS            xx              
+    willy@Hitagi fake68 master$ 
+
+I also managed to copy the Aestedes `CMDS` directory from the expanded image I
+used with `os9exec`.
+
+    willy@Hitagi mame master$ os9 dsave -e $AE_DD/CMDS nvram/fake68/nvram,CMDS
+    os9 copy '../../../../os9exec-git_code/dd/CMDS/scitextape' 'nvram,CMDS/scitextape'  -b=32768
+    os9 copy '../../../../os9exec-git_code/dd/CMDS/comld' 'nvram,CMDS/comld'  -b=32768
+    os9 copy '../../../../os9exec-git_code/dd/CMDS/pd' 'nvram,CMDS/pd'  -b=32768
+    [..]
+
+Unfortunately the copied binaries seem to not immediately run, and they all
+result in the error
+
+    'command' found as module relative to data directory
+
+whatever the current directories changed with `chx` and `chd` are.
+
+
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
