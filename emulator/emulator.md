@@ -440,7 +440,7 @@ dir /c0_fmt
 But it fails with `error #000:244`.
 
 
-## Strorage driver 
+## Storage driver 
 
 Trying to make the compact flash storage layer in the CB030 port is proving a
 bit difficult, as the custom drivers written in the port (which are not
@@ -492,6 +492,31 @@ result in the error
     'command' found as module relative to data directory
 
 whatever the current directories changed with `chx` and `chd` are.
+
+Here's why: OS-9 has the concepts of "data directory" and "execution directory". Both can be set with `chd` and `chx` respectively. It seems that if the data directory contains `CMDS` and the execution directory is not properly configured, then the above error appears. This can be fixed with:
+
+```
+chx /r0/CMDS
+```
+
+. After this, simple executables like `echo` can be run, provided there is also the `cio` library, here's how:
+
+1. using Toolshed, copy `echo` and `cio` into `CMDS`:
+
+```sh
+os9 makdir mame/nvram/fake68/nvram,CMDS
+os9 copy ../../HD10/HD10/CMDS/cio mame/nvram/fake68/nvram,CMDS
+os9 copy ../../HD10/HD10/CMDS/echo mame/nvram/fake68/nvram,CMDS
+```
+
+2. Start the emulator, set the execution directory, then run the command:
+
+```
+...
+pd: can't open current directory. $ chx /r0/CMDS
+$ echo "hello world!"
+hello world!
+```
 
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
