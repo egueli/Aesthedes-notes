@@ -518,5 +518,18 @@ $ echo "hello world!"
 hello world!
 ```
 
+## Running `fcontrol`
+
+Now that we've figured out how to run simple executables, let's see if `fcontrol` also works:
+
+```
+chx /r0/CMDS
+fcontrol
+```
+
+... and magically, it starts up! We can see the ANSI/ASCII art of the startup sequence, just like when it was running on os9exec. It still hangs at "Initializing color system", but I'm positively surprised that it reaches that point without all the issues we had to fix in os9exec.
+
+The reason it hangs at that point is IMO the same: it's waiting for a signal from a driver that doesn't exist in the system because the original ROMs are not yet dumped and handled by MAME.
+
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
