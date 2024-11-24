@@ -76,3 +76,27 @@ To actually do the copy, add the `-e` parameter, but this will require having
 the `os9` toolshed executable in the current `$PATH`, because `dsave` will
 simply do a `system` to invoke the `copy` command.
 
+
+## LUA mame
+
+Getting an handle on the memory space
+
+    mem = manager.machine.devices[":maincpu"].spaces['program']
+
+Printing the content of a memory address
+
+    print(string.format("%x", mem:read_u32(0)))
+
+Useful addresses
+
+    sys_glob = mem:read_u32(0)
+    module_dir_start = mem:read_u32(sys_glob + 0x3c)
+    module_dir_end = mem:read_u32(sys_glob + 0x40)
+
+It is possible to continuously import a file in the lua REPL like so:
+
+    loadfile('../file.lua')()
+
+A breakpoint command (not lua) to break on OS9 syscalls
+
+    bpset 52c,1,{ print w@(d@(a7 + 2)) }
