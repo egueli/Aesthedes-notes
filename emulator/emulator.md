@@ -493,13 +493,17 @@ result in the error
 
 whatever the current directories changed with `chx` and `chd` are.
 
-Here's why: OS-9 has the concepts of "data directory" and "execution directory". Both can be set with `chd` and `chx` respectively. It seems that if the data directory contains `CMDS` and the execution directory is not properly configured, then the above error appears. This can be fixed with:
+Here's why: OS-9 has the concepts of "data directory" and "execution
+directory". Both can be set with `chd` and `chx` respectively. It seems that if
+the data directory contains `CMDS` and the execution directory is not properly
+configured, then the above error appears. This can be fixed with:
 
 ```
 chx /r0/CMDS
 ```
 
-. After this, simple executables like `echo` can be run, provided there is also the `cio` library, here's how:
+. After this, simple executables like `echo` can be run, provided there is also
+the `cio` library, here's how:
 
 1. using Toolshed, copy `echo` and `cio` into `CMDS`:
 
@@ -517,6 +521,42 @@ pd: can't open current directory. $ chx /r0/CMDS
 $ echo "hello world!"
 hello world!
 ```
+
+
+### Check permissions
+
+The command files need to be marked as executables in the OS9/RBF filesystem. In
+some cases, Toolshed can copy files without that permission. In this case, that's
+the error
+
+    $ fcontrol
+    mshell: can't execute "fcontrol"  - Error #000:214
+
+Check the file permissions:
+
+    $ dir -e CMDS
+                               Directory of CMDS 24:00:00
+     Owner    Last modified  Attributes Sector Bytecount Name
+    -------   -------------  ---------- ------ --------- ----
+      0.0     24/06/16 0355   ----r-wr      25     20192 cio
+      0.0     24/06/16 0355   ----r-wr      75    658492 fcontrol
+
+Those are **incorrect**, so fix them:
+
+    $ attr fcontrol -pe -e
+    --e-rewr  fcontrol
+    $ attr cio -pe -e
+    --e-rewr  cio
+
+The **working** permissions are:
+
+    $ dir -e
+                                Directory of . 24:00:00
+     Owner    Last modified  Attributes Sector Bytecount Name
+    -------   -------------  ---------- ------ --------- ----
+      0.0     24/06/16 0355   --e-rewr      25     20192 cio
+      0.0     24/06/16 0355   --e-rewr      75    658492 fcontrol
+
 
 ## Running `fcontrol`
 
