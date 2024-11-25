@@ -571,5 +571,30 @@ fcontrol
 
 The reason it hangs at that point is IMO the same: it's waiting for a signal from a driver that doesn't exist in the system because the original ROMs are not yet dumped and handled by MAME.
 
+## Remap `c0` and `h0` to `r0`
+
+The NVRAM mechanism showed effective at letting the OS-9 manage a virtual
+storage device in MAME's emulated environment. There are some issues left:
+
+* The kernel (ported for CB030) tries to mount `c0` at startup i.e. the
+  CompactFlash, that is buggy. The current workaround is typing `chx /r0/CMDS`
+  and `chd /r0` just after startup.
+* Aesthedes' `fcontrol` attempts to open `h0` in raw mode. The name is
+  hardcoded. Luckily, the program doesn't seem to be bothered that the device is
+  missing in the CB030 kernel. At least at startup.
+* Storage is currently limited to 16MB.
+
+To address the first two issues at once, we may try setting up aliases so that
+`c0` and `h0` become equivalent to `r0`.
+
+The CB030 README states that `/dd` aliased to `/c0`. This is done in
+`cfide_descriptors.make`, that builds the `dd` descriptor with the same linker
+arguments as another descriptor (was `c0` then later changed to `r0`) but with a
+different output file name.
+
+By deleting the existing targets about `c0`, and replacing them with a target
+that makes the alias to `r0`, the system seems to work correctly. Adding another
+alias for `h0` is a no-brainer.
+
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
