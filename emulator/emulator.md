@@ -155,7 +155,7 @@ It looks like a task management app. Maybe for handling a large set of concurren
 
 I know for sure that `fcontrol`, reverse-engineered to [find the system password](../Aesthedes%202%2085f7fd7209474298b3528148e30837ca.md), is eventually run by the physical Aesthedes. Somehow there must be a relation, direct or indirect, between `app` and `fcontrol` . Either the emulator fails to load something that `app` expects (and it just can’t handle the error and does nothing else except handling the user interaction), or `app` is actually not involved at all i.e. the physical system actually runs some other startup script.
 
-Walking down the second option. Going backwards from `fcontrol`, I see (with `strings -f * | grep fcontrol | less -S)` that the only “significant” program that invokes it is `main`.  `main` seems to reveal more about the softwar architecture: it seems to launch three components:
+Walking down the second option. Going backwards from `fcontrol`, I see (with `strings -f * | grep fcontrol | less -S)`) that the only “significant” program that invokes it is `main`. The latter seems to reveal more about the software architecture. It seems to launch three components:
 
 - `m2dispsys` as the “DS”, associated with `/r0/dispout`;
 - `m2gsys` as the “GS”, associated with `/r0/gsout`;
@@ -596,5 +596,26 @@ By deleting the existing targets about `c0`, and replacing them with a target
 that makes the alias to `r0`, the system seems to work correctly. Adding another
 alias for `h0` is a no-brainer.
 
+### Emulating storage with original ROMs
+
+The HDD image contains the `main` executable that starts `fcontrol`. The
+original ROMs will likely start up the system by running this executable. As
+described in the notes above, `main` also launches two executables that reside
+in `r0` (see notes above), or are somehow linked to files in `r0`. This means
+that the actual system will work with sepatate storage devices `r0` and `h0`. As
+an educated guess, `r0` could be a RAM disk for temporary files.
+
+Therefore it is important that the HDD image we have, is accessible in a way
+that is compatible to what the OS-9 in the ROMs expect. This means some sort of
+SCSI device: after all, we know that the HDD image was extracted by a 256-byte
+SCSI HDD.
+
+Alas we (currently) have no details on e.g. which SCSI controller is been used.
+From [Youtube videos](https://youtu.be/aVfmSLoi2Wg?si=wGnEy56MvtuNh5NJ&t=559),
+we see SCSI controller chips such as the NCR 5386 and NCR 53C90A on some of the
+Aesthedes PCBs. Alas these two chips don't seem to be emulated (yet) in MAME.
+But the HDD image seems to include several SCSI drivers in `CMDS/BOOTOBJS`,
+including the OMTI 5100 that is emulated in MAME. It could then be a candidate
+device to be included in the emulated hardware description in MAME.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
