@@ -618,4 +618,35 @@ But the HDD image seems to include several SCSI drivers in `CMDS/BOOTOBJS`,
 including the OMTI 5100 that is emulated in MAME. It could then be a candidate
 device to be included in the emulated hardware description in MAME.
 
+## Running `main`
+
+Unlike what was stated before, it's not actually true that `fcontrol` requires
+an executable that is present in the (currently unavailable) ROMs. The other two
+executables launched by `main`, `m2dispsys` and `m2gsys`, seem to provide what
+`fcontrol` is waiting for during its startup sequence. So, by running `main` we
+may be able to launch `fcontrol` successfully even without the ROMs.
+
+`main`, when launched, stops almost immediately due to it failing to launch a
+module called `AE_CONFIG`. By [creating]() a mock executable with the same name
+and does nothing (i.e. exits immediately) and installing it into `CMDS`, it can
+continue running.
+
+After that, it stops with `Cant Fork GS : 205` (205 is `E_BMID`, Bad Module ID).
+"GS" hints at `m2gsys`. Running that executable from the shell leads to the
+error `mshell: can't execute "J"  - Error #000:216` (216 is `E_PNNF`, Path Name
+Not Found).
+
+The above happened with the MAME emulation. When trying the same with os9exec,
+there are different failures: `main` shows error 214 (`E_FNA`, File Not
+Accessible) and the shell shows the following:
+
+```
+# Emulation could not start due to OS-9 error #000:214 (E_FNA): 'm2gsys'
+#   File Not Accessible
+```
+
+There is definitely something wrong with `m2gsys`, or the OS-9 kernels we're
+using aren't compatible with it somehow.
+
+
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
