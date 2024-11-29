@@ -648,5 +648,31 @@ Accessible) and the shell shows the following:
 There is definitely something wrong with `m2gsys`, or the OS-9 kernels we're
 using aren't compatible with it somehow.
 
+Running it again with `os9exec -d 0x20` to log module loading, reveals the
+following:
+
+```
+# load_module: loaded 655361 bytes from module's file
+# load_module: (found) mid=3, theModuleP=7FE78BD27000, ^theModuleP=4AFC0001
+# load_module: bad size: 831324>655361, E_BMID
+```
+
+(os9exec seems to hide the actual error code `E_BMID`. That would make it
+consistent with OS-9 on MAME).
+
+It looks like `m2gsys` is truncated. Indeed its size is an odd number of bytes,
+which is weird for a 68k executable. In fact, several executables in `CMDS` seem
+to have the same issue. Could it be a side-effect of running `dcheck` on the HDD
+image when I was trying to get the password?
+
+Luckily, `os9 copy` can work on the original HDD image and copy the file in its
+entirety.
+
+After installing the correct `m2gsys` into MAME's NVRAM, `main` doesn't show
+that error anymore... but it clears the screen and seems to enter an infinite
+loop. os9exec also clears the screen but shows a crash (null-pointer exception)
+preceded by `GS terminated with 208` (208 is `E_UNKSVC`, Unknown Service Code).
+I can't tell if both emulators are misbehaving for the same underlying cause, or
+os9exec has some emulation bug. 
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
