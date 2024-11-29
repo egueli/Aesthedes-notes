@@ -100,3 +100,15 @@ It is possible to continuously import a file in the lua REPL like so:
 A breakpoint command (not lua) to break on OS9 syscalls
 
     bpset 52c,1,{ print w@(d@(a7 + 2)) }
+
+## Intercept OS-9 system calls
+
+1. Run MAME with `-console -debug`.
+2. In the console used to run it, type
+
+    loadfile('../mame-os9.lua')()
+
+3. In the debugging console, type `go`.
+4. Start the OS and/or the program to debug.
+5. In the debugging console, type `bpset 52c,1,{ print w@(d@(a7 + 2)) }`.
+6. You will see OS-9 system call details in the other console.
