@@ -627,9 +627,9 @@ executables launched by `main`, `m2dispsys` and `m2gsys`, seem to provide what
 may be able to launch `fcontrol` successfully even without the ROMs.
 
 `main`, when launched, stops almost immediately due to it failing to launch a
-module called `AE_CONFIG`. By [creating]() a mock executable with the same name
-and does nothing (i.e. exits immediately) and installing it into `CMDS`, it can
-continue running.
+module called `AE_CONFIG`. By creating a mock executable (commit f00f0b9) with
+the same name and does nothing, and installing it into `CMDS`, it can continue
+running.
 
 After that, it stops with `Cant Fork GS : 205` (205 is `E_BMID`, Bad Module ID).
 "GS" hints at `m2gsys`. Running that executable from the shell leads to the
