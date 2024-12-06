@@ -110,5 +110,23 @@ A breakpoint command (not lua) to break on OS9 syscalls
 
 3. In the debugging console, type `go`.
 4. Start the OS and/or the program to debug.
-5. In the debugging console, type `bpset 52c,1,{ print w@(d@(a7 + 2)) }`.
+5. In the console, type
+
+    trace_syscalls()
+
+(note: it will slow down execution quite a bit)
 6. You will see OS-9 system call details in the other console.
+
+## OS-9 debugging tools
+
+This returns the address of PC, adjusted for Ghidra i.e. it can be searched with
+Ghidra's `G` shortcut:
+
+    pc_ghidra()
+
+This adds a breakpoint on a OS-9 process (`fcontrol` in this case), given its
+Ghidra-adjusted address:
+
+    os9_break('fcontrol', 0x30052)
+
+Note that the process must be already loaded in memory.

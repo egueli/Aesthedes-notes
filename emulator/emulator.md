@@ -675,4 +675,20 @@ preceded by `GS terminated with 208` (208 is `E_UNKSVC`, Unknown Service Code).
 I can't tell if both emulators are misbehaving for the same underlying cause, or
 os9exec has some emulation bug. 
 
+The problem is actually not in `main` but in `fcontrol`. If `fcontrol` is
+launched via the shell, it hangs as well. It looks like the mock `AE_CONFIG`
+causes it to hang; probably because it expects some event to be delivered. If
+`AE_CONFIG` is removed, `fcontrol` starts normally, and hangs at "Initializing
+color system" as before.
+
+## Running `fcontrol` with mock `AE_CONFIG`
+
+So, what does fcontrol need from AE_CONFIG to start correctly?
+
+`load_configuration` calls T$Link to load AE_CONFIG; it reads some data from it,
+sets a few global variables, calls some functions, then unloads it. Some of
+these steps makes it hang; hopefully it's just one step. So we may use the MAME
+debugger skip parts of that function to find the culprit.
+
+
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
