@@ -688,7 +688,11 @@ So, what does fcontrol need from AE_CONFIG to start correctly?
 `load_configuration` calls T$Link to load AE_CONFIG; it reads some data from it,
 sets a few global variables, calls some functions, then unloads it. Some of
 these steps makes it hang; hopefully it's just one step. So we may use the MAME
-debugger skip parts of that function to find the culprit.
+debugger to skip parts of that function to find the culprit, e.g. by
+live-patching the function with NOPs.
+
+It actually hangs at loading AE_CONFIG?
+
 
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)

@@ -130,3 +130,30 @@ Ghidra-adjusted address:
     os9_break('fcontrol', 0x30052)
 
 Note that the process must be already loaded in memory.
+
+## Debugging session
+
+1. start MAME:
+
+```sh
+make run-term
+```
+
+2. start debugger with `g`
+3. type init commands in serial terminal; type the last command but DO NOT press
+enter:
+```
+chd /r0
+chx /r0/CMDS
+main
+```
+3. enable debugging:
+
+```lua
+loadfile('../mame-os9.lua')()
+trace_syscalls()
+import_comments_from_ghidra('fcontrol', '/tmp/fcontrol-uilli.txt')
+os9_break('fcontrol', 0x302e0)
+
+```
+4. press enter on serial terminal.
