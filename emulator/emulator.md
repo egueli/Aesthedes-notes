@@ -618,6 +618,11 @@ But the HDD image seems to include several SCSI drivers in `CMDS/BOOTOBJS`,
 including the OMTI 5100 that is emulated in MAME. It could then be a candidate
 device to be included in the emulated hardware description in MAME.
 
+Bitsavers has an [extremely useful technical manual](http://www.bitsavers.org/pdf/sms/omti_5x00/OMTI_5x00.pdf)
+that confirms the OMTI5100 referenced in the MAME source code is basically
+the same as the OMTI5400 referenced in OS-9.
+
+
 ## Running `main`
 
 Unlike what was stated before, it's not actually true that `fcontrol` requires
