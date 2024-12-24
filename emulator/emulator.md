@@ -696,7 +696,12 @@ these steps makes it hang; hopefully it's just one step. So we may use the MAME
 debugger to skip parts of that function to find the culprit, e.g. by
 live-patching the function with NOPs.
 
-It actually hangs at loading AE_CONFIG?
+Beware that the MAME debugger does not always work as expected: in particular,
+Step Into and Step Next may cause weird side-effects if an OS9 syscall happens
+in-between, and make it look like the CPU goes into infinite loop inside the
+kernel. On the other hand, by adding a breakpoint on the next instruction it
+works correctly. It's recommended to use the state-save (`ss`) and state-load
+(`sl`) commands to revert to a known good state if things go awry.
 
 
 
