@@ -153,7 +153,14 @@ main
 loadfile('../mame-os9.lua')()
 trace_syscalls()
 import_comments_from_ghidra('fcontrol', '/tmp/fcontrol-uilli.txt')
+
+-- break fcontrol just before load_configuration
 os9_break('fcontrol', 0x302e0)
 
+-- break main just before loading AE_CONFIG
+os9_break('main', 0x3043a)
+
+-- break fcontrol just after load_module(AE_CONFIG)
+os9_break('fcontrol', 0x3a676)
 ```
 4. press enter on serial terminal.
