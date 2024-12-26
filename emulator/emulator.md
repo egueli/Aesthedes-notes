@@ -690,18 +690,26 @@ color system" as before.
 
 So, what does fcontrol need from AE_CONFIG to start correctly?
 
-`load_configuration` calls T$Link to load AE_CONFIG; it reads some data from it,
-sets a few global variables, calls some functions, then unloads it. Some of
-these steps makes it hang; hopefully it's just one step. So we may use the MAME
-debugger to skip parts of that function to find the culprit, e.g. by
-live-patching the function with NOPs.
+`load_configuration` (function 0x3a65a in Ghidra) calls T$Link to load
+AE_CONFIG; it reads some data from it, sets a few global variables, calls some
+functions, then unloads it. Some of these steps makes it hang; hopefully it's
+just one step. So we may use the MAME debugger to skip parts of that function to
+find the culprit, e.g. by live-patching the function with NOPs.
 
 Beware that the MAME debugger does not always work as expected: in particular,
-Step Into and Step Next may cause weird side-effects if an OS9 syscall happens
-in-between, and make it look like the CPU goes into infinite loop inside the
-kernel. On the other hand, by adding a breakpoint on the next instruction it
-works correctly. It's recommended to use the state-save (`ss`) and state-load
-(`sl`) commands to revert to a known good state if things go awry.
+Step Into, Step Next and Run to Cursor may cause weird side-effects if an OS9
+syscall happens in-between, and make it look like the CPU goes into infinite
+loop inside the kernel. On the other hand, by adding a breakpoint on the next
+instruction it works correctly. It's recommended to use the state-save (`ss`)
+and state-load (`sl`) commands to revert to a known good state if things go
+awry.
+
+Thanks to this new knowledge, it seems that `load_configuration` actually runs
+fine but the system hangs later. Here's a pseudo-stacktrace:
+
+* somewhere in function 0xb697a
+* invoked by function 0x3b0c2 at 0x3b1e4 (note: it's the second invocation)
+* invoked by `main` function (0x30272) at 0x30310.
 
 
 

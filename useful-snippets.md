@@ -160,7 +160,7 @@ os9_break('fcontrol', 0x302e0)
 -- break main just before loading AE_CONFIG
 os9_break('main', 0x3043a)
 
--- break fcontrol just after load_module(AE_CONFIG)
-os9_break('fcontrol', 0x3a676)
+-- break fcontrol just before it kernel-hangs
+os9_break('fcontrol', 0x3b1e4)
 ```
 4. press enter on serial terminal.
