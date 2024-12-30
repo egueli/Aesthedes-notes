@@ -707,10 +707,47 @@ awry.
 Thanks to this new knowledge, it seems that `load_configuration` actually runs
 fine but the system hangs later. Here's a pseudo-stacktrace:
 
-* somewhere in function 0xb697a
+* somewhere in function 0xb697a (named `fill_screen_with_stuff` in Ghidra)
 * invoked by function 0x3b0c2 at 0x3b1e4 (note: it's the second invocation)
 * invoked by `main` function (0x30272) at 0x30310.
 
+Function 0xb697a handles 80-byte arrays filled with value 0x20, and has a loop
+that is supposed to run 20 (0x14) times. If 80x20 is the character size of the
+text screens, then this function may have to do with text output. Actually the
+screens have 25 lines, but it seems that only the first 20 are used in the
+startup texts.
 
+The loop has an iterator that starts at 20 (or 21) and should end at 40, but the
+hang begins when it reaches 37, i.e. the 17th iteration. A stack overflow
+triggered by an invalid configuration value, maybe?
+
+The last instruction in application code before the hang was at 0xb9610 (`bsr.l
+0xbf646`), that calls the CIO function to print a null-terminated string.
+
+fcontrol Ghidra offset: 0xE01DB0
+
+Tracing info:
+
+MAME debugger commands:
+```
+sl after_config_6
+trace hang.tr,,noloop,{tracelog "A7=%08x D0=%08x ", A7, D0}
+g
+[wait until frame0=~7030]
+trace off
+```
+
+Analyzer commandline:
+```sh
+cat mame/hang.tr | nl -w8 -ba |perl -n -e '/(.{33})(.{8})(.*)/ && (printf "%s%18s%s\n", $1, (hex($2) >= 0xE31DB0 && hex($2) < (0xE31DB0 + 0xA0C3C)) ? sprintf("fcontrol+%06x", hex($2)-0xE01DB0) : $2, $3) || print' >  hang_trace.txt
+```
+
+The first execution of b69f2 is at line 20377. Last-but-one (16th iteration) is
+at 95462, last (17th iteration) is at 100475.
+
+At the 17th iteration, at line 105140, a `bcc` branches differently between the
+two iterations. That instruction is at memory address 0x13d60, that is allocated
+to the `sc68681` driver (module base at 0x139f8). Maybe the emulated hardware is
+buggy? Or the driver itself is?
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
