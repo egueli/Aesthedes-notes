@@ -747,7 +747,47 @@ at 95462, last (17th iteration) is at 100475.
 
 At the 17th iteration, at line 105140, a `bcc` branches differently between the
 two iterations. That instruction is at memory address 0x13d60, that is allocated
-to the `sc68681` driver (module base at 0x139f8). Maybe the emulated hardware is
-buggy? Or the driver itself is?
+to the `sc68681` driver (module base at 0x139f8; it seems that the kernel loads
+this driver at the same location at every startup, so one can set a breakpoint
+at the absolute address). Maybe the emulated hardware is buggy? Or the driver
+itself is?
+
+We have sources for the driver: `MWOS/OS9/SRC/IO/SCF/DRVR/sc68681.a` and the
+branch is at around line 1072 (`bhs` is a synonym for `bcc`):
+
+```
+Write: move.w sr,d6 save current IRQ status
+ move.w IRQMask(a2),sr mask IRQs
+ move.w OutCount(a2),d2 get output buffer data count
+ cmpi.w #OutSiz,d2 room for more data?
+ bhs.s Write00 ..no; wait for room
+```
+
+A possible explanation is that the transmit buffer for the serial port used to
+send those characters, is never emptied and it gets eventually full.
+
+A debugger command can print transmit buffer level after each write to any
+serial port:
+
+```
+bpset 13d60,1,{ printf "port@%06x count=%d", a2, w@(a2 + 72); g }
+```
+
+(72 is the offset from the start of the variables section for the driver, which
+is held in A2. That offset is calculated by the linker as the sum of 42 i.e. the
+space required by other object files linked in, and 30 that is `OutCount` in
+`sc68681`)
+
+With this, one can see that two serial ports are used overall: one at address
+0xfc9390 (the one with the OS-9 prompt), one at 0xffde70 (where some ANSI codes
+are printed when running `main` or `fcontrol`). Before launching `main` and
+shortly after that, the levels are arouns 10 and never higher than 60; after
+some point, the second one reaches 140 and that's where the system hangs. I
+guess that `fcontrol` may reconfigure the driver in a way that it doesn't
+transmit anymore. It could be the enabling of some flow control, but changing
+the serial port setting in MAME to RTS leads to no change; moreover, the are no
+reports of system calls that could enable the flow control.
+
+
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)

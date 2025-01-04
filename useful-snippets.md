@@ -164,3 +164,28 @@ os9_break('main', 0x3043a)
 os9_break('fcontrol', 0x3b1e4)
 ```
 4. press enter on serial terminal.
+
+## Trace loop iterations
+
+Example:
+
+Breakpoint inside an iteration block, assuming `i` is at D0, and the limit in
+the stack at offset 0xa0:
+```
+bpset eb87c0,1,{ printf "i=%d limit=%d", d@(a7+0xa0), d0 }
+```
+
+## Monitor serial transmit buffer count
+
+Note: to paste text onto the debugger window, right-click on the text-box then
+"Paste". If you see nothing, hit Backspace once and the text should appear.
+
+```
+bpset 13d60,1,{ printf "port@%06x count=%d", a2, w@(a2 + 72); g }
+```
+
+Break:
+```
+bpset 13d60, sr&1, { printf "port@%06x count=%d", a2, w@(a2 + 72) }
+```
+
