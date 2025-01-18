@@ -189,3 +189,14 @@ Break:
 bpset 13d60, sr&1, { printf "port@%06x count=%d", a2, w@(a2 + 72) }
 ```
 
+Dump some variables of `sc68681` driver when transmitting a character (in D0),
+just before deciding if send immediately or queue it:
+
+```
+bpset 13d60,1,{ printf "port@%06x D0.b=%02x BaseAddr=%08x OutCount=%3d ChanelNo=%02x BaudRate=%02x Parity=%02x InHalt=%02x OutHalt=%02x Otpt_On=%02x Otpt_Off=%02x RTSmode=%02x RTSstate=%02x TXmode=%02x", a2, d0, d@(a2+0x56+0x18), w@(a2+0x56+0x1c), b@(a2+0x56+0x2a), b@(a2+0x56+0x2b), b@(a2+0x56+0x2c), b@(a2+0x56+0x2d), b@(a2+0x56+0x2e), b@(a2+0x56+0x2f), b@(a2+0x56+0x30), b@(a2+0x56+0x31), b@(a2+0x56+0x32), b@(a2+0x56+0x33); g }
+```
+
+For the full list of variables, edit `scf_68681.make` and add `-s` to `RFLAGS`,
+this enables listing generation. In the generated `scf_sc68681.lst` look for
+definitions in `vsect` and add those offsets to `a2+0x56`.
+

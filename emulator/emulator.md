@@ -770,13 +770,13 @@ A debugger command can print transmit buffer level after each write to any
 serial port:
 
 ```
-bpset 13d60,1,{ printf "port@%06x count=%d", a2, w@(a2 + 72); g }
+bpset 13d60,1,{ printf "port@%06x count=%d", a2, w@(a2 + 0x72); g }
 ```
 
-(72 is the offset from the start of the variables section for the driver, which
-is held in A2. That offset is calculated by the linker as the sum of 42 i.e. the
-space required by other object files linked in, and 30 that is `OutCount` in
-`sc68681`)
+(0x72 is the offset from the start of the variables section for the driver,
+which is held in A2. That offset is calculated by the linker as the sum of 0x56
+i.e. the space required by other object files linked in, and 0x1c that is
+`OutCount` in `sc68681`)
 
 With this, one can see that two serial ports are used overall: one at address
 0xfc9390 (the one with the OS-9 prompt), one at 0xffde70 (where some ANSI codes
@@ -786,8 +786,10 @@ some point, the second one reaches 140 and that's where the system hangs. I
 guess that `fcontrol` may reconfigure the driver in a way that it doesn't
 transmit anymore. It could be the enabling of some flow control, but changing
 the serial port setting in MAME to RTS leads to no change; moreover, the are no
-reports of system calls that could enable the flow control.
+reports of system calls that could enable the flow control. And, none of the
+driver's variables seem to change significantly.
 
-
+So my attention is going to focus on the emulated MC68681. Maybe it is behaving
+incorrectly?
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
