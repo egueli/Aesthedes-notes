@@ -787,9 +787,86 @@ guess that `fcontrol` may reconfigure the driver in a way that it doesn't
 transmit anymore. It could be the enabling of some flow control, but changing
 the serial port setting in MAME to RTS leads to no change; moreover, the are no
 reports of system calls that could enable the flow control. And, none of the
-driver's variables seem to change significantly.
+driver's variables seem to change significantly. The only exception seems to be
+the parity configuration byte, sometimes changing from 0 to 2 for a couple
+characters then back to 0 (note that `sc68681.a` probably has a typo in line 840
+since 3 is not a value that can be contained in two bits), but this happened a
+few times before the hang. Moreover it doesn't seem to reflect a register write
+to the DUART.
 
 So my attention is going to focus on the emulated MC68681. Maybe it is behaving
 incorrectly?
+
+I enabled `VERBOSE` in `mc68681.cpp` to see what happens at MAME side. When
+sending a byte (`53` hex in this example, followed by `59`) from the output
+buffer that is partially full, this is what is being logged:
+
+```
+[:duart] Writing 68681 (:duart) reg 3 (THRA) with 53 
+[:duart] Interrupt line not active (IMR & ISR = 00) 
+[:duart] Interrupt line active (IMR & ISR = 01) 
+[:duart] Reading 68681 (:duart) reg 5 (ISR) 
+[:duart] returned 09
+[:duart] Writing 68681 (:duart) reg 3 (THRA) with 59 
+[:duart] Interrupt line not active (IMR & ISR = 00) 
+...
+```
+
+The OS-9 driver writes the byte to THRA. The emulated chip deasserts the
+interrupt, sends the byte, then asserts it. The driver looks at the ISR, sees
+that bit 0 (TxRDYA) is asserted, and proceeds to send the next byte in the
+buffer.
+
+But at some point, this chain reaction breaks:
+
+```
+[:duart] Reading 68681 (:duart) reg 5 (ISR) 
+[:duart] returned 09 
+[:duart] Writing 68681 (:duart) reg 3 (THRA) with 5b 
+[:duart] Interrupt line not active (IMR & ISR = 00) 
+[:duart] Interrupt line active (IMR & ISR = 01) 
+[:duart] Reading 68681 (:duart) reg 5 (ISR) 
+[:duart] returned 09 
+[:duart] Reading 68681 (:duart) reg 5 (ISR) 
+[:duart] returned 09 
+[:duart] Reading 68681 (:duart) reg 5 (ISR) 
+[:duart] returned 09 
+...
+```
+It looks like the driver reads the ISR in an infinite loop?
+
+Is this triggered by something OS-9 did? To answer this, I dumped all the
+driver's registers once again. The MAME log now has logs for both the driver and
+the port. I wrote a Python script (`mc68681_tracker.py`) to see if this change
+in behavior happened with some change in the driver state but nothing relevant
+came up.
+
+Let's debug the interrupt service routine. It starts at `MPSIRQEx` (whose
+address should be 0x13f6a, by looking at the output of `irqs`). At 0x13fac (line
+1453 in driver source) it checks if there is anything to handle; during the hang
+it seems to branch and return early from the interrupt. So, why does the port
+trigger an interrupt with no events?
+
+With vebose port logging, I see this:
+
+```
+[:duart] Reading 68681 (:duart) reg 5 (ISR)
+[:duart] returned 09
+[:duart] Writing 68681 (:duart) reg 3 (THRA) with 5b
+[:duart] Interrupt line not active (IMR & ISR = 00)
+[:duart1] Interrupt line active (IMR & ISR = 01)
+[:duart1] Reading 68681 (:duart1) reg 5 (ISR)
+[:duart1] returned 01
+[:duart1] Writing 68681 (:duart1) reg 3 (THRA) with 48
+[:duart1] Interrupt line not active (IMR & ISR = 00)
+[:duart1] Writing 68681 (:duart1) reg 5 (IMR) with 02
+[:duart] Interrupt line active (IMR & ISR = 01)
+[:duart] Reading 68681 (:duart) reg 5 (ISR)
+[:duart] returned 09
+```
+
+It looks like everything stopped when somehow IMR was written a different value
+*from a different port*. Why was `duart` also affected? And why the interrupt
+mask was changed anyway?
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)

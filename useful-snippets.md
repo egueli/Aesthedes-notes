@@ -200,3 +200,18 @@ For the full list of variables, edit `scf_68681.make` and add `-s` to `RFLAGS`,
 this enables listing generation. In the generated `scf_sc68681.lst` look for
 definitions in `vsect` and add those offsets to `a2+0x56`.
 
+Trace/break on serial port IRQs:
+
+```
+bpset 13f6a,1,{ printf "port@%06x MPSCIRQ D1.b=%02x", a2, (d1 & 0xff); g }
+bpset 13fac,1,{ printf "port@%06x MIRQ.a2 interrupts_A=%02x", a2, (d1 & 0xff); g }
+bpset 13fac, (a2 == 0xffde70) && ((d1 & 0xff) == 0)
+```
+
+Trace whole IRQ execution:
+```
+base = (0x13f6a - 0x536) = 0x13a34
+bpset 0x13a34+0x53e, 1, {printf "port@%06x IRQ 053e ISR=%02x", a2, (d1 & 0xff); g}
+bpset 0x13a34+0x546, 1, {printf "port@%06x IRQ 0546 ISR=%02x masked disabled", a2, (d1 & 0xff); g}
+bpset 0x13a34+0x57a, 1, {printf "port@%06x IRQ 057a processing recv IRQ", a2; g}
+```
