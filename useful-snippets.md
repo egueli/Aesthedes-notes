@@ -215,3 +215,8 @@ bpset 0x13a34+0x53e, 1, {printf "port@%06x IRQ 053e ISR=%02x", a2, (d1 & 0xff); 
 bpset 0x13a34+0x546, 1, {printf "port@%06x IRQ 0546 ISR=%02x masked disabled", a2, (d1 & 0xff); g}
 bpset 0x13a34+0x57a, 1, {printf "port@%06x IRQ 057a processing recv IRQ", a2; g}
 ```
+
+Trace global masks offset:
+```
+bpset 0x13a34+0x86
+```

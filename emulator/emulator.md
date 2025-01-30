@@ -847,7 +847,7 @@ address should be 0x13f6a, by looking at the output of `irqs`). At 0x13fac (line
 it seems to branch and return early from the interrupt. So, why does the port
 trigger an interrupt with no events?
 
-With vebose port logging, I see this:
+With verbose port logging, I see this:
 
 ```
 [:duart] Reading 68681 (:duart) reg 5 (ISR)
@@ -868,5 +868,44 @@ With vebose port logging, I see this:
 It looks like everything stopped when somehow IMR was written a different value
 *from a different port*. Why was `duart` also affected? And why the interrupt
 mask was changed anyway?
+
+(by the way, it looks like the DUART driver is used as an example SCF driver in
+[OS-9 Insights An Advanced Programmers Guide to
+OS-9](http://www.icdia.co.uk/books_os9/os9insights_ed3.pdf), chapter 29)
+
+It looks like the driver uses a shadow copy of IMR in memory. This is required
+because the driver has to know which interrupt types were masked out, but IMR
+cannot be read from the 68681 directly (reading that register will load ISR
+instead). For *reasons*, this shadow resides into a "OEM globals" area (see
+chapter 29.5 in the book, page 401 (pdf:421)). Is it possible that both
+instances are mistakenly reading/writing into the same address?
+
+The first port that is initialized (at base addr A2=0xffde70, A1=0x0141dc)
+* global mask offset is 0x70;
+* offset to the global pair for this device is 0;
+* entry of the pair in the OEM_Globals is 0x7c4;
+* this is saved to Globl(a2) = 0xffdee6.
+
+The second port that is initialized (at base addr A2=0xfc9490, A1=0x0142d6)
+* global mask offset is 0x70;
+* offset to the global pair for this device is 0;
+* entry of the pair in the OEM_Globals is 0x7c4;
+* this is saved to Globl(a2) = 0xfc9506.
+
+Is the same offset saved to two separate locations? Really?
+
+Now let's look at the next-occurring serial interrupt
+(at base addr A2=0xfc9490, A1=0xfc9600):
+* Globl(a2) = 0xfc9506;
+* offset to the pair in the OEM_Globals is 0x7c4...
+
+So they're all reading and writing to the same offset 0x7c4! Of course they'd
+eventually crash into each other...
+
+It seems that the "offset to the global pair" (defined as `DevCon` (Device
+Constants) in the book) should be 0 for the first device, 2 for the second etc.
+(it should increment by 2 because sc68681 needs two shadow bytes). But in
+`systype.d` it was set to 0 for all 4 ports (`TERM`, `CRT80`, `CRT81` and
+`CRT82`). A quick fix made them finally work independently from each other.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
