@@ -704,6 +704,8 @@ instruction it works correctly. It's recommended to use the state-save (`ss`)
 and state-load (`sl`) commands to revert to a known good state if things go
 awry.
 
+### A crash in the middle of an iteration
+
 Thanks to this new knowledge, it seems that `load_configuration` actually runs
 fine but the system hangs later. Here's a pseudo-stacktrace:
 
@@ -907,5 +909,32 @@ Constants) in the book) should be 0 for the first device, 2 for the second etc.
 (it should increment by 2 because sc68681 needs two shadow bytes). But in
 `systype.d` it was set to 0 for all 4 ports (`TERM`, `CRT80`, `CRT81` and
 `CRT82`). A quick fix made them finally work independently from each other.
+
+### Trying to make GS not terminate
+
+Now that the serial ports are disentangled, fcontrol seems move forward. But,
+now we get a "GS terminated with " followed by a seemingly random number, and
+the system becomes unresponsive.
+
+Firing up Ghidra again, I try to see (1) how does it get the termination code
+(and why is it broken) and (2) why does GS gets prematurely terminated. It might
+also be that it crashes when trying to run some action triggered by `main` or
+`fcontrol`.
+
+Some reverse-engineering reveals another secret: the unresponsiveness is caused
+by an infinite loop, that happens only if some global variable is set. And that
+is set if `main` is invoked with the `-t` option. That same variable also
+triggers the printing of `STARTING SYSTEM WITH DEBUG-OPTIONS` so it's safe to
+assume it's about some debug mode. With that option, `main` exits to the prompt,
+removing the need of resetting the machine. It also prints the output (stdout?)
+of CS, DS and GS to `/r0/csout`, `/r0/dsout` and `/r0/gsout` respectively, but
+so far these files, although created, contain zero bytes.
+
+The "GS" (Graphics System?) mentioned in the error should be the `m2gsys`
+executable. When it is launched from the shell, I see it running for a while
+with no output, then waits with the `stop` 68K instruction. I can return to the
+prompt with a Ctrl-C. Therefore `main` might be calling it in a different way,
+that makes it end prematurely. Alas there are no other error messages, so one
+way to figure out what's wrong is to debug `m2gsys` and see where it exits.
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
