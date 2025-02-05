@@ -937,4 +937,26 @@ prompt with a Ctrl-C. Therefore `main` might be calling it in a different way,
 that makes it end prematurely. Alas there are no other error messages, so one
 way to figure out what's wrong is to debug `m2gsys` and see where it exits.
 
+(0xefc100 in MAME is 0x30270 in Ghidra -> offset = 0xecbe90)
+
+Tracing the point where the app crashes:
+* m2gsys's `main()` is at 0x30270 in Ghidra.
+* It calls the function at 0x5f6c6 at 0x302f2.
+* In turns, it calls the function at 0x3b5ee at 0x5f79c.
+* (`m2gsys_2`) In turns, it calls the function at 0x31294 at 0x3b622.
+* (`m2gsys_3`) In turns, it calls the function at 0xea132 at 0x312ae.
+* (`m2gsys_4`) In turns, it calls the function at 0xea436 at 0xea18c.
+* In turns, it calls the function at 0xea338 at 0xea46c.
+* (`m2gsys_5`) In turns, it calls the function at 0xebaae at 0xea358.
+* In turns, it calls OS-9's F$Exit, causing the program to stop.
+
+So there's no crash, but an expected exit. Why does it exit then? 
+The answer is in the function at 0xea436: it calls 0xeb7b8 which calls F$Event,
+but it seems to fail. This is reported as a -1 value, which causes 0xea338 to be
+called.
+
+0xeb7b8 is called with D0=0x20001 and D1=2. It eventually calls F$Event with
+D1=0xA (that means Ev$Set), D0 (signal ID) = 0x20001 and D2 (new event value) =
+2. The system calls returns with D1=0xFFFFFFFF, signaling an error.
+
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
