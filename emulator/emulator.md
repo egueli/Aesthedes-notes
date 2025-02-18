@@ -957,6 +957,92 @@ called.
 
 0xeb7b8 is called with D0=0x20001 and D1=2. It eventually calls F$Event with
 D1=0xA (that means Ev$Set), D0 (signal ID) = 0x20001 and D2 (new event value) =
-2. The system calls returns with D1=0xFFFFFFFF, signaling an error.
+2. The system call returns with D1=0xFFFFFFFF, signaling an error. Which is
+weird, because the documentation says the only possible error is 0xa7
+(E$EvntID). A different error then?
+
+Maybe the system call was misused? Here's the list of last syscalls performed:
+
+```
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Link) D0: 00efcc6e, D1: 0000, D2: 48d6, D3: bc50, A0: 00efcc6e (CS_GS) 
+Now loaded: CS_GS@00e2f9c0 
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Creat) D0: 000003e7, D1: 0002, D2: ffff, D3: 0000, A0: 00efcc6e (CS_GS) 
+OS9 syscall: m2gsys+000eb7d0  F$Event       (Ev_Set) D0: 00010000, D1: 000a, D2: 0000, D3: bc50, A0: 00efcc6e (CS_GS) 
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Link) D0: 00efbb16, D1: 0000, D2: 48d6, D3: bc50, A0: 00efbb16 (EV_DISPSYS) 
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Creat) D0: 000003e7, D1: 0002, D2: ffff, D3: 0000, A0: 00efbb16 (EV_DISPSYS) 
+OS9 syscall: m2gsys+000eb82a  F$Link        D0: 0000, A0: bac6 (DM_DISPSYS) 
+OS9 syscall: m2gsys+000eb650  F$DatMod      D0: 00000400, D1: 8000, D2: 0003, D3: bc50, A0: bac6 (DM_DISPSYS) 
+OS9 syscall: m2gsys+000eba3e  F$ID           
+Now loaded: DM_DISPSYS@00e2f570 
+(3)
+OS9 syscall: m2gsys+000eb7f6  F$Event       (Ev_Wait) D0: 00020001, D1: 0004, D2: 0000, D3: 0000, A0: 00ef0dc2 
+OS9 syscall: m2dispsys+00042510  F$Sleep       D0: 8000000a 
+OS9 syscall: m2dispsys+00042510  F$Sleep       D0: 8000000a 
+OS9 syscall: m2dispsys+00042510  F$Sleep       D0: 8000000a 
+OS9 syscall: m2dispsys+00042510  F$Sleep       D0: 8000000a 
+(4)
+OS9 syscall: m2dispsys+00042678  F$Event       (Ev_Link) D0: 00fd1912, D1: 0000, D2: a93a, D3: 1a0e, A0: 00fd1912 (EV_DISPSYS) 
+OS9 syscall: m2dispsys+00042778  F$Link        D0: 0000, A0: 18c2 (DM_DISPSYS) 
+(5)
+OS9 syscall: m2dispsys+0004271e  F$Event       (Ev_Set) D0: 00020001, D1: 000a, D2: 0000, D3: 1a0e, A0: 00fd18c2 (DM_DISPSYS) 
+OS9 syscall: m2dispsys+00042744  F$Event       (Ev_Wait) D0: 00020001, D1: 0004, D2: 0002, D3: 0002, A0: 00fd1970 
+(6)
+OS9 syscall: m2gsys+000eb7d0  F$Event       (Ev_Set) D0: 00020001, D1: 000a, D2: 0002, D3: bc50, A0: 00ef0dc2 
+OS9 syscall: cio+0003498a  I$Close       D0: 0000 
+OS9 syscall: scf+00030238  I$Detach      A2: 00ffe350 
+OS9 syscall: cio+0003498a  I$Close       D0: 0001 
+OS9 syscall: cio+0003498a  I$Close       D0: 0002 
+OS9 syscall: m2gsys+000ebac6  F$Exit        D1: 00dd 
+```
+
+I fixed the OS-9 call tracing (events are now displayed with the relevant
+register and their sizes), here's the new trace:
+
+```
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Link) A0: 00efe66e (CS_GS) 
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Creat) D0: 000003e7, D2: ffff, D3: 0000 
+OS9 syscall: m2gsys+000eb7d0  F$Event       (Ev_Set) D0: 00010000, D1: 000a, D2: 00000000 
+(1)
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Link) A0: 00efbb16 (EV_DISPSYS) 
+(2)
+OS9 syscall: m2gsys+000eb72a  F$Event       (Ev_Creat) D0: 000003e7, D2: ffff, D3: 0000 
+OS9 syscall: m2gsys+000eb82a  F$Link        D0: 0000, A0: bac6 (DM_DISPSYS) 
+OS9 syscall: m2gsys+000eb650  F$DatMod      D0: 00000400, D1: 8000, D2: 0003, D3: bc50, A0: bac6 (DM_DISPSYS) 
+OS9 syscall: m2gsys+000eba3e  F$ID           
+(3)
+OS9 syscall: m2gsys+000eb7f6  F$Event       (Ev_Wait) D0: 00020001, D2: 00000000, D3: 00000000 
+OS9 syscall: m2dispsys+00042510  F$Sleep       D0: 8000000a 
+(4)
+OS9 syscall: m2dispsys+00042678  F$Event       (Ev_Link) A0: 00fd1912 (EV_DISPSYS) 
+OS9 syscall: m2dispsys+00042778  F$Link        D0: 0000, A0: 18c2 (DM_DISPSYS) 
+(5)
+OS9 syscall: m2dispsys+0004271e  F$Event       (Ev_Set) D0: 00020001, D1: 000a, D2: 00000000 
+OS9 syscall: m2dispsys+00042744  F$Event       (Ev_Wait) D0: 00020001, D2: 00000002, D3: 00000002 
+(6)
+OS9 syscall: m2gsys+000eb7d0  F$Event       (Ev_Set) D0: 00020001, D1: 000a, D2: 00000002 
+OS9 syscall: cio+0003498a  I$Close       D0: 0000 
+OS9 syscall: scf+00030238  I$Detach      A2: 00ffe350 
+OS9 syscall: cio+0003498a  I$Close       D0: 0001 
+OS9 syscall: cio+0003498a  I$Close       D0: 0002 
+OS9 syscall: m2gsys+000ebac6  F$Exit        D1: 00dd 
+```
+
+There is some IPC going on. It looks like m2gsys wants to start m2dispsys and
+wait for it to be ready. To do so, it creates an event called `EV_DISPSYS` with
+initial value -1 (1), then loads the executable (2) (note: it asks for
+`DM_DISPSYS` but the actual executable is called `m2dispsys`?), then waits for
+the event to become 0 (3). m2dispsys starts, sleeps a bit, then links to the
+same event (4), sets it to 0 (5) and waits. Now that `EV_DISPSYS` is 0, m2gsys
+wakes up and attempts to set it to 2 (6), but OS-9 returns with an error.
+
+This might call for an in-kernel debugging, of which we have no sources.
+
+I also noted that the system acually fails in two different modes - which one
+happens, it's random. The error number may be a hint: it may be 221 or 168. In
+the crashes above, the number was 221. Maybe they have the same root cause and
+the 168 failure is easier to troubleshoot?
+
+
+
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
