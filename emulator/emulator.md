@@ -941,19 +941,18 @@ way to figure out what's wrong is to debug `m2gsys` and see where it exits.
 
 Tracing the point where the app crashes:
 * m2gsys's `main()` is at 0x30270 in Ghidra.
-* It calls the function at 0x5f6c6 at 0x302f2.
-* In turns, it calls the function at 0x3b5ee at 0x5f79c.
-* (`m2gsys_2`) In turns, it calls the function at 0x31294 at 0x3b622.
-* (`m2gsys_3`) In turns, it calls the function at 0xea132 at 0x312ae.
-* (`m2gsys_4`) In turns, it calls the function at 0xea436 at 0xea18c.
-* In turns, it calls the function at 0xea338 at 0xea46c.
-* (`m2gsys_5`) In turns, it calls the function at 0xebaae at 0xea358.
+* At 0x302f2, it calls the function at 0x5f6c6.
+* In turns, at 0x5f79c it calls the function at 0x3b5ee.
+* In turns, at 0x3b622 it calls the function at 0x31294. (`m2gsys_2`)
+* In turns, at 0x312ae it calls the function at 0xea132. (`m2gsys_3`)
+* In turns, at 0xea18c it calls the function at 0xea436. (`m2gsys_4`)
+* In turns, at 0xea46c it calls the function at 0xea338.
+* In turns, at 0xea358 it calls the function at 0xebaae. (`m2gsys_5`)
 * In turns, it calls OS-9's F$Exit, causing the program to stop.
 
-So there's no crash, but an expected exit. Why does it exit then? 
-The answer is in the function at 0xea436: it calls 0xeb7b8 which calls F$Event,
-but it seems to fail. This is reported as a -1 value, which causes 0xea338 to be
-called.
+So there's no crash, but an expected exit. Why does it exit then? The answer is
+in the function at 0xea436: it calls 0xeb7b8 which calls F$Event, but it seems
+to fail. This is reported as a -1 value, which causes 0xea338 to be called.
 
 0xeb7b8 is called with D0=0x20001 and D1=2. It eventually calls F$Event with
 D1=0xA (that means Ev$Set), D0 (signal ID) = 0x20001 and D2 (new event value) =
@@ -1041,7 +1040,6 @@ I also noted that the system acually fails in two different modes - which one
 happens, it's random. The error number may be a hint: it may be 221 or 168. In
 the crashes above, the number was 221. Maybe they have the same root cause and
 the 168 failure is easier to troubleshoot?
-
 
 
 
