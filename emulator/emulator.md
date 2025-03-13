@@ -1041,6 +1041,73 @@ happens, it's random. The error number may be a hint: it may be 221 or 168. In
 the crashes above, the number was 221. Maybe they have the same root cause and
 the 168 failure is easier to troubleshoot?
 
+#### Debugging the kernel
+
+To recap: an OS-9 syscall is returning -1 but it shouldn't. I want to figure out
+where in the OS code that -1 is generated and why.
+
+We have no sources for the kernel, but we have the ROM image and can
+disassemble/decompile it in Ghidra.
+
+`romimage.dev` is likely not a good candidate because it contains both the
+bootloader and the OS, and the vector table may have been overwritten even
+multiple times.
+
+Had a look at `romboot.map`. It seems to only contain address maps for the ROM
+bootloader, but not OS-9 itself. It does contain symbols from `sysboot.l`, that
+is part of the OS-9 binaries, and the label `SysBoot` that seems to be the entry
+point for OS-9.
+
+Reset the system, then enable OS-9 tracing and set the breakpoints to
+0xea436 (before the syscall) and to 0xea464 (after the syscall) via MAME
+console:
+
+```
+loadfile('../mame-os9.lua')()
+trace_syscalls()
+os9_break('m2gsys', 0xea436)
+os9_break('m2gsys', 0xea464)
+```
+
+Wait for the debugger to stop, then enable tracing: this will trace a
+successful call.
+
+```
+trace ev_wait_good.tr,,noloop,{tracelog "A7=%08x (A7+0)=%08x (A7+4)=%08x D0=%08x D1=%08x D2=%08x D3=%08x A2=%08x A3=%08x ", A7, d@(A7), d@(A7+4), D0, D1, D2, D3, A2, A3}
+```
+Do note that this successfull call is not (5): we're debugging m2gsys, not
+m2dispsys. It must be a previous call.
+
+Resume it with `g`: it should stop at 0xea464. Stop tracing and resume:
+
+```
+trace off
+g
+```
+
+It should stop again at 0xea436 (that would be (6)). Enable tracing to a
+different file:
+
+```
+trace ev_wait_bad.tr,,noloop,{tracelog "A7=%08x (A7+0)=%08x (A7+4)=%08x D0=%08x D1=%08x D2=%08x D3=%08x A2=%08x A3=%08x ", A7, d@(A7), d@(A7+4), D0, D1, D2, D3, A2, A3}
+```
+
+Resume it with `g`: it should stop at 0xea464 again. Stop tracing:
+
+```
+trace off
+```
+
+By comparing the two traces, it seems that when PC hits 000081B2, the
+instruction `bne $817a` branches differently. That's where things start to go
+wrong. It's a comparison between the D3 and A3 registers: in the first case
+("good") the registers are equal, in the second case ("bad") they're different.
+
+Do note that they're not being called by the same code and are not calling
+Ev$Set with the same parameters:
+
+1. Caller: Ghidra 0x303e2, Ev$Set D0.l=00010000, D1.w=000a, D2.l=00000000
+2. Caller: Ghidra 0xea192, Ev$Set D0.l=00020001, D1.w=000a, D2.l=00000002
 
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
