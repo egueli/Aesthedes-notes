@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0" version="29.5.2">
   <diagram name="Page-1" id="hSUGbJTizT7nBUm9xrPh">
-    <mxGraphModel dx="690" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1208" dy="1017" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" style="locked=1;" />
@@ -993,8 +993,23 @@
         <mxCell id="Co_P9oP2Z69vOGCNE33A-26" parent="Co_P9oP2Z69vOGCNE33A-25" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
           <mxGeometry height="80" width="20" x="90" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="Co_P9oP2Z69vOGCNE33A-29" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 100%;&quot;&gt;Cards:&lt;/h1&gt;&lt;p&gt;302: PME 68-22, main application CPU&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;S: SCSI to HDD (now BlueSCSI emulator)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;R: RS-232 connection to ? (maybe one of the 6 D-sub connectors&lt;/p&gt;&lt;p&gt;305: SCSI &amp;amp; floppy controller (NCR 53C90 SCSI controller + WD37C65 floppy controller)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;F: to the two floppy drives&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="270" width="300" x="20" y="550" as="geometry" />
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-29" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 100%;&quot;&gt;Cards:&lt;/h1&gt;&lt;p&gt;302: PME 68-22, main application CPU&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;S: SCSI to HDD (now BlueSCSI emulator)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;R: RS-232 connection to ? (maybe one of the 6 D-sub connectors&lt;/p&gt;&lt;p&gt;305: SCSI &amp;amp; floppy controller (NCR 53C90 SCSI controller + WD37C65 floppy controller)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;F: to the two floppy drives&lt;/p&gt;&lt;p&gt;320: Aesthedes C100/0006, I/O card, SN 778&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;A: to 516B&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;B: to 516A&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;C: to 616A&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;D: unplugged&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="310" width="300" x="20" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-31" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;strokeColor=#CCCCCC;fillColor=none;align=center;verticalAlign=middle;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="A" vertex="1">
+          <mxGeometry height="30" width="20" x="390" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-32" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;strokeColor=#CCCCCC;fillColor=none;align=center;verticalAlign=middle;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="B" vertex="1">
+          <mxGeometry height="30" width="20" x="390" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-33" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;strokeColor=#CCCCCC;fillColor=none;align=center;verticalAlign=middle;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="C" vertex="1">
+          <mxGeometry height="30" width="20" x="390" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-34" parent="Co_P9oP2Z69vOGCNE33A-25" style="text;html=1;whiteSpace=wrap;strokeColor=#CCCCCC;fillColor=none;align=center;verticalAlign=middle;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="D" vertex="1">
+          <mxGeometry height="30" width="20" x="390" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Co_P9oP2Z69vOGCNE33A-30" parent="Co_P9oP2Z69vOGCNE33A-25" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="160" width="20" x="390" y="320" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
