@@ -440,7 +440,7 @@ dir /c0_fmt
 But it fails with `error #000:244`.
 
 
-## Storage driver 
+### Storage driver 
 
 Trying to make the compact flash storage layer in the CB030 port is proving a
 bit difficult, as the custom drivers written in the port (which are not
@@ -558,7 +558,7 @@ The **working** permissions are:
       0.0     24/06/16 0355   --e-rewr      75    658492 fcontrol
 
 
-## Running `fcontrol`
+### Running `fcontrol`
 
 Now that we've figured out how to run simple executables, let's see if `fcontrol` also works:
 
@@ -571,7 +571,7 @@ fcontrol
 
 The reason it hangs at that point is IMO the same: it's waiting for a signal from a driver that doesn't exist in the system because the original ROMs are not yet dumped and handled by MAME.
 
-## Remap `c0` and `h0` to `r0`
+### Remap `c0` and `h0` to `r0`
 
 The NVRAM mechanism showed effective at letting the OS-9 manage a virtual
 storage device in MAME's emulated environment. There are some issues left:
@@ -623,7 +623,7 @@ that confirms the OMTI5100 referenced in the MAME source code is basically
 the same as the OMTI5400 referenced in OS-9.
 
 
-## Running `main`
+### Running `main`
 
 Unlike what was stated before, it's not actually true that `fcontrol` requires
 an executable that is present in the (currently unavailable) ROMs. The other two
@@ -686,7 +686,7 @@ causes it to hang; probably because it expects some event to be delivered. If
 `AE_CONFIG` is removed, `fcontrol` starts normally, and hangs at "Initializing
 color system" as before.
 
-## Running `fcontrol` with mock `AE_CONFIG`
+### Running `fcontrol` with mock `AE_CONFIG`
 
 So, what does fcontrol need from AE_CONFIG to start correctly?
 
@@ -704,7 +704,7 @@ instruction it works correctly. It's recommended to use the state-save (`ss`)
 and state-load (`sl`) commands to revert to a known good state if things go
 awry.
 
-### A crash in the middle of an iteration
+#### A crash in the middle of an iteration
 
 Thanks to this new knowledge, it seems that `load_configuration` actually runs
 fine but the system hangs later. Here's a pseudo-stacktrace:
@@ -910,7 +910,7 @@ Constants) in the book) should be 0 for the first device, 2 for the second etc.
 `systype.d` it was set to 0 for all 4 ports (`TERM`, `CRT80`, `CRT81` and
 `CRT82`). A quick fix made them finally work independently from each other.
 
-### Trying to make GS not terminate
+#### Trying to make GS not terminate
 
 Now that the serial ports are disentangled, fcontrol seems move forward. But,
 now we get a "GS terminated with " followed by a seemingly random number, and
