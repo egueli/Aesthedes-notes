@@ -2,6 +2,8 @@ This document collects information about the internal AES2 hardware that can be 
 
 # Hardware analysis
 
+## CPU cards PME 68-22M
+
 By looking again at the [pictures I made to the Aesthedes boards](pics) when I visited the HCM on 8th June 2024, I noticed the text "PME 68-22M" on the handle of the CPU board. After some intensive googling, I found out a few facts I didn't know:
 
 - PME 68-xx was a lineup of VME-bus CPU boards with 68k architecture for industrial/defense applications, made by Plessey Microsystems, UK-based, later [incorporated](https://www.techmonitor.ai/technology/vme_board_builder_plessey_microsystems_becomes_radstone_in_management_buyout) by Radstone Technology Ltd, who later became Abaco Systems.
@@ -41,3 +43,38 @@ Some insights about how these boards are installed in the Aesthedes:
 
 About the video cards: it might well be the case that they are built in-house, given how peculiar the Aesthedes was w.r.t. other computers of its era. The lack of a front panel/handles with model information may also be a hint. A reverse-engineering (PCB photographs, EPROM/GAL/PAL dumps) may be in order, if anything for preservation purposes.
 
+## All cards
+
+### Crate 3 backplanes
+
+There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via a bridge card.
+
+| Card location | Front backplane | Back backplane |
+|---------------|-----------------|----------------|
+| 302           | Both            |                |
+| 305           | Top only        |                |
+| 320           |                 | Both           |
+
+### Crate 5 backplanes
+
+There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via a bridge card.
+
+
+
+
+### Crate 6 backplanes
+
+There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins.
+
+| Card location | Backplane usage     |
+|---------------|---------------------|
+| 611           | Both                |
+| 613           | Both                |
+| 616           | Bottom only         |
+| 617           | Both                |
+| 618           | Bottom only, 3 rows (*) |
+| 619           | Top (**)             |
+
+(*) No idea if the third row is actually connected. We should better look at that backplane.
+
+(**) This card has a 2x32 connector on the bottom backplane but no pin seem connected to any PCB trace.
