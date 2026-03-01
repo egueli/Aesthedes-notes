@@ -1111,3 +1111,12 @@ Ev$Set with the same parameters:
 
 
 [Dockerfile](https://gist.github.com/biappi/a7538e38bbdd7f1ea7d33c54112aa22f)
+
+
+## Faithful hardware emulation
+
+The section above was about running the Aesthedes software on a third-party OS-9 kernel and hardware (CB030). That was necessary since we did not have yet the original ROMs or hardware information. Now that we (almost) do, we can try emulating each device of an Aesthedes 2.
+
+The Aesthedes is a multi-crate VMEbus system (see [hardware/README.md](../hardware/README.md)). Such architecture is somewhat supported in MAME: see `src/mame/motorola/sys1121.cpp` emulating a Motorola SYS1121 VME chassis; inside of it, it emulates a set of cards installed at several slots. One of them, `mvme120`, is a 68010-based CPU card.
+
+Therefore, the upcoming device `claessens/aesthedes2.cpp` in MAME source (`mame/src/mame`) may be built with a similar structure.
