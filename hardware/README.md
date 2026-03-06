@@ -45,6 +45,9 @@ About the video cards: it might well be the case that they are built in-house, g
 
 ## All cards
 
+
+![Radstone PME 68-22M](https://egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132525.jpg)
+
 ### Crate 3 backplanes
 
 There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via a bridge card.
