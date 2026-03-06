@@ -1687,10 +1687,13 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BAx9mgv55lvgCVXTZbX7" name="Block diagram">
-    <mxGraphModel dx="2035" dy="1980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2337" dy="2183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="GVxKON0yR-xSnEqr2A3m-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" value="" vertex="1">
+          <mxGeometry height="1190" width="1192" x="-90" y="-340" as="geometry" />
+        </mxCell>
         <mxCell id="0nVwS6h6hLwG64Jl9DTM-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;div&gt;Side GPU&lt;/div&gt;&lt;div&gt;C100/065 #25&lt;/div&gt;&lt;div&gt;@513&lt;/div&gt;" vertex="1">
           <mxGeometry height="90" width="120" x="415" y="250" as="geometry" />
         </mxCell>
@@ -2079,7 +2082,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="GVxKON0yR-xSnEqr2A3m-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Crate 3 front backplane" vertex="1">
-          <mxGeometry height="10" width="130" x="285" y="-270" as="geometry" />
+          <mxGeometry height="10" width="130" x="310" y="-250" as="geometry" />
         </mxCell>
         <mxCell id="GVxKON0yR-xSnEqr2A3m-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Crate 3 back backplane" vertex="1">
           <mxGeometry height="10" width="140" x="440" y="-110" as="geometry" />
@@ -2165,10 +2168,10 @@
         <mxCell id="GVxKON0yR-xSnEqr2A3m-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="B/D/F" vertex="1">
           <mxGeometry height="10" width="40" x="313.5" y="626" as="geometry" />
         </mxCell>
-        <mxCell id="GVxKON0yR-xSnEqr2A3m-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Top backplane" vertex="1">
-          <mxGeometry height="10" width="91.5" x="338.5" y="483.5" as="geometry" />
+        <mxCell id="GVxKON0yR-xSnEqr2A3m-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="Top backplane" vertex="1">
+          <mxGeometry height="10" width="91.5" x="348.5" y="483.5" as="geometry" />
         </mxCell>
-        <mxCell id="GVxKON0yR-xSnEqr2A3m-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Bottom backplane" vertex="1">
+        <mxCell id="GVxKON0yR-xSnEqr2A3m-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="Bottom backplane" vertex="1">
           <mxGeometry height="10" width="101.5" x="338.5" y="505" as="geometry" />
         </mxCell>
         <mxCell id="GVxKON0yR-xSnEqr2A3m-55" edge="1" parent="1" source="j5ZCsZ51pbcdo25wbUF5-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeWidth=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
@@ -2177,8 +2180,8 @@
             <mxPoint x="300" y="500" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GVxKON0yR-xSnEqr2A3m-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Crate 6" vertex="1">
-          <mxGeometry height="10" width="140" x="338.5" y="468.5" as="geometry" />
+        <mxCell id="GVxKON0yR-xSnEqr2A3m-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="Crate 6" vertex="1">
+          <mxGeometry height="10" width="140" x="300" y="465.5" as="geometry" />
         </mxCell>
         <mxCell id="j5ZCsZ51pbcdo25wbUF5-5" edge="1" parent="1" source="0nVwS6h6hLwG64Jl9DTM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.881;entryY=0.007;entryDx=0;entryDy=0;endArrow=classic;endFill=1;startArrow=none;startFill=0;jumpStyle=arc;entryPerimeter=0;" target="0nVwS6h6hLwG64Jl9DTM-1">
           <mxGeometry relative="1" as="geometry">
@@ -2207,6 +2210,9 @@
               <mxPoint x="220" y="270" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="GVxKON0yR-xSnEqr2A3m-59" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;align=right;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Aesthedes 2 System Diagram&lt;/h1&gt;&lt;div&gt;from hardware reverse engineering&lt;/div&gt;&lt;p&gt;Version 1&lt;/p&gt;&lt;p&gt;Enrico Gueli, 2026-03-06&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="400" x="670" y="-316" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
