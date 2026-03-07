@@ -27,51 +27,75 @@ How to read the diagram:
 
 * I numbered the crates left-to-right, then right-to-bottom: the PSU at top-left corner would be #1, #2 is below it, #3 is at its right and so on.
 * Each crate has room for 20 cards. Each card takes a slot. I labeled the slots with a three-digit code, where the fist digit is the crate number and the other two is the slot number, left to right, starting from 1.
-  * This numbering scheme is similar to the one used in the original [system schematics of the Aesthedes 1](https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg). I didn't have that schematic at hand when I numbered the cards, so I went by memory.
-* Most of the cards have no edge panel, silkscreen or other indication describing the connectors so I labeled each connection top-to-bottom, alphabetically starting with A. The PME 68-22M cards are the only ones with clear labels, SCSI and RS-232, so I labeled them S and R respectively.
+  * This numbering scheme is similar to the one used in the original [wiring diagram of the Aesthedes 1](https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg). I didn't have that diagram at hand when I numbered the cards, so I went by memory.
+* Most of the cards have no edge panel, silkscreen or other indication describing the connectors. To keep track of their wiring, I labeled each connector top-to-bottom, alphabetically starting with A. The PME 68-22M cards are the only ones with clear labels, SCSI and RS-232, so I labeled them S and R respectively.
 
-### Cards
+## Cards
 
-## CPU cards PME 68-22M
+The cards in the system are all compatible with the VMEbus.
 
-By looking again at the [pictures I made to the Aesthedes boards](pics) when I visited the HCM on 8th June 2024, I noticed the text "PME 68-22M" on the handle of the CPU board. After some intensive googling, I found out a few facts I didn't know:
+Each subsection will describe each card and how their connections are used.
 
-- PME 68-xx was a lineup of VME-bus CPU boards with 68k architecture for industrial/defense applications, made by Plessey Microsystems, UK-based, later [incorporated](https://www.techmonitor.ai/technology/vme_board_builder_plessey_microsystems_becomes_radstone_in_management_buyout) by Radstone Technology Ltd, who later became Abaco Systems.
+### 302: PME 68-22, 68020 CPU
+	S: SCSI to HDD (now BlueSCSI emulator)
+	R: RS-232 connection to ? (maybe one of the 6 D-sub connectors
+### 305: SCSI & floppy controller (NCR 53C90 SCSI controller + WD37C65 floppy controller)
+	F: to the two floppy drives
+### 320: Aesthedes C100/0006, I/O card, SN 778
+	A: to 516B
+	B: to 516A
+	C: to 504R
+	D: unplugged
+### 504: PME 68-22, 68020 CPU
+	S: SCSI to Quantum HDD
+	R: to 320C
+### 508: Aesthedes C100/065, RGB out, SN ?, w/ vertical RAM
+	A: to 611A
+	B: to 513C
+	C: to 613B
+	D, E, F: to Color Current R, G, B
+### 513: Aesthedes C100/065, RGB out, SN 25
+	A: unplugged
+	B: to Color Combi Sync out?
+	C: to 508B
+	D, E, F: to Color Window R, G, B
+### 516: Aesthedes C100/0006, I/O, SN 637
+	A: to 320B
+	B: to 320A
+	C: to 616A
+	D: unplugged
+### 517: Aesthedes C100/0006, I/O, SN 784
+	A: to Digipad
+	B: to Keyboard
+	C: to Bitpad
+	D: unplugged
+### 518: Aesthedes C100/0009, CRTC, SN 568
+	A: to left B/W CRT
+### 519: Aesthedes C100/0009, CRTC, SN 556
+	A: to center B/W CRT?
+### 520: Aesthedes C100/0009, CRTC, SN 455
+	A: to right B/W CRT?
+### 611: Aesthedes C100/0036.1, video A, SN 104
+	A: to 508A
+	B: to 613A
+	C: to 618A
+### 613: Aesthedes C100/0030, video B, SN 78
+	A: to 611B
+	B: to 508C
+	C: to Color Combi Sync Out
+	D, F, H: to Color Combi R, G, B
+	E, G, I: unplugged
+### 616: Aesthedes C100/0038, 68000 CPU, SN 1964
+	A: to 516C
+	B, C, D: unplugged
+### 617: Aesthedes C100/0032, video input, SN 97
+	A, C, E: unplugged
+	B, D, F: to Camera Input R, G, B
+### 618: Aesthedes C100/0048, video C, SN 71
+	A: to 618C
+### 619: Aesthedes C100/0035, video RAM, SN 89
 
-  - This means that the CPU board is a commercial product, rather than something developed in-house. This could make it easier to write an emulator for, especially if somehow we manage to get the technical manuals or even another board.
 
-- Unsurprisingly, the entire PME 68-xx lineup is now discontinued. One can find some old stock hardware via [eBay](https://www.ebay.com/sch/i.html?_nkw=pme+68&_sacat=0&_from=R40&_trksid=p4624852.m570.l1313) or [Artisan Technology Group](https://www.artisantg.com/Search?q=pme%2068), an US-based company specialized in old electronics equipment. 
-
-- It is also a bit hard to find technical information about the 68-22M. The [OS-9 HW/SW Source Book 1988](https://colorcomputerarchive.com/repo/Documents/Books/OS-9%20Hardware-Software%20Source%20Book%201988%20Edition%20(Microware).pdf) describes it as:
-  > "Multi-user/multitasking processor, 68020 CPU, optional FPCP, 68851 PMMU, SM dual-port DRAM, on-board SCSI interface, 2 async. ports, programmable timer, real-time clock, up to 64K EPROM.".
-  
-  [This other document](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1663520) says about it:
-  
-  > "The PME 68-22 ($4350) has multitasking paged memory management for Unix, IEEE-P754 floating-point capability, an intelligent SCSI interface, and offers 32-bit processing at 16.7 or 20 MHz.".
-- Among the lineup described by the OS-9 Source Book, the 68-22 looks like the most complex one with its SCSI interface (which is obviously used for the Aesthedes hard drive) and MMU, unlike similar products like the 68-23. The 68-23 is [on sale by Artisan](https://www.artisantg.com/TestMeasurement/69626-6/Abaco-Systems-Radstone-PME-68-23-VME-Module).
-
-- I could not find a technical manual for the 68-22, but we can look for similar products to get an idea on how the 68-22 system architecture would look like:
-    - In the same lineup there are manuals for [68-1B](manuals/pme_681b-1.pdf) and the [68-14](manuals/Radstone_PME_68_14_SBC_Manual-1.pdf). They're equipped with a 68000 and a 68010 respectively.
-    - One can expand the search for boards with the same or similar chipset (68020 CPU, 68851 MMU, VME, optional SCSI) made by other companies. Examples are Motorola's MVME132, MVME136 ([manual](https://www.mvme.net/manuals/MVME135_136-manual.pdf)), Compcontrol CC-120, Cyclone Microsystems CY4110. 
-    - Among non-VME systems, one can find the Macintosh II (with MMU installed) and the Amiga A2500.
-
-- About the "M" suffix in 68-22M: The 68-14 manual specifies that the 68-14M variant has more memory; therefore, the suffix may indicate it has more RAM than the standard version (how much anyway?).
-
-- These boards come with ROM/EPROM sockets, some populated with firmware provided by Radstone, some unpopulated so the user can supply their own EPROMS.
-  - The OS-9 kernel used by the Aesthedes may reside in one of such chips.
-
-
-Some insights about how these boards are installed in the Aesthedes:
-  - There are two identical 68-22Ms (except for EPROM contents maybe?). This matches with the machine specs having 2x68020.
-  - One of them is mounted near the power supplies, the other near the video cards. Let's call them "A" and "B" respectively.
-  - They both seem to be attached to two independent VME backplanes.
-  - Maybe the A board hosts the application/UI and B takes care of rasterization on screen? Although the B seems connected to the only SCSI hard drive. It would be great to have a system block diagram to clarify that.
-  - In picture 172344 we see the A next to a SCSI controller board. Both boards have a SCSI flat cable attached. Since the hard drive seems to be connected to the B, so I'm not sure what are they attached to.
-    - To each other? What for? There's the VME backplane already.
-    - To the floppy drives? Unlikely, because the HDD images contain drivers for the [WD37C65](https://bitsavers.org/components/westernDigital/_dataSheets/WD37C65.pdf) which is all but a SCSI controller.
-  - Besides, what are the floppy drives connected to? And where is the WD37C65?
-
-About the video cards: it might well be the case that they are built in-house, given how peculiar the Aesthedes was w.r.t. other computers of its era. The lack of a front panel/handles with model information may also be a hint. A reverse-engineering (PCB photographs, EPROM/GAL/PAL dumps) may be in order, if anything for preservation purposes.
 
 
 ## Connections
