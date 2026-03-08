@@ -6,7 +6,15 @@ aesthedes:
     - serial: "8912733"
 ---
 
-# PME 68-22M
+# PME 68-22M @302
+
+This card hosts one of the two main 68020 processors. 
+
+Connections:
+
+	S: SCSI to HDD (now BlueSCSI emulator)
+	R: RS-232 connection to ? (maybe one of the 6 D-sub connectors)
+
 
 ## Initial investigation (before 2026-02-20)
 

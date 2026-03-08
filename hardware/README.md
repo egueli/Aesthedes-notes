@@ -30,112 +30,63 @@ How to read the diagram:
   * This numbering scheme is similar to the one used in the original [wiring diagram of the Aesthedes 1](https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg). I didn't have that diagram at hand when I numbered the cards, so I went by memory.
 * Most of the cards have no edge panel, silkscreen or other indication describing the connectors. To keep track of their wiring, I labeled each connector top-to-bottom, alphabetically starting with A. The PME 68-22M cards are the only ones with clear labels, SCSI and RS-232, so I labeled them S and R respectively.
 
-## Cards
-
-The cards in the system are all compatible with the VMEbus.
-
-Each subsection will describe each card and how their connections are used.
-
-### 302: PME 68-22, 68020 CPU
-	S: SCSI to HDD (now BlueSCSI emulator)
-	R: RS-232 connection to ? (maybe one of the 6 D-sub connectors
-### 305: SCSI & floppy controller (NCR 53C90 SCSI controller + WD37C65 floppy controller)
-	F: to the two floppy drives
-### 320: Aesthedes C100/0006, I/O card, SN 778
-	A: to 516B
-	B: to 516A
-	C: to 504R
-	D: unplugged
-### 504: PME 68-22, 68020 CPU
-	S: SCSI to Quantum HDD
-	R: to 320C
-### 508: Aesthedes C100/065, RGB out, SN ?, w/ vertical RAM
-	A: to 611A
-	B: to 513C
-	C: to 613B
-	D, E, F: to Color Current R, G, B
-### 513: Aesthedes C100/065, RGB out, SN 25
-	A: unplugged
-	B: to Color Combi Sync out?
-	C: to 508B
-	D, E, F: to Color Window R, G, B
-### 516: Aesthedes C100/0006, I/O, SN 637
-	A: to 320B
-	B: to 320A
-	C: to 616A
-	D: unplugged
-### 517: Aesthedes C100/0006, I/O, SN 784
-	A: to Digipad
-	B: to Keyboard
-	C: to Bitpad
-	D: unplugged
-### 518: Aesthedes C100/0009, CRTC, SN 568
-	A: to left B/W CRT
-### 519: Aesthedes C100/0009, CRTC, SN 556
-	A: to center B/W CRT?
-### 520: Aesthedes C100/0009, CRTC, SN 455
-	A: to right B/W CRT?
-### 611: Aesthedes C100/0036.1, video A, SN 104
-	A: to 508A
-	B: to 613A
-	C: to 618A
-### 613: Aesthedes C100/0030, video B, SN 78
-	A: to 611B
-	B: to 508C
-	C: to Color Combi Sync Out
-	D, F, H: to Color Combi R, G, B
-	E, G, I: unplugged
-### 616: Aesthedes C100/0038, 68000 CPU, SN 1964
-	A: to 516C
-	B, C, D: unplugged
-### 617: Aesthedes C100/0032, video input, SN 97
-	A, C, E: unplugged
-	B, D, F: to Camera Input R, G, B
-### 618: Aesthedes C100/0048, video C, SN 71
-	A: to 618C
-### 619: Aesthedes C100/0035, video RAM, SN 89
-
-
-
-
 ## Connections
+
+![System diagram of the "Hilversum" machine](system_diagram.svg)
 
 All the cards are connected with one another, either via VME backplanes on each crate, or via cables on the user-facing edge.
 
-The following subsections describe the backplane connections.
+Do note that it may not be a "proper" VMEbus: while the standard describes two connectos 3x32 pins each, called P1 and P2, the bottom "P2" connectors in the Aesthedes have sometimes 2 rows instead. The pinouts need then to be investigated, as the P2 backplane may be something Aesthedes-proprietary.
 
-### Crate 3 backplanes
+Backplanes are connected to each other within each crate (via interposer cards), but separated from other crates. Inter-crate communication is made possible by I/O cards and flat cables.
+
+The following subsections provide details about the backplanes. They list all the cards installed into them, and link to the respective page with the card's details.
+
+### Crate 3
 
 There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via an interposer card.
 
 | Card location | Front backplane | Back backplane |
 |---------------|-----------------|----------------|
-| 302           | Both            |                |
-| 305           | Top only        |                |
-| 320           |                 | Both           |
+| [302](cards/302/README.md)           | Both            |                |
+| [305](cards/305/README.md)           | P1 only         |                |
+| [320](cards/320/README.md)           |                 | Both           |
 
-### Crate 5 backplanes
+### Crate 5
 
 There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via an interposer card.
 
+| Card location | Front backplane | Back backplane |
+|---------------|-----------------|----------------|
+| [504](cards/504/README.md)           | Both            |                |
+| [508](cards/508/README.md)           |                 | Both           |
+| [513](cards/513/README.md)           |                 | Both           |
+| [516](cards/516/README.md)           |                 | P2 only        |
+| [517](cards/517/README.md)           |                 | P2 only        |
+| [518](cards/518/README.md)           |                 | P2 only        |
+| [519](cards/519/README.md)           |                 | P2 only        |
+| [520](cards/520/README.md)           |                 | P2 only        |
 
 
-
-### Crate 6 backplanes
+### Crate 6
 
 There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins.
 
 | Card location | Backplane usage     |
 |---------------|---------------------|
-| 611           | Both                |
-| 613           | Both                |
-| 616           | Bottom only         |
-| 617           | Both                |
-| 618           | Bottom only, 3 rows (*) |
-| 619           | Top (**)             |
+| [611](cards/611/README.md)           | Both                |
+| [613](cards/613/README.md)           | Both                |
+| [616](cards/616/README.md)           | P2 only             |
+| [617](cards/617/README.md)           | Both                |
+| [618](cards/618/README.md)           | P2 only, 3 rows (*) |
+| [619](cards/619/README.md)           | P1 only (**)        |
 
 (*) No idea if the third row is actually connected. We should better look at that backplane.
 
-(**) This card has a 2x32 connector on the bottom backplane but no pin seem connected to any PCB trace.
+(**) This card has a 2x32 connector on the bottom backplane but no pin seems connected to any PCB trace.
+
+
+
+
 
 
