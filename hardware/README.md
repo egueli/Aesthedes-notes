@@ -48,7 +48,7 @@ There is a "front" and a "back" backplane, made to accommodate different card de
 
 | Card location | Front backplane | Back backplane |
 |---------------|-----------------|----------------|
-| [302](cards/302/README.md)           | Both            |                |
+| [302](cards/pme6822/README.md#slot-302)           | Both            |                |
 | [305](cards/305/README.md)           | P1 only         |                |
 | [320](cards/320/README.md)           |                 | Both           |
 
@@ -58,7 +58,7 @@ There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards.
 
 | Card location | Front backplane | Back backplane |
 |---------------|-----------------|----------------|
-| [504](cards/504/README.md)           | Both            |                |
+| [504](cards/pme6822/README.md#slot-504)           | Both            |                |
 | [508](cards/508/README.md)           |                 | Both           |
 | [513](cards/513/README.md)           |                 | Both           |
 | [516](cards/516/README.md)           |                 | P2 only        |

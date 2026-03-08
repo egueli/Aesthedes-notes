@@ -10,10 +10,23 @@ aesthedes:
 
 This card hosts one of the two main 68020 processors. 
 
-Connections:
+# Slot 504
+
+The 504 card runs the main application, graphics, and user input.
+
+	S: SCSI to Quantum HDD
+	R: to 320C
+
+
+
+# Slot 302
+
+The 302 card does file management (I/O to hard drive and floppy disks)
 
 	S: SCSI to HDD (now BlueSCSI emulator)
 	R: RS-232 connection to ? (maybe one of the 6 D-sub connectors)
+
+
 
 
 ## Initial investigation (before 2026-02-20)
