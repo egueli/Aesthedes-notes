@@ -46,40 +46,40 @@ The following subsections provide details about the backplanes. They list all th
 
 There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via an interposer card.
 
-| Card location | Front backplane | Back backplane |
-|---------------|-----------------|----------------|
-| [302](cards/pme6822/README.md#slot-302)           | Both            |                |
-| [305](cards/305/README.md)           | P1 only         |                |
-| [320](cards/320/README.md)           |                 | Both           |
+| Type          | Location                                 | Front backplane | Back backplane |
+| ------------- | ---------------------------------------- | --------------- | -------------- |
+| PME 68-22M    | [302](cards/pme6822/README.md#slot-302)  | Both            |                |
+| Microsys FDC  | [305](cards/microsys/README.md#slot-305) | P1 only         |                |
+| Aesthedes I/O | [320](cards/aes_io/README.md#slot-320)   |                 | Both           |
 
 ### Crate 5
 
 There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via an interposer card.
 
-| Card location | Front backplane | Back backplane |
-|---------------|-----------------|----------------|
-| [504](cards/pme6822/README.md#slot-504)           | Both            |                |
-| [508](cards/508/README.md)           |                 | Both           |
-| [513](cards/513/README.md)           |                 | Both           |
-| [516](cards/516/README.md)           |                 | P2 only        |
-| [517](cards/517/README.md)           |                 | P2 only        |
-| [518](cards/518/README.md)           |                 | P2 only        |
-| [519](cards/519/README.md)           |                 | P2 only        |
-| [520](cards/520/README.md)           |                 | P2 only        |
+| Type           | Card location                            | Front backplane | Back backplane |
+| -------------- | ---------------------------------------- | --------------- | -------------- |
+| PME 68-22M     | [504](cards/pme6822/README.md#slot-504)  | Both            |                |
+| Aesthedes GPU  | [508](cards/aes_gpu/README.md#slot-508)  |                 | Both           |
+| Aesthedes GPU  | [513](cards/aes_gpu/README.md#slot-513)  |                 | Both           |
+| Aesthedes I/O  | [516](cards/aes_io/README.md#slot-516)   |                 | P2 only        |
+| Aesthedes I/O  | [517](cards/aes_io/README.md#slot-517)   |                 | P2 only        |
+| Aesthedes CRTC | [518](cards/aes_crtc/README.md#slot-518) |                 | P2 only        |
+| Aesthedes CRTC | [519](cards/aes_crtc/README.md#slot-519) |                 | P2 only        |
+| Aesthedes CRTC | [520](cards/aes_crtc/README.md#slot-520) |                 | P2 only        |
 
 
 ### Crate 6
 
 There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins.
 
-| Card location | Backplane usage     |
-|---------------|---------------------|
-| [611](cards/611/README.md)           | Both                |
-| [613](cards/613/README.md)           | Both                |
-| [616](cards/616/README.md)           | P2 only             |
-| [617](cards/617/README.md)           | Both                |
-| [618](cards/618/README.md)           | P2 only, 3 rows (*) |
-| [619](cards/619/README.md)           | P1 only (**)        |
+| Type                | Card location                                 | Backplane usage     |
+| ------------------- | --------------------------------------------- | ------------------- |
+| Aesthedes "video A" | [611](cards/aes_video_a/README.md#slot-611)   | Both                |
+| Aesthedes "video B" | [613](cards/aes_video_b/README.md#slot-613)   | Both                |
+| Aesthedes 68000 CPU | [616](cards/aes_68k/README.md#slot-616)       | P2 only             |
+| Aesthedes video in  | [617](cards/aes_video_in/README.md#slot-617)  | Both                |
+| Aesthedes "video C" | [618](cards/aes_video_c/README.md#slot-618)   | P2 only, 3 rows (*) |
+| Aesthedes video RAM | [619](cards/aes_video_ram/README.md#slot-619) | P1 only (**)        |
 
 (*) No idea if the third row is actually connected. We should better look at that backplane.
 

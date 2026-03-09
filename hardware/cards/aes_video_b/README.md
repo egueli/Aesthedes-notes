@@ -1,4 +1,11 @@
-### 613: Aesthedes C100/0030, video B, SN 78
+# Aesthedes C100/0030, video B
+
+## Slot 613
+
+SN 78
+
+Connections:
+
 	A: to 611B
 	B: to 508C
 	C: to Color Combi Sync Out
