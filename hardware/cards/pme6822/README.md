@@ -8,7 +8,82 @@ aesthedes:
 
 # PME 68-22M @302
 
-This card hosts one of the two main 68020 processors. 
+This card hosts one of the two main 68020 processors.
+
+## Photos
+
+Card 302 in the crate:
+
+[![Card 302 in the crate](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121217.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121217.jpg)
+
+Card 302 in the crate, with more of the backplane visible:
+
+[![Card 302 in the crate, with more of the backplane visible](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121306.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121306.jpg) 
+
+Card 302, front:
+
+[![Card 302, front](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121642.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121642.jpg) 
+
+Card 302, front, upside down:
+
+[![Card 302, front, upside down](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121700.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121700.jpg) 
+
+Card 302, side view:
+
+[![Card 302, side view](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121726.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121726.jpg)
+
+Card 302, component side:
+
+[![Card 302, component side](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121745.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121745.jpg)
+
+Card 302, component side, upside down:
+
+[![Card 302, component side, upside down](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121755.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121755.jpg)
+
+Card 302, detail, top-left:
+
+[![Card 302, detail, top-left](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121843.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121843.jpg)
+
+Card 302, detail, top-center:
+
+[![Card 302, detail, top-center](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121912.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121912.jpg)
+
+Card 302, detail, top-right:
+
+[![Card 302, detail, top-right](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121916.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121916.jpg)
+
+Card 302, detail, bottom-right:
+
+[![Card 302, detail, bottom-right](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121922.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121922.jpg)
+
+Card 302, detail, bottom-center:
+
+[![Card 302, detail, bottom-center](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121925.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121925.jpg)
+
+Card 302, detail, bottom-left:
+
+[![Card 302, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121928.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121928.jpg)
+
+Card 302, detail, dip-switches near RAM:
+
+[![Card 302, detail, dip-switches near RAM](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_121946.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121946.jpg)
+
+Card 302, detail, jumpers near RAM:
+
+[![Card 302, detail, jumpers near RAM](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_122003.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122003.jpg)
+
+Card 302, detail, jumpers near VME connectors:
+
+[![Card 302, detail, jumpers near VME connectors](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_122013.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122013.jpg)
+
+Card 302, detail, crystal oscillators:
+
+[![Card 302, detail, crystal oscillators](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_122024.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122024.jpg)
+
+Card 302, detail, EPROMs removed from sockets:
+
+[![Card 302, detail, EPROMs removed from sockets](https://www.egueli.com/aesthedes/thumbs/cards/302_PME68-22M/IMG_20260220_122625.jpg)](https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122625.jpg)
+
 
 # Slot 504
 
