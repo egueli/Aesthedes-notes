@@ -1,0 +1,265 @@
+---
+# the thumbnail should replace "egueli.com/aesthedes/pics" with "egueli.com/aesthedes/thumbs".
+thumb_url_gen:
+  match: "(.*)egueli.com/aesthedes/pics/(.*)"
+  replace: "\\1egueli.com/aesthedes/thumbs/\\2"
+
+pics:
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121217.jpg
+    caption: "Card 302 in its crate"
+    card: pme6822
+    slots: [302]
+  
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121306.jpg
+    caption: "Card 302 in its crate, with more of the backplane visible"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121642.jpg
+    caption: "Card 302, front"
+    card: pme6822
+    slots: [302]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121700.jpg
+    caption: "Card 302, front, upside down"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121726.jpg
+    caption: "Card 302, side view"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121745.jpg
+    caption: "Card 302, component side"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121755.jpg
+    caption: "Card 302, component side, upside down"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121843.jpg
+    caption: "Card 302, detail, top-left"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121912.jpg
+    caption: "Card 302, detail, top-center"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121916.jpg
+    caption: "Card 302, detail, top-right"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121922.jpg
+    caption: "Card 302, detail, bottom-right"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121925.jpg
+    caption: "Card 302, detail, bottom-center"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121928.jpg
+    caption: "Card 302, detail, bottom-left"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121946.jpg
+    caption: "Card 302, detail, dip-switches near RAM"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122003.jpg
+    caption: "Card 302, detail, jumpers near RAM"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122013.jpg
+    caption: "Card 302, detail, jumpers near VME connectors"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122024.jpg
+    caption: "Card 302, detail, crystal oscillators"
+    card: pme6822
+    slots: [302]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_122625.jpg
+    caption: "Card 302, detail, EPROMs removed from sockets"
+    card: pme6822
+    slots: [302]
+
+  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120618.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120651.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120802.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120812.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/320_AesC100-0006_SN778/IMG_20260220_131401.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/320_AesC100-0006_SN778/IMG_20260220_131438.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/320_AesC100-0006_SN778/IMG_20260220_131444.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_125546.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132128.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132525.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132538.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132542.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132545.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132548.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132552.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_144712.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145002.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145010.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150140.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150150.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150152.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151450.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151456.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154223.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154301.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_115025.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_155516.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_155534.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_155550.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_155600.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160208.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160217.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162423.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162436.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162441.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162451.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162853.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162857.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162904.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162909.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165359.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165610.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165616.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165624.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165639.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165713.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165718.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165722.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165726.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165731.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165745.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165749.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165754.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165759.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165810.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171725.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171731.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171735.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171751.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171755.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171759.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171802.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171817.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171820.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171823.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171828.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171834.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171838.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172911.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172916.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172925.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172930.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172936.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172941.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172959.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173005.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173010.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173014.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173018.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173024.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174755.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174803.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174807.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174810.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174813.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174826.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174830.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174835.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174838.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174842.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175312.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175315.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175322.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175327.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175331.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175335.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175348.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175352.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175356.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175359.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175402.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175411.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175415.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175420.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175708.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175712.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175715.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175719.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175723.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175731.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175744.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175749.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175753.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175756.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175800.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175824.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175836.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114841.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114852.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114904.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_123550.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_123752.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_124037.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_124121.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/CRTCards/IMG_20260220_155722.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153510.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153601.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153610.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153624.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/IMG_20260220_151246.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154525.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154556.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154559.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154602.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154606.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172344.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172347.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172353.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172405.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172409.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172412.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172417.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172422.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172425.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172627.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113225.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113318.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113353.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113459.jpg
+  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113717.jpg
+
+...
+
+
