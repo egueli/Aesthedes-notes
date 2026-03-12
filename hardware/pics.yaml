@@ -132,14 +132,41 @@ pics:
     card: aes_io
     slots: [320]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_125546.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132128.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132525.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132538.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132542.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132545.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132548.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132552.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132128.jpg
+    caption: "Card 504 in its crate"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132525.jpg
+    caption: "Card 504, front"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132538.jpg
+    caption: "Card 504, detail of EPROMs and jumpers"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132542.jpg
+    caption: "Card 504, front, detail, top-left"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132545.jpg
+    caption: "Card 504, front, detail, top-right"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132548.jpg
+    caption: "Card 504, front, detail, bottom-right"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132552.jpg
+    caption: "Card 504, front, detail, bottom-left"
+    card: pme6822
+    slots: [504]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_144712.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145002.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145010.jpg
