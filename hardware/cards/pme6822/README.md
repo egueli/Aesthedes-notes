@@ -1,12 +1,4 @@
----
-aesthedes:
-    - name: "PME 68-22M"
-    - slot: "302"
-    - manufacturer: "Plessey Microsystems"
-    - serial: "8912733"
----
-
-# PME 68-22M @302
+# PME 68-22M
 
 This card hosts one of the two main 68020 processors.
 
