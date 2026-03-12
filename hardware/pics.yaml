@@ -167,28 +167,117 @@ pics:
     card: pme6822
     slots: [504]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_144712.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145002.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145010.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150140.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150150.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150152.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151450.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151456.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154223.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154301.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_144712.jpg
+    caption: "Card 508 in its crate"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145002.jpg
+    caption: "Card 508, front"
+    card: aes_gpu
+    slots: [508]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_145010.jpg
+    caption: "Card 508, front"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150140.jpg
+    caption: "Card 508, detail of video RAM banks"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150150.jpg
+    caption: "Card 508, detail of video RAM banks (back side)"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_150152.jpg
+    caption: "Card 508, detail of video RAM banks (back side)"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151450.jpg
+    caption: "Card 508, back side"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/508_AesC100-065/IMG_20260220_151456.jpg
+    caption: "Card 508, back side"
+    card: aes_gpu
+    slots: [508]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154223.jpg
+    caption: "Card 513, front"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg
+    caption: "Card 513, front, detail, bottom-left"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg
+    caption: "Card 513, front, detail, bottom-right"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg
+    caption: "Card 513, front, detail, top-right (blurred)"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg
+    caption: "Card 513, front, detail, top-left"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154301.jpg
+    caption: "Card 513, back"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg
+    caption: "Card 513, back, detail, bottom-left"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg
+    caption: "Card 513, back, detail, bottom-right"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg
+    caption: "Card 513, back, detail, top-right"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg
+    caption: "Card 513, back, detail, top-left"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg
+    caption: "Card 513, front, detail, top-left (blurred)"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg
+    caption: "Card 513, front, detail, top-right"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg
+    caption: "Card 513, front, detail, bottom-right (blurred)"
+    card: aes_gpu
+    slots: [513]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg
+    caption: "Card 513, front, detail, bottom-left"
+    card: aes_gpu
+    slots: [513]
+
   - url: https://www.egueli.com/aesthedes/pics/cards/516_AesC100-0006_SN637/IMG_20260220_115025.jpg
     caption: "I/O cards 516 and 517 in their crate"
     card: aes_io
