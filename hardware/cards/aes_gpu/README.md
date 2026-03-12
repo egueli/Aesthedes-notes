@@ -86,24 +86,24 @@ Card 513, front:
 [![Card 513, front](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154223.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154223.jpg)
 
 
-Card 513, front, detail, bottom-left:
+Card 513, detail, bottom-left:
 
-[![Card 513, front, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg)
-
-
-Card 513, front, detail, bottom-right:
-
-[![Card 513, front, detail, bottom-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg)
+[![Card 513, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg)
 
 
-Card 513, front, detail, top-right (blurred):
+Card 513, detail, bottom-right:
 
-[![Card 513, front, detail, top-right (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg)
+[![Card 513, detail, bottom-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg)
 
 
-Card 513, front, detail, top-left:
+Card 513, detail, top-right (blurred):
 
-[![Card 513, front, detail, top-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg)
+[![Card 513, detail, top-right (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg)
+
+
+Card 513, detail, top-left:
+
+[![Card 513, detail, top-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg)
 
 
 Card 513, back:
@@ -111,44 +111,44 @@ Card 513, back:
 [![Card 513, back](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154301.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154301.jpg)
 
 
-Card 513, back, detail, bottom-left:
+Card 513, bottom side, detail, bottom-left:
 
-[![Card 513, back, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg)
-
-
-Card 513, back, detail, bottom-right:
-
-[![Card 513, back, detail, bottom-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg)
+[![Card 513, bottom side, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg)
 
 
-Card 513, back, detail, top-right:
+Card 513, bottom side, detail, bottom-right:
 
-[![Card 513, back, detail, top-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg)
-
-
-Card 513, back, detail, top-left:
-
-[![Card 513, back, detail, top-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg)
+[![Card 513, bottom side, detail, bottom-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg)
 
 
-Card 513, front, detail, top-left (blurred):
+Card 513, bottom side, detail, top-right:
 
-[![Card 513, front, detail, top-left (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg)
-
-
-Card 513, front, detail, top-right:
-
-[![Card 513, front, detail, top-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg)
+[![Card 513, bottom side, detail, top-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg)
 
 
-Card 513, front, detail, bottom-right (blurred):
+Card 513, bottom side, detail, top-left:
 
-[![Card 513, front, detail, bottom-right (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg)
+[![Card 513, bottom side, detail, top-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg)
 
 
-Card 513, front, detail, bottom-left:
+Card 513, detail, top-left (blurred):
 
-[![Card 513, front, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg)
+[![Card 513, detail, top-left (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg)
+
+
+Card 513, detail, top-right:
+
+[![Card 513, detail, top-right](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg)
+
+
+Card 513, detail, bottom-right (blurred):
+
+[![Card 513, detail, bottom-right (blurred)](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg)
+
+
+Card 513, detail, bottom-left:
+
+[![Card 513, detail, bottom-left](https://www.egueli.com/aesthedes/thumbs/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg)](https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg)
 
 
 <!-- $End-Autogenerated$ -->

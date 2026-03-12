@@ -22,7 +22,7 @@ pics:
     featured: true
 
   - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121700.jpg
-    caption: "Card 302, front, upside down"
+    caption: "Card 302, upside down"
     card: pme6822
     slots: [302]
 
@@ -32,12 +32,12 @@ pics:
     slots: [302]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121745.jpg
-    caption: "Card 302, component side"
+    caption: "Card 302, bottom side"
     card: pme6822
     slots: [302]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/302_PME68-22M/IMG_20260220_121755.jpg
-    caption: "Card 302, component side, upside down"
+    caption: "Card 302, bottom side, upside-down"
     card: pme6822
     slots: [302]
 
@@ -148,22 +148,22 @@ pics:
     slots: [504]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132542.jpg
-    caption: "Card 504, front, detail, top-left"
+    caption: "Card 504, detail, top-left"
     card: pme6822
     slots: [504]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132545.jpg
-    caption: "Card 504, front, detail, top-right"
+    caption: "Card 504, detail, top-right"
     card: pme6822
     slots: [504]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132548.jpg
-    caption: "Card 504, front, detail, bottom-right"
+    caption: "Card 504, detail, bottom-right"
     card: pme6822
     slots: [504]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/504_PME68-22M/IMG_20260220_132552.jpg
-    caption: "Card 504, front, detail, bottom-left"
+    caption: "Card 504, detail, bottom-left"
     card: pme6822
     slots: [504]
 
@@ -214,22 +214,22 @@ pics:
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154229.jpg
-    caption: "Card 513, front, detail, bottom-left"
+    caption: "Card 513, detail, bottom-left"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154236.jpg
-    caption: "Card 513, front, detail, bottom-right"
+    caption: "Card 513, detail, bottom-right"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154240.jpg
-    caption: "Card 513, front, detail, top-right (blurred)"
+    caption: "Card 513, detail, top-right (blurred)"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154243.jpg
-    caption: "Card 513, front, detail, top-left"
+    caption: "Card 513, detail, top-left"
     card: aes_gpu
     slots: [513]
 
@@ -239,42 +239,42 @@ pics:
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154309.jpg
-    caption: "Card 513, back, detail, bottom-left"
+    caption: "Card 513, bottom side, detail, bottom-left"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154312.jpg
-    caption: "Card 513, back, detail, bottom-right"
+    caption: "Card 513, bottom side, detail, bottom-right"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154314.jpg
-    caption: "Card 513, back, detail, top-right"
+    caption: "Card 513, bottom side, detail, top-right"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154316.jpg
-    caption: "Card 513, back, detail, top-left"
+    caption: "Card 513, bottom side, detail, top-left"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154338.jpg
-    caption: "Card 513, front, detail, top-left (blurred)"
+    caption: "Card 513, detail, top-left (blurred)"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154341.jpg
-    caption: "Card 513, front, detail, top-right"
+    caption: "Card 513, detail, top-right"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154347.jpg
-    caption: "Card 513, front, detail, bottom-right (blurred)"
+    caption: "Card 513, detail, bottom-right (blurred)"
     card: aes_gpu
     slots: [513]
 
   - url: https://www.egueli.com/aesthedes/pics/cards/513_AesC100-065_SN25/IMG_20260220_154350.jpg
-    caption: "Card 513, front, detail, bottom-left"
+    caption: "Card 513, detail, bottom-left"
     card: aes_gpu
     slots: [513]
 
