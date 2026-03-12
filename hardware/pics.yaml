@@ -96,9 +96,19 @@ pics:
     card: pme6822
     slots: [302]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120618.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120618.jpg
+    caption: "Microsys FDC in its crate"
+    card: microsys
+    slots: [305]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120651.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120802.jpg
+  
+  - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120802.jpg
+    caption: "Microsys FDC, front"
+    card: microsys
+    slots: [305]
+    featured: true
+  
   # - url: https://www.egueli.com/aesthedes/pics/cards/305_MicrosysFloppySCSI/IMG_20260220_120812.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/320_AesC100-0006_SN778/IMG_20260220_131401.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/320_AesC100-0006_SN778/IMG_20260220_131438.jpg
