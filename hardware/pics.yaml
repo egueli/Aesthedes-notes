@@ -496,18 +496,67 @@ pics:
     card: aes_video_b
     slots: [613]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172911.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172916.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172925.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172930.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172936.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172941.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172959.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173005.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173010.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173014.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173018.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173024.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172911.jpg
+    caption: "Aesthedes C100-0038 card"
+    card: aes_68k
+    slots: [616]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172916.jpg
+    caption: "Aesthedes C100-0038 card"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172925.jpg
+    caption: "Aesthedes C100-0038 card, detail, bottom-right"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172930.jpg
+    caption: "Aesthedes C100-0038 card, detail, top-right"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172936.jpg
+    caption: "Aesthedes C100-0038 card, detail, top-left"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172941.jpg
+    caption: "Aesthedes C100-0038 card, detail, bottom-left"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172959.jpg
+    caption: "Aesthedes C100-0038 card, back side"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173005.jpg
+    caption: "Aesthedes C100-0038 card, back side, detail, top-right"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173010.jpg
+    caption: "Aesthedes C100-0038 card, back side, detail, bottom-right"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173014.jpg
+    caption: "Aesthedes C100-0038 card, back side, detail, top-left"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173018.jpg
+    caption: "Aesthedes C100-0038 card, back side, detail, bottom-left"
+    card: aes_68k
+    slots: [616]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_173024.jpg
+    caption: "Aesthedes C100-0038 card, back side"
+    card: aes_68k
+    slots: [616]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174755.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174803.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/617_AesC100-0032_SN97/IMG_20260220_174807.jpg
