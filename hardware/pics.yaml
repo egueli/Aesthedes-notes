@@ -608,20 +608,77 @@ pics:
     card: aes_video_in
     slots: [617]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175312.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175315.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175322.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175327.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175331.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175335.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175348.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175352.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175356.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175359.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175402.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175411.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175415.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175420.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175312.jpg
+    caption: "Aesthedes C100-0048 card"
+    card: aes_video_c
+    slots: [618]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175315.jpg
+    caption: "Aesthedes C100-0048 card"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175322.jpg
+    caption: "Aesthedes C100-0048 card, detail, user edge"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175327.jpg
+    caption: "Aesthedes C100-0048 card, detail, backplane edge"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175331.jpg
+    caption: "Aesthedes C100-0048 card, detail, top-right"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175335.jpg
+    caption: "Aesthedes C100-0048 card, detail, top-left"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175348.jpg
+    caption: "Aesthedes C100-0048 card, back side"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175352.jpg
+    caption: "Aesthedes C100-0048 card, back side, detail, backplane edge"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175356.jpg
+    caption: "Aesthedes C100-0048 card, back side, detail, user edge and burn mark"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175359.jpg
+    caption: "Aesthedes C100-0048 card, back side, detail, top-right (blurred)"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175402.jpg
+    caption: "Aesthedes C100-0048 card, back side, detail, top-left"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175411.jpg
+    caption: "Aesthedes C100-0048 card, detail of backplane connector with jumpers"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175415.jpg
+    caption: "Aesthedes C100-0048 card, detail of jumper in backplane connector"
+    card: aes_video_c
+    slots: [618]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/618_AesC100-0048_SN71/IMG_20260220_175420.jpg
+    caption: "Aesthedes C100-0048 card, detail of jumper in backplane connector"
+    card: aes_video_c
+    slots: [618]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175708.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175712.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/619_AesC100-0035_SN89/IMG_20260220_175715.jpg
