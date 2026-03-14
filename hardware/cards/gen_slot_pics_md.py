@@ -29,12 +29,18 @@ def generate_snippets(pics, card, slot):
     snippets = []
 
     for pic in pics['pics']:
-        if pic.get('card') == card and slot in [str(s) for s in pic.get('slots', [])]:
-            caption = pic['caption']
-            url = pic['url']
-            thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
-            md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
-            snippets.append(md_snippet)
+        if pic.get('card') != card:
+            continue
+
+        slots = [str(s) for s in pic.get('slots', [])]
+        if slot not in slots:
+            continue
+
+        caption = pic['caption']
+        url = pic['url']
+        thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
+        md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
+        snippets.append(md_snippet)
 
     return snippets
 
