@@ -303,16 +303,57 @@ pics:
     card: aes_io
     slots: [516]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160208.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160217.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162423.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162436.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162441.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162451.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162853.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162857.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162904.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162909.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160208.jpg
+    caption: "Aesthedes CRT controller card #568"
+    card: aes_crtc
+    slots: [518]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/518_AesC100-0009_SN568/IMG_20260220_160217.jpg
+    caption: "Aesthedes CRT controller card #568, back side"
+    card: aes_crtc
+    slots: [518]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162423.jpg
+    caption: "Aesthedes CRT controller card #556"
+    card: aes_crtc
+    slots: [519]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162436.jpg
+    caption: "Aesthedes CRT controller card #556, back side"
+    card: aes_crtc
+    slots: [519]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162441.jpg
+    caption: "Aesthedes CRT controller card #556, back side"
+    card: aes_crtc
+    slots: [519]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/519_AesC100-0009_SN556/IMG_20260220_162451.jpg
+    caption: "Aesthedes CRT controller card #556"
+    card: aes_crtc
+    slots: [519]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162853.jpg
+    caption: "Aesthedes CRT controller card #455"
+    card: aes_crtc
+    slots: [520]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162857.jpg
+    caption: "Aesthedes CRT controller card #455"
+    card: aes_crtc
+    slots: [520]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162904.jpg
+    caption: "Aesthedes CRT controller card #455, back side"
+    card: aes_crtc
+    slots: [520]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/520_AesC100-0009_SN455/IMG_20260220_162909.jpg
+    caption: "Aesthedes CRT controller card #455, back side"
+    card: aes_crtc
+    slots: [520]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165359.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165610.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/611_AesC100-0036_SN104/IMG_20260220_165616.jpg
