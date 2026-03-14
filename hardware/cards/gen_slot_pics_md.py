@@ -13,18 +13,40 @@ import sys
 import yaml
 import re
 
-with open(sys.argv[1], 'r') as f:
-    pics = yaml.safe_load(f)
+def generate_snippets(pics, card, slot):
+    """
+    Generates a list of Markdown snippets for the pictures of a card in a specific slot.
 
-thumb_url_gen = pics.get('thumb_url_gen', {})
+    Args:
+        pics (dict): The loaded pics catalog from YAML.
+        card (str): The card name.
+        slot (str): The slot number as a string.
 
-card = sys.argv[2]
-slot = int(sys.argv[3])
+    Returns:
+        list: A list of Markdown snippet strings.
+    """
+    thumb_url_gen = pics.get('thumb_url_gen', {})
+    snippets = []
 
-for pic in pics['pics']:
-    if pic.get('card') == card and slot in pic.get('slots', []):
-        caption = pic['caption']
-        url = pic['url']
-        thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
-        md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
-        print(md_snippet)
+    for pic in pics['pics']:
+        if pic.get('card') == card and slot in [str(s) for s in pic.get('slots', [])]:
+            caption = pic['caption']
+            url = pic['url']
+            thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
+            md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
+            snippets.append(md_snippet)
+
+    return snippets
+
+if __name__ == '__main__':
+    if len(sys.argv) != 4:
+        print("Usage: gen_slot_pics_md.py <yaml_path> <card> <slot>")
+        sys.exit(1)
+
+    yaml_path, card, slot = sys.argv[1:4]
+
+    with open(yaml_path, 'r') as f:
+        catalog = yaml.safe_load(f)
+        snippets = generate_snippets(catalog, card, slot)
+        for snippet in snippets:
+            print(snippet)
