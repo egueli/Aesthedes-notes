@@ -430,19 +430,72 @@ pics:
     card: aes_video_a
     slots: [611]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171725.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171731.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171735.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171751.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171755.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171759.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171802.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171817.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171820.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171823.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171828.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171834.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171838.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171725.jpg
+    caption: "Aesthedes C100-0030 card, detail of analog side"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171731.jpg
+    caption: "Aesthedes C100-0030 card"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171735.jpg
+    caption: "Aesthedes C100-0030 card"
+    card: aes_video_b
+    slots: [613]
+    featured: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171751.jpg
+    caption: "Aesthedes C100-0030 card, detail, bottom-left"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171755.jpg
+    caption: "Aesthedes C100-0030 card, detail, top-left"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171759.jpg
+    caption: "Aesthedes C100-0030 card, detail, top-right"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171802.jpg
+    caption: "Aesthedes C100-0030 card, detail, bottom-right"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171817.jpg
+    caption: "Aesthedes C100-0030 card, back side, detail, top"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171820.jpg
+    caption: "Aesthedes C100-0030 card, back side, detail, bottom"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171823.jpg
+    caption: "Aesthedes C100-0030 card, back side, detail, bottom"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171828.jpg
+    caption: "Aesthedes C100-0030 card, back side, detail, top-left"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171834.jpg
+    caption: "Aesthedes C100-0030 card, back side"
+    card: aes_video_b
+    slots: [613]
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/613_AesC100-0030_SN78/IMG_20260220_171838.jpg
+    caption: "Aesthedes C100-0030 card, back side"
+    card: aes_video_b
+    slots: [613]
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172911.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172916.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/616_AesC100-0038_SN1964/IMG_20260220_172925.jpg
