@@ -19,14 +19,17 @@ import subprocess
 import gen_slot_pics_md
 import yaml
 
+
+with open('../pics.yaml', 'r') as f:
+    pics_catalog = yaml.safe_load(f)
+
+
 def template_gen_card_featured_pic_md(card_id):
     return subprocess.check_output(['python3', 'gen_card_featured_pic_md.py', '../pics.yaml', card_id]).decode('utf-8')
 
 def template_gen_slot_pics_md(card_id, slot_id):
-    with open('../pics.yaml', 'r') as f:
-        pics = yaml.safe_load(f)
-        snippets = gen_slot_pics_md.generate_snippets(pics, card_id, slot_id)
-        return '\n'.join(snippets) + '\n'
+    snippets = gen_slot_pics_md.generate_snippets(pics_catalog, card_id, slot_id)
+    return '\n'.join(snippets) + '\n'
 
 templates = {
     'FeaturedPic': template_gen_card_featured_pic_md,
