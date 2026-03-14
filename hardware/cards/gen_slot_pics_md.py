@@ -22,7 +22,7 @@ card = sys.argv[2]
 slot = int(sys.argv[3])
 
 for pic in pics['pics']:
-    if pic['card'] == card and slot in pic.get('slots', []):
+    if pic.get('card') == card and slot in pic.get('slots', []):
         caption = pic['caption']
         url = pic['url']
         thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)

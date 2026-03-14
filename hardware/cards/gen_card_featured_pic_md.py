@@ -20,7 +20,7 @@ thumb_url_gen = pics.get('thumb_url_gen', {})
 card = sys.argv[2]
 
 for pic in pics['pics']:
-    if pic['card'] == card and pic.get('featured'):
+    if pic.get('card') == card and pic.get('featured'):
         caption = pic['caption']
         url = pic['url']
         thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
