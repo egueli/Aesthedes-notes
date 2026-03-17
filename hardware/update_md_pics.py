@@ -16,7 +16,6 @@ as long as the underlying data (e.g., pics.yaml) does not change.
 import os
 import re
 import subprocess
-import gen_slot_pics_md
 import yaml
 
 
@@ -24,11 +23,45 @@ with open('pics.yaml', 'r') as f:
     pics_catalog = yaml.safe_load(f)
 
 
+def generate_slot_pics_snippets(pics, card, slot):
+    """
+    Generates a list of Markdown snippets for the pictures of a card in a specific slot.
+    The snippets include the image thumbnail and the caption (as alt text and printed below the image),
+    and links to the full-size image.
+
+    Args:
+        pics (dict): The loaded pics catalog from YAML.
+        card (str): The card name.
+        slot (str): The slot number as a string.
+
+    Returns:
+        list: A list of Markdown snippet strings.
+    """
+    thumb_url_gen = pics.get('thumb_url_gen', {})
+    snippets = []
+
+    for pic in pics['pics']:
+        if pic.get('card') != card:
+            continue
+
+        slots = [str(s) for s in pic.get('slots', [])]
+        if slot not in slots:
+            continue
+
+        caption = pic['caption']
+        url = pic['url']
+        thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
+        md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
+        snippets.append(md_snippet)
+
+    return snippets
+
+
 def template_gen_card_featured_pic_md(card_id):
     return subprocess.check_output(['python3', 'gen_card_featured_pic_md.py', 'pics.yaml', card_id]).decode('utf-8')
 
 def template_gen_slot_pics_md(card_id, slot_id):
-    snippets = gen_slot_pics_md.generate_snippets(pics_catalog, card_id, slot_id)
+    snippets = generate_slot_pics_snippets(pics_catalog, card_id, slot_id)
     return '\n'.join(snippets) + '\n'
 
 templates = {
