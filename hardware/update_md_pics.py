@@ -22,6 +22,12 @@ with open('pics.yaml', 'r') as f:
     pics_catalog = yaml.safe_load(f)
 
 
+def md_img(pics, url, caption):
+    thumb_url_gen = pics.get('thumb_url_gen', {})
+    thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
+    return f'[![{caption}]({thumb_url})]({url})'
+
+
 def generate_slot_pics_snippets(pics, card, slot):
     """
     Generates a list of Markdown snippets for the pictures of a card in a specific slot.
@@ -36,7 +42,6 @@ def generate_slot_pics_snippets(pics, card, slot):
     Returns:
         list: A list of Markdown snippet strings.
     """
-    thumb_url_gen = pics.get('thumb_url_gen', {})
     snippets = []
 
     for pic in pics['pics']:
@@ -49,8 +54,7 @@ def generate_slot_pics_snippets(pics, card, slot):
 
         caption = pic['caption']
         url = pic['url']
-        thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
-        md_snippet = f'{caption}:\n\n[![{caption}]({thumb_url})]({url})\n\n'
+        md_snippet = f'{caption}:\n\n{md_img(pics, url, caption)}\n\n'
         snippets.append(md_snippet)
 
     return snippets
@@ -62,14 +66,12 @@ def generate_featured_pic_snippet(pics, card):
     The featured picture is the one with the "featured: true" flag in the referenced pics catalog.
     The snippet includes the image thumbnail and the caption, and links to the full-size image.
     """
-    thumb_url_gen = pics.get('thumb_url_gen', {})
 
     for pic in pics['pics']:
         if pic.get('card') == card and pic.get('featured'):
             caption = pic['caption']
             url = pic['url']
-            thumb_url = re.sub(thumb_url_gen['match'], thumb_url_gen['replace'], url)
-            md_snippet = f'[![{caption}]({thumb_url})]({url})\n\n{caption}\n\n\n'
+            md_snippet = f'{md_img(pics, url, caption)}\n\n{caption}\n\n\n'
             return md_snippet
         
     return f'<!-- No featured picture found for card {card} -->\n'
