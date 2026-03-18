@@ -85,9 +85,22 @@ def template_gen_slot_pics_md(card_id, slot_id):
     snippets = generate_slot_pics_snippets(pics_catalog, card_id, slot_id)
     return '\n'.join(snippets) + '\n'
 
+
+def template_gen_desk_pics_md():
+    def make_desk_pic_snippet(pic):
+        caption = pic['caption']
+        url = pic['url']
+        return f'{caption}:\n\n{md_img(pics_catalog, url, caption)}\n\n'
+    
+    return '\n'.join(make_desk_pic_snippet(pic) \
+                     for pic in pics_catalog['pics'] \
+                        if pic.get('desk')) + '\n'
+
+
 templates = {
     'FeaturedPic': template_gen_card_featured_pic_md,
-    'SlotGallery': template_gen_slot_pics_md
+    'SlotGallery': template_gen_slot_pics_md,
+    'DeskGallery': template_gen_desk_pics_md,
 }
 
 def update_md_pics(md_file):

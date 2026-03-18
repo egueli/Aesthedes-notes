@@ -86,7 +86,9 @@ There is a single backplane for all the 6U+ cards. The top DIN 41612 connector h
 (**) This card has a 2x32 connector on the bottom backplane but no pin seems connected to any PCB trace.
 
 
+# Desk 
 
+The desk is connected to the central unit via three flat cables and some power wires.
 
-
+For more information, see the [desk page](desk.md).
 
