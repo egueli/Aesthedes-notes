@@ -771,7 +771,11 @@ pics:
     caption: "Backside of Crate 3's front VMEbus backplane, and interposer at 301"
     slots: [301]
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/CRTCards/IMG_20260220_155722.jpg 
+  - url: https://www.egueli.com/aesthedes/pics/cards/CRTCards/IMG_20260220_155722.jpg
+    caption: "All three CRTC cards in Crate 5"
+    card: aes_crtc
+    slots: [518, 519, 520]
+  
   # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153510.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153601.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153610.jpg
