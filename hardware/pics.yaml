@@ -747,14 +747,6 @@ pics:
     slots: [619]
 
 
-  - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114852.jpg
-    caption: "Desk connections, detail of power connectors"
-    desk: true
-
-  - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114904.jpg
-    caption: "Desk connections, detail of flat cables (blurred)"
-    desk: true
-
   - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_123550.jpg
     caption: "Small VMEbus card in backplane of Crate 3"
     slots: [309]
@@ -776,10 +768,27 @@ pics:
     card: aes_crtc
     slots: [518, 519, 520]
   
-  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153510.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153601.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153610.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153624.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114852.jpg
+    caption: "Desk connections, detail of power connectors"
+    desk: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/backplane/IMG_20260220_114904.jpg
+    caption: "Desk connections, detail of flat cables (blurred)"
+    desk: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153510.jpg
+    caption: "Boards under desk"
+    desk: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153601.jpg
+    caption: "Boards under desk"
+    desk: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/desk/IMG_20260220_153624.jpg
+    caption: "Boards under desk"
+    desk: true
+
+
   # - url: https://www.egueli.com/aesthedes/pics/cards/IMG_20260220_151246.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154525.jpg
   # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154556.jpg
