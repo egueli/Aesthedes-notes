@@ -678,29 +678,93 @@ pics:
     desk: true
 
 
-  # - url: https://www.egueli.com/aesthedes/pics/cards/IMG_20260220_151246.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154525.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154556.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154559.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154602.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154606.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172344.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172347.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172353.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172405.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172409.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172412.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172417.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172422.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172425.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172627.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113225.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113318.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113353.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113459.jpg
-  # - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113717.jpg
+  - url: https://www.egueli.com/aesthedes/pics/cards/IMG_20260220_151246.jpg
+    caption: "Schematic of ColorBoard 185"
+    schematic: true
 
-...
+  - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154525.jpg
+    caption: "Schematic of PME68-25M, sheet 1/6"
+    schematic: true
 
+  - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154556.jpg
+    caption: "Schematic of PME68-25M, sheet 1/6, detail"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154559.jpg
+    caption: "Schematic of PME68-25M, sheet 1/6, detail"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154602.jpg
+    caption: "Schematic of PME68-25M, sheet 1/6, detail"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/cards/PME68-25M/IMG_20260220_154606.jpg
+    caption: "Schematic of PME68-25M, sheet 1/6, detail"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg
+    caption: "Wiring diagram of Aesthedes 1"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172344.jpg
+    caption: "PME 68-22M and MicroSys FDC in Crate 3"
+    slots: [302, 305]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172347.jpg
+    caption: "Detail of Quantum hard disk connected to PME 68-22M at slot 504"
+    card: pme6822
+    slots: [504]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172353.jpg
+    caption: "Aesthedes C100-0006 in slot 320"
+    card: aes_io
+    slots: [320]
+    
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172405.jpg
+    caption: "PME 68-22M and Aesthedes C100-0065 in Crate 5"
+    slots: [504, 508]
+    
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172409.jpg
+    caption: "Cards in Crate 5"
+    slots: [508, 513, 516, 517]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172412.jpg
+    caption: "Cards in Crate 5"
+    slots: [513, 516, 517]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172417.jpg
+    caption: "Cards in Crate 6"
+    slots: [613, 616, 617, 618, 619]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172422.jpg
+    caption: "Crate 5 and 6"
+    slots: [504, 508, 513, 516, 517, 518, 519, 520, 611, 613, 616, 617, 618, 619]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172425.jpg
+    caption: "Crate 3 and power supplies"
+    slots: [302, 305]
+
+  - url: https://www.egueli.com/aesthedes/pics/IMG_20240608_172627.jpg
+    caption: "Power distribution schematic"
+    schematic: true
+
+  - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113225.jpg
+    caption: "Data control monitor showing output of the `mfree` command"
+    card: aes_crtc
+
+  - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113318.jpg
+    caption: "Data control monitor showing output of the `irqs` command"
+    card: aes_crtc
+
+  - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113353.jpg
+    caption: "Data control monitor showing output of the `mdir` command"
+    card: aes_crtc
+
+  - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113459.jpg
+    caption: "Data control monitor showing output of the `procs` command"
+    card: aes_crtc
+
+  - url: https://www.egueli.com/aesthedes/pics/live/IMG_20260220_113717.jpg
+    caption: "Data control monitor showing partial output of the `print_eeprom` command"
+    card: aes_crtc
 
