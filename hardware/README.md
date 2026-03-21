@@ -1,80 +1,94 @@
 This document collects information about the internal AES2 hardware that can be useful to implement an emulator.
 
-# Hardware analysis
+# General information
 
-## CPU cards PME 68-22M
+The Home Computer Museum has two Aesthedes 2. I named them "Hilversum" and "Klokhuis". 
 
-By looking again at the [pictures I made to the Aesthedes boards](pics) when I visited the HCM on 8th June 2024, I noticed the text "PME 68-22M" on the handle of the CPU board. After some intensive googling, I found out a few facts I didn't know:
+I visited the museum in two separate occasions, on 2024-06-08 and 2026-02-20, and took photos and notes of the Hilversum machine. Most of the information presented here is derived from these visits.
 
-- PME 68-xx was a lineup of VME-bus CPU boards with 68k architecture for industrial/defense applications, made by Plessey Microsystems, UK-based, later [incorporated](https://www.techmonitor.ai/technology/vme_board_builder_plessey_microsystems_becomes_radstone_in_management_buyout) by Radstone Technology Ltd, who later became Abaco Systems.
+Unless otherwise specified, these pages are about the Hilversum machine.
+# System overview
 
-  - This means that the CPU board is a commercial product, rather than something developed in-house. This could make it easier to write an emulator for, especially if somehow we manage to get the technical manuals or even another board.
+The machine is made of 5 larger components:
 
-- Unsurprisingly, the entire PME 68-xx lineup is now discontinued. One can find some old stock hardware via [eBay](https://www.ebay.com/sch/i.html?_nkw=pme+68&_sacat=0&_from=R40&_trksid=p4624852.m570.l1313) or [Artisan Technology Group](https://www.artisantg.com/Search?q=pme%2068), an US-based company specialized in old electronics equipment. 
+* A central unit with power, CPU cards, graphics cards, and three terminal-like CRTs.
+* A "desk" for user input, made of a large button matrix ("bitpad"), a digitizer ("digipad") and a mechanical keyboard.
+* Three color CRT monitors.
 
-- It is also a bit hard to find technical information about the 68-22M. The [OS-9 HW/SW Source Book 1988](https://colorcomputerarchive.com/repo/Documents/Books/OS-9%20Hardware-Software%20Source%20Book%201988%20Edition%20(Microware).pdf) describes it as:
-  > "Multi-user/multitasking processor, 68020 CPU, optional FPCP, 68851 PMMU, SM dual-port DRAM, on-board SCSI interface, 2 async. ports, programmable timer, real-time clock, up to 64K EPROM.".
-  
-  [This other document](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1663520) says about it:
-  
-  > "The PME 68-22 ($4350) has multitasking paged memory management for Unix, IEEE-P754 floating-point capability, an intelligent SCSI interface, and offers 32-bit processing at 16.7 or 20 MHz.".
-- Among the lineup described by the OS-9 Source Book, the 68-22 looks like the most complex one with its SCSI interface (which is obviously used for the Aesthedes hard drive) and MMU, unlike similar products like the 68-23. The 68-23 is [on sale by Artisan](https://www.artisantg.com/TestMeasurement/69626-6/Abaco-Systems-Radstone-PME-68-23-VME-Module).
+# Central unit
 
-- I could not find a technical manual for the 68-22, but we can look for similar products to get an idea on how the 68-22 system architecture would look like:
-    - In the same lineup there are manuals for [68-1B](manuals/pme_681b-1.pdf) and the [68-14](manuals/Radstone_PME_68_14_SBC_Manual-1.pdf). They're equipped with a 68000 and a 68010 respectively.
-    - One can expand the search for boards with the same or similar chipset (68020 CPU, 68851 MMU, VME, optional SCSI) made by other companies. Examples are Motorola's MVME132, MVME136 ([manual](https://www.mvme.net/manuals/MVME135_136-manual.pdf)), Compcontrol CC-120, Cyclone Microsystems CY4110. 
-    - Among non-VME systems, one can find the Macintosh II (with MMU installed) and the Amiga A2500.
+On the back of the unit, the volume is divided into six spaces. The top-left one is almost entirely taken by the power supplies. The other five are VMEBus crates, with backplanes and rail guides.
 
-- About the "M" suffix in 68-22M: The 68-14 manual specifies that the 68-14M variant has more memory; therefore, the suffix may indicate it has more RAM than the standard version (how much anyway?).
+The following diagram shows how the crates are filled with PCBs:
 
-- These boards come with ROM/EPROM sockets, some populated with firmware provided by Radstone, some unpopulated so the user can supply their own EPROMS.
-  - The OS-9 kernel used by the Aesthedes may reside in one of such chips.
+![Diagram depicting how VMEbus PCBs are installed inside the Aesthedes 2 "Hilversum".](cards_location.svg)
+
+How to read the diagram:
+
+* I numbered the crates left-to-right, then right-to-bottom: the PSU at top-left corner would be #1, #2 is below it, #3 is at its right and so on.
+* Each crate has room for 20 cards. Each card takes a slot. I labeled the slots with a three-digit code, where the fist digit is the crate number and the other two is the slot number, left to right, starting from 1.
+  * This numbering scheme is similar to the one used in the original [wiring diagram of the Aesthedes 1](https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg). I didn't have that diagram at hand when I numbered the cards, so I went by memory.
+* Most of the cards have no edge panel, silkscreen or other indication describing the connectors. To keep track of their wiring, I labeled each connector top-to-bottom, alphabetically starting with A. The PME 68-22M cards are the only ones with clear labels, SCSI and RS-232, so I labeled them S and R respectively.
+
+## Connections
+
+![System diagram of the "Hilversum" machine](system_diagram.svg)
+
+All the cards are connected with one another, either via VME backplanes on each crate, or via cables on the user-facing edge.
+
+Do note that it may not be a "proper" VMEbus: while the standard describes two connectos 3x32 pins each, called P1 and P2, the bottom "P2" connectors in the Aesthedes have sometimes 2 rows instead. The pinouts need then to be investigated, as the P2 backplane may be something Aesthedes-proprietary.
+
+Backplanes are connected to each other within each crate (via interposer cards), but separated from other crates. Inter-crate communication is made possible by I/O cards and flat cables.
+
+The following subsections provide details about the backplanes. They list all the cards installed into them, and link to the respective page with the card's details.
+
+### Crate 3
+
+There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via an interposer card.
+
+| Type          | Location                                 | Front backplane | Back backplane |
+| ------------- | ---------------------------------------- | --------------- | -------------- |
+| PME 68-22M    | [302](cards/pme6822/README.md#slot-302)  | Both            |                |
+| Microsys FDC  | [305](cards/microsys/README.md#slot-305) | P1 only         |                |
+| Aesthedes I/O | [320](cards/aes_io/README.md#slot-320)   |                 | Both           |
+
+### Crate 5
+
+There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via an interposer card.
+
+| Type           | Card location                            | Front backplane | Back backplane |
+| -------------- | ---------------------------------------- | --------------- | -------------- |
+| PME 68-22M     | [504](cards/pme6822/README.md#slot-504)  | Both            |                |
+| Aesthedes GPU  | [508](cards/aes_gpu/README.md#slot-508)  |                 | Both           |
+| Aesthedes GPU  | [513](cards/aes_gpu/README.md#slot-513)  |                 | Both           |
+| Aesthedes I/O  | [516](cards/aes_io/README.md#slot-516)   |                 | P2 only        |
+| Aesthedes I/O  | [517](cards/aes_io/README.md#slot-517)   |                 | P2 only        |
+| Aesthedes CRTC | [518](cards/aes_crtc/README.md#slot-518) |                 | P2 only        |
+| Aesthedes CRTC | [519](cards/aes_crtc/README.md#slot-519) |                 | P2 only        |
+| Aesthedes CRTC | [520](cards/aes_crtc/README.md#slot-520) |                 | P2 only        |
 
 
-Some insights about how these boards are installed in the Aesthedes:
-  - There are two identical 68-22Ms (except for EPROM contents maybe?). This matches with the machine specs having 2x68020.
-  - One of them is mounted near the power supplies, the other near the video cards. Let's call them "A" and "B" respectively.
-  - They both seem to be attached to two independent VME backplanes.
-  - Maybe the A board hosts the application/UI and B takes care of rasterization on screen? Although the B seems connected to the only SCSI hard drive. It would be great to have a system block diagram to clarify that.
-  - In picture 172344 we see the A next to a SCSI controller board. Both boards have a SCSI flat cable attached. Since the hard drive seems to be connected to the B, so I'm not sure what are they attached to.
-    - To each other? What for? There's the VME backplane already.
-    - To the floppy drives? Unlikely, because the HDD images contain drivers for the [WD37C65](https://bitsavers.org/components/westernDigital/_dataSheets/WD37C65.pdf) which is all but a SCSI controller.
-  - Besides, what are the floppy drives connected to? And where is the WD37C65?
-
-About the video cards: it might well be the case that they are built in-house, given how peculiar the Aesthedes was w.r.t. other computers of its era. The lack of a front panel/handles with model information may also be a hint. A reverse-engineering (PCB photographs, EPROM/GAL/PAL dumps) may be in order, if anything for preservation purposes.
-
-## All cards
-
-### Crate 3 backplanes
-
-There is a "front" and a "back" backplane, made to accommodate different card depths (6U and what I called 6U+). The two backplanes are connected together via a bridge card.
-
-| Card location | Front backplane | Back backplane |
-|---------------|-----------------|----------------|
-| 302           | Both            |                |
-| 305           | Top only        |                |
-| 320           |                 | Both           |
-
-### Crate 5 backplanes
-
-There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via a bridge card.
-
-
-
-
-### Crate 6 backplanes
+### Crate 6
 
 There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins.
 
-| Card location | Backplane usage     |
-|---------------|---------------------|
-| 611           | Both                |
-| 613           | Both                |
-| 616           | Bottom only         |
-| 617           | Both                |
-| 618           | Bottom only, 3 rows (*) |
-| 619           | Top (**)             |
+| Type                | Card location                                 | Backplane usage     |
+| ------------------- | --------------------------------------------- | ------------------- |
+| Aesthedes "video A" | [611](cards/aes_video_a/README.md#slot-611)   | Both                |
+| Aesthedes "video B" | [613](cards/aes_video_b/README.md#slot-613)   | Both                |
+| Aesthedes 68000 CPU | [616](cards/aes_68k/README.md#slot-616)       | P2 only             |
+| Aesthedes video in  | [617](cards/aes_video_in/README.md#slot-617)  | Both                |
+| Aesthedes "video C" | [618](cards/aes_video_c/README.md#slot-618)   | P2 only, 3 rows (*) |
+| Aesthedes video RAM | [619](cards/aes_video_ram/README.md#slot-619) | P1 only (**)        |
 
 (*) No idea if the third row is actually connected. We should better look at that backplane.
 
-(**) This card has a 2x32 connector on the bottom backplane but no pin seem connected to any PCB trace.
+(**) This card has a 2x32 connector on the bottom backplane but no pin seems connected to any PCB trace.
+
+
+# Desk 
+
+The desk is connected to the central unit via three flat cables and some power wires.
+
+For more information, see the [desk page](desk.md).
+
