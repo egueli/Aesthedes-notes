@@ -21,6 +21,11 @@ import yaml
 with open('pics.yaml', 'r') as f:
     pics_catalog = yaml.safe_load(f)
 
+slots = pics_catalog['slots']
+
+def card_of_slot(slot_id):
+    return next((slot['card'] for slot in slots if str(slot['id']) == str(slot_id)), None)
+
 
 def md_img(pics, url, caption):
     thumb_url_gen = pics.get('thumb_url_gen', {})
@@ -28,7 +33,7 @@ def md_img(pics, url, caption):
     return f'[![{caption}]({thumb_url})]({url})'
 
 
-def generate_slot_pics_snippets(pics, card, slot):
+def generate_slot_pics_snippets(pics, slot):
     """
     Generates a list of Markdown snippets for the pictures of a card in a specific slot.
     The snippets include the image thumbnail and the caption (as alt text and printed below the image),
@@ -36,7 +41,6 @@ def generate_slot_pics_snippets(pics, card, slot):
 
     Args:
         pics (dict): The loaded pics catalog from YAML.
-        card (str): The card name.
         slot (str): The slot number as a string.
 
     Returns:
@@ -45,9 +49,6 @@ def generate_slot_pics_snippets(pics, card, slot):
     snippets = []
 
     for pic in pics['pics']:
-        if pic.get('card') != card:
-            continue
-
         slots = [str(s) for s in pic.get('slots', [])]
         if slot not in slots:
             continue
@@ -68,11 +69,17 @@ def generate_featured_pic_snippet(pics, card):
     """
 
     for pic in pics['pics']:
-        if pic.get('card') == card and pic.get('featured'):
-            caption = pic['caption']
-            url = pic['url']
-            md_snippet = f'{md_img(pics, url, caption)}\n\n{caption}\n\n\n'
-            return md_snippet
+        if not pic.get('featured'):
+            continue
+
+        slots = [str(s) for s in pic.get('slots', [])]
+        if card_of_slot(slots[0]) != card:
+            continue
+
+        caption = pic['caption']
+        url = pic['url']
+        md_snippet = f'{md_img(pics, url, caption)}\n\n{caption}\n\n\n'
+        return md_snippet
         
     return f'<!-- No featured picture found for card {card} -->\n'
         
@@ -81,8 +88,8 @@ def template_gen_card_featured_pic_md(card_id):
     snippet = generate_featured_pic_snippet(pics_catalog, card_id)
     return snippet
 
-def template_gen_slot_pics_md(card_id, slot_id):
-    snippets = generate_slot_pics_snippets(pics_catalog, card_id, slot_id)
+def template_gen_slot_pics_md(slot_id):
+    snippets = generate_slot_pics_snippets(pics_catalog, slot_id)
     return '\n'.join(snippets) + '\n'
 
 
