@@ -1119,4 +1119,65 @@ The section above was about running the Aesthedes software on a third-party OS-9
 
 The Aesthedes is a multi-crate VMEbus system (see [hardware/README.md](../hardware/README.md)). Such architecture is somewhat supported in MAME: see `src/mame/motorola/sys1121.cpp` emulating a Motorola SYS1121 VME chassis; inside of it, it emulates a set of cards installed at several slots. One of them, `mvme120`, is a 68010-based CPU card.
 
+Other examples:
+
+* `hcpu30.cpp` as a card inside `miniforce.cpp`
+* `sgi_ip4_device` (in `ip4.h`) as a card inside `tt.cpp`
+
 Therefore, the upcoming device `claessens/aesthedes2.cpp` in MAME source (`mame/src/mame`) may be built with a similar structure.
+
+### Running the kernel ROM
+
+The beginning of the ROM contains the 68k vector table. The first two entries, that are supposed to contain the initial stack pointer and the reset vector, are 0x8021000 and 0x58e respectively. From this we can infer that the ROM expects to be mapped at address 0, and that there must be RAM at 0x08000000, since the initial stack pointer points there.
+
+It also expects a MC6821P at 0x60000. It seems like it's compatible with the MC68681; if anything, it does print some early boot messages.
+
+It scans in two memory regions, 0x08000000 to 0x087fffff and 0x02200000 to 0x029fffff, either to search for OS-9 modules.
+
+What else it does (writes) between 0x08010000 and 0x0801ffff and from 0x08021000 and beyond? (excluding the stack area, that is at 0x0802xxxx)
+
+* At 0x4a2, it copies the ROM to RAM; in particular it copies from 0xcd8 (start of kernel module) to 0xd080 (end of `id_OS` module) to 0x08010000. Weirdly enough, there are more OS-9 modules in the ROM after 0xd080, mostly related to SCSI. And the system doesn't seem to read them at all, not even later.
+* At 0x6ba, it clears RAM from 0x08021000 to 0x080217ff.
+* At 0x77a, it writes 0xFEEDC0DE to 0x08222000 (?).
+* At 0x792, it writes 0x08021074 to 0x08022000, then at 0x83a it clears it again?
+* At 0x83c, it writes 0x007dd800 to 0x08022004. That's the last write to that area by the bootloader.
+
+
+When run, the system goes into a boot-loop while printing the following text:
+
+```
+OS-9/68K System Bootstrap
+OS-9 kernel found in ROM at $08010004
+Can't access /ROM0
+Error #000:214
+OS-9/68K System Bootstrap
+...
+```
+
+The mention of `/ROM0` is surprising, since the only EPROMs I dumped don't contain an RBF image. Let's try to see what's going on.
+
+The bootloader copies the EPROM contents from 0xcd8 to 0x08010000, then scans for modules. It finds the kernel, then at 0x91c it jumps at address 0x0801007a (likely the OS-9 kernel entry point). Several things happen, then it prints the `Can't access` message.
+
+The `Can't access ` string is located at 0x0801b050, and `/ROM0` right after, at 0x0801b05e. Somehow the two strings are concatenated together but what's most interesting is that `/H0` and `/D0` are also present, as if the three were part of an array. Like a boot priority list.
+
+Let's see where and how `/ROM0` is read:
+
+```
+wpset 0801b05e,1,r
+```
+
+Execution stops at 0x08014874, in a routine that starts at 0x801483c and is turn called at 0x080147d2.
+
+Let's try to figure out the stack trace.
+
+SP was 0x08020fdc when PC is 0x080147d4. Here's the stack dump, given that SP was 0x08020ff8 when the kernel was entered:
+
+```
+ 08020FD0    00001200    00000000    080147D4    08010004    ..........G�....
+ 08020FE0    080146B0    00000000    00000000    00000002    ..F�............
+ 08020FF0    00000000    08010004    08020000    0801033E    ...............>
+```
+
+Program-like addresses:
+* 0x080147d4 (at SP=0x08020fdc) is the instruction after the caller of the routine that reads the string;
+* 0x080146b0 (at SP=0x08020fe0) is the instruction after the caller of 0x080147d4; the caller is at 0x080146ac
