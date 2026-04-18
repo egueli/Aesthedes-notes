@@ -32,11 +32,20 @@ The "M" suffix may indicate that the board has more RAM than the standard versio
 The Aesthedes has two of these boards. None of them seem to have an MMU installed. They talk to each other via I/O cables connected at slots 506 and 320.
 
 
+## I/O
 
+There is a DUART controller, MC6821P, mapped at 0x00060000. 
 
 ## EPROMs
 
-In each card, both EPROM sockets are populated. One socket has the OS-9 kernel and its contents are identical in both cards. The other socket contains the `AE_CONFIG` OS-9 module, with application configuration data; the contents of this second socket differ between the two cards.
+The card has two EPROM sockets:
+
+* The first, nearer to the CPU, is mapped at 0x00000000. In both cards, it is populated and contains the bootleader, OS-9 kernel and modules. The contents are identical.
+* The second socket, just above the first, is mapped at 0x02000000. In both cards, it is populated and contains the `AE_CONFIG` OS-9 module, with some configuration data. The contents of the EPROMs differ between the two cards.
+
+## RAM
+
+There seems to be two RAM banks, one mapped at 0x08000000 (to 0x087fffff) and one at 0x02200000 (to 0x029fffff). 
 
 
 ## Slot 504
