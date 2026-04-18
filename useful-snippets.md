@@ -220,3 +220,23 @@ Trace global masks offset:
 ```
 bpset 0x13a34+0x86
 ```
+
+## MAME post-mortem debugging
+
+Instructions are for Linux (WSL2)
+
+First, we need to enable core dumps:
+
+```sh
+ulimit -c unlimited
+sudo sysctl -w kernel.core_pattern=core
+```
+
+Then, run MAME and let it crash.
+
+After the crash, a `core` file should be generated in the current directory. We can
+then use `gdb` to analyze it:
+
+```sh
+gdb /path/to/mame --core=core
+```
