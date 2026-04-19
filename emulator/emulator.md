@@ -1136,7 +1136,8 @@ It scans in two memory regions, 0x08000000 to 0x087fffff and 0x02200000 to 0x029
 
 What else it does (writes) between 0x08010000 and 0x0801ffff and from 0x08021000 and beyond? (excluding the stack area, that is at 0x0802xxxx)
 
-* At 0x4a2, it copies the ROM to RAM; in particular it copies from 0xcd8 (start of kernel module) to 0xd080 (end of `id_OS` module) to 0x08010000. Weirdly enough, there are more OS-9 modules in the ROM after 0xd080, mostly related to SCSI. And the system doesn't seem to read them at all, not even later.
+* At 0x4a2, it copies the ROM to RAM; not all of it is copied, but only the region between the magic strings `oS09` and `BoOt`. They are at locations 0xcd8 and 0xd080, respectively. This region is copied to 0x08010000.
+  * Weirdly enough, there are more OS-9 modules in the ROM after 0xd080, mostly related to SCSI. The system doesn't seem to read them at all, not even later.
 * At 0x6ba, it clears RAM from 0x08021000 to 0x080217ff.
 * At 0x77a, it writes 0xFEEDC0DE to 0x08222000 (?).
 * At 0x792, it writes 0x08021074 to 0x08022000, then at 0x83a it clears it again?
