@@ -1159,7 +1159,7 @@ The mention of `/ROM0` is surprising, since the only EPROMs I dumped don't conta
 
 The bootloader copies the EPROM contents from 0xcd8 to 0x08010000, then scans for modules. It finds the kernel, then at 0x91c it jumps at address 0x0801007a (likely the OS-9 kernel entry point). Several things happen, then it prints the `Can't access` message.
 
-The `Can't access ` string is located at 0x0801b050, and `/ROM0` right after, at 0x0801b05e. Somehow the two strings are concatenated together but what's most interesting is that `/H0` and `/D0` are also present, as if the three were part of an array. Like a boot priority list.
+The `Can't access ` string is located at 0x0801b050, and `/ROM0` right after, at 0x0801b05e. Both strings are located in the `sysgo` module. Somehow the two strings are concatenated together but what's most interesting is that `/H0` and `/D0` are also present, as if the three were part of an array. Like a boot priority list.
 
 Let's see where and how `/ROM0` is read:
 
