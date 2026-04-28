@@ -36,17 +36,24 @@ The Aesthedes has two of these boards. None of them seem to have an MMU installe
 
 There is a DUART controller, MC6821P, mapped at 0x00060000. 
 
-## EPROMs
+## ROM sockets
 
-The card has two EPROM sockets:
+The card has two ROM sockets:
 
-* The first, nearer to the CPU, is mapped at 0x00000000. In both cards, it is populated and contains the bootleader, OS-9 kernel and modules. The contents are identical.
-* The second socket, just above the first, is mapped at 0x02000000. In both cards, it is populated and contains the `AE_CONFIG` OS-9 module, with some configuration data. The contents of the EPROMs differ between the two cards.
+* The first, nearer to the CPU, is mapped at 0x00000000. In both cards, it is populated with a 64 KiB EPROM and contains the bootleader, OS-9 kernel and modules. The contents are identical.
+* The second socket, just above the first, is mapped at 0x0040000. In both cards, it is populated and contains the `AE_CONFIG` OS-9 module (8KiB), with some configuration data. The contents of the EPROMs differ between the two cards.
+
+## RTC
+
+A DS1216E RTC is present in the system, just below the second ROM socket. The bootloader and OS-9 clock driver accesses it at 0x0041FFF.
 
 ## RAM
 
 There seems to be two RAM banks, one mapped at 0x08000000 (to 0x087fffff) and one at 0x02200000 (to 0x029fffff). 
 
+## SCSI controller
+
+The board hosts an NCR 5386 SCSI controller. It is mapped in memory at 0x00600000.
 
 ## Slot 504
 
