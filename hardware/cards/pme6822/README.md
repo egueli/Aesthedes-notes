@@ -53,7 +53,11 @@ There seems to be two RAM banks, one mapped at 0x08000000 (to 0x087fffff) and on
 
 ## SCSI controller
 
-The board hosts an NCR 5386 SCSI controller. It is mapped in memory at 0x00600000.
+The board hosts an NCR 5386 SCSI controller. Its ID in the SCSI bus is hardcoded to 7. It is mapped in memory at 0x00060000. Its IRQ line is connected to the CPU's IRQ3.
+
+There is additional circuitry, allowing the CPU to "peek" at the SCSI interrupt line without acknowledging it, by reading bit 5 of register 5, i.e. address 0x00060005. According to its datasheet, the NCR5386 does not use that bit (only the lowest 3 bits are used for the controller's own ID). It reads 1 if the IRQ line is or has been active in the past 50 microseconds, 0 otherwise.
+
+
 
 ## Slot 504
 
