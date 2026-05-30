@@ -41,11 +41,11 @@ There is a DUART controller, MC6821P, mapped at 0x00060000.
 The card has two ROM sockets:
 
 * The first, nearer to the CPU, is mapped at 0x00000000. In both cards, it is populated with a 64 KiB EPROM and contains the bootleader, OS-9 kernel and modules. The contents are identical.
-* The second socket, just above the first, is mapped at 0x0040000. In both cards, it is populated and contains the `AE_CONFIG` OS-9 module (8KiB), with some configuration data. The contents of the EPROMs differ between the two cards.
+* The second socket, just above the first, is mapped at 0x0040000. In both cards, it is populated and contains the `AE_CONFIG` OS-9 module (8KiB, mirrored over 64KB), with some configuration data. The contents of the EPROMs differ between the two cards.
 
 ## RTC
 
-A DS1216E RTC is present in the system, just below the second ROM socket. The bootloader and OS-9 clock driver accesses it at 0x00041FFF.
+A DS1216E RTC is present in the system, just below the second ROM socket. The bootloader and OS-9 clock driver accesses it at 0x00041FFF and at 0x0004FFFF.
 
 ## RAM
 
