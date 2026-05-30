@@ -45,7 +45,7 @@ The card has two ROM sockets:
 
 ## RTC
 
-A DS1216E RTC is present in the system, just below the second ROM socket. The bootloader and OS-9 clock driver accesses it at 0x0041FFF.
+A DS1216E RTC is present in the system, just below the second ROM socket. The bootloader and OS-9 clock driver accesses it at 0x00041FFF.
 
 ## RAM
 
