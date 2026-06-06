@@ -4,10 +4,22 @@
 
 | Name      | Start address | End address            | Type (M$Type)            |
 | --------- | ------------- | ---------------------- | ------------------------ |
+| `init`    | 80149f4       | 8014aac                |                          |
 | `SCSILIB` | 80198f8       | 801af20                |                          |
 | `sysgo`   | 801af20       | 801c326                |                          |
 | `H0SCSI`  | 801c3a8       | 801c4f2                | Physical Device Driver   |
 | `h0`      | 801c5a0       | 801c64e (end of EPROM) | Device Descriptor Module |
+
+### `init` module
+
+This is the data module used by the kernel to initialize itself. Some possibily relevant details:
+
+* The first process to be launched is `Sysgo`.
+* The initial default directory name (`M$SysDev`) is `/h0`.
+* The initial I/O pathlist (`M$Consol`) is `/Term`.
+* The installation name string is `BARCO Graphics - AESTHEDES`.
+* The OS-9 version is level 1, version 2.2, edition 0.
+* The OS-9 name string is `OS-9/68020 V2.2`.
 
 ### `h0` module
 
