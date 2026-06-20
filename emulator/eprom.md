@@ -25,6 +25,14 @@ This is the data module used by the kernel to initialize itself. Some possibily 
 
 This is a device descriptor for the SCSI hard disk. It references RBF as the file manager and `H0SCSI` as the driver.
 
+Given that this module is referenced by `init` as the default directory's device, it may be loaded and initialized early in the boot process, before Sysgo.
+
+Its initialization routine loads the `SCSILIB` library module.
+
+### `SCSILIB` module
+
+This library module implements the SCSI protocol and the low-level logic to control the NCR 5386 SCSI controller and the related interrupt and DMA on the PME 68-22.
+
 ## Boot priority order
 
 1. `/D0`
