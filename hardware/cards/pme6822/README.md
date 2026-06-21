@@ -34,7 +34,13 @@ The Aesthedes has two of these boards. None of them seem to have an MMU installe
 
 ## I/O
 
-There is a DUART controller, MC6821P, mapped at 0x00060000. 
+There is a DUART controller, MC2681P, mapped at 0x00060000. It provides an RS-232 interface to the outside world. The Aesthedes 2 bootloader and kernel configure it for 19200bps and use it for early boot messages.
+
+Its input and output ports are connected to various parts of the board:
+* IP2 is used by the Aesthedes' SCSI driver to enable "fast" data transfers to the hard drive. It should be low if the sector size is 1024 bytes or higher, high otherwise. It is likely connected to a jumper.
+* IP3 is used by the Aesthedes' SCSI driver, for unknown reasons. Its expected value is function of the "fast" data tranfers enabled, and the DMA data direction (OP2).
+* OP2 is set by the Aesthedes' SCSI driver to indicate a DMA read (low) or a write (high).
+
 
 ## ROM sockets
 
