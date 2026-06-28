@@ -1182,3 +1182,10 @@ SP was 0x08020fdc when PC is 0x080147d4. Here's the stack dump, given that SP wa
 Program-like addresses:
 * 0x080147d4 (at SP=0x08020fdc) is the instruction after the caller of the routine that reads the string;
 * 0x080146b0 (at SP=0x08020fe0) is the instruction after the caller of 0x080147d4; the caller is at 0x080146ac
+
+### Other quests
+
+* Be able to mount the SCSI hard disk
+  * [Figure out why does the SCSILIB driver reads a bit that doesn't exist](Reg5bit5.md)
+  * [Persuade SCSILIB to not read HDD sectors in huge, buffer-overflowing 1KiB blocks](SectorSize.md)
+  * [Fix a "cannot load CIO trap handler" error](cio.md)

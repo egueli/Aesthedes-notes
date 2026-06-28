@@ -240,3 +240,9 @@ then use `gdb` to analyze it:
 ```sh
 gdb /path/to/mame --core=core
 ```
+
+## Print HD image, with sector/offset addressing
+
+```sh
+img=roms/aesthedes2/harddisk_504.bin; hexdump -C $img | awk -F '[ ]' '/^*$/ {print $0} !/^*$/ {offset=strtonum("0x" $1); sector=int(offset/512); soff = offset % 512; $1=sprintf("%08x %06x:%03x", offset, sector, soff); print $0}' | less
+```
