@@ -37,7 +37,7 @@ The Aesthedes has two of these boards. None of them seem to have an MMU installe
 There is a DUART controller, MC2681P, mapped at 0x00060000. It provides an RS-232 interface to the outside world. The Aesthedes 2 bootloader and kernel configure it for 19200bps and use it for early boot messages.
 
 Its input and output ports are connected to various parts of the board:
-* IP2 is used by the Aesthedes' SCSI driver to enable "fast" data transfers to the hard drive. It should be low if the sector size is 1024 bytes or higher, high otherwise. It is likely connected to a jumper.
+* IP2 is connected to the FIFO's "full" state, active low. See "FIFO" section below. In other words, reading 0 guarantees that the CPU can read no less than 1024 byte from the FIFO.
 * IP3 is used by the Aesthedes' SCSI driver, for unknown reasons. Its expected value is function of the "fast" data tranfers enabled, and the DMA data direction (OP2).
 * OP2 is set by the Aesthedes' SCSI driver to indicate a DMA read (low) or a write (high).
 
@@ -63,7 +63,13 @@ The board hosts an NCR 5386 SCSI controller. Its ID in the SCSI bus is hardcoded
 
 There is additional circuitry, allowing the CPU to "peek" at the SCSI interrupt line without acknowledging it, by reading bit 5 of register 5, i.e. address 0x00060005. According to its datasheet, the NCR5386 does not use that bit (only the lowest 3 bits are used for the controller's own ID). It reads 1 if the IRQ line is or has been active in the past 50 microseconds, 0 otherwise.
 
+### FIFO
 
+A dual-port 1KiB FIFO memory (Renesas IDT7202 LA80) is be used for DMA transfers with the SCSI controller. Both ends can be controlled by the CPU and the SCSI controller, taking turns depending on the data direction. By reading or writing any address in the 0x30000..0x3000f range, the CPU can pop or push a single byte, respectively.
+
+When the FIFO is full and the SCSI controller wants to push a byte, its DACK/ pin won't be asserted, causing the SCSI bus to wait until the CPU starts processing the FIFO. Then DACK/ is asserted again.
+
+The "full" state of the FIFO can be inspected by reading IP2 of the DUART.
 
 ## Slot 504
 

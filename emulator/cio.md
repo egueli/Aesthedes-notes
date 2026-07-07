@@ -50,6 +50,8 @@ That data should have been read by a 38-sector read:
 ```
 Therefore, it looks like the current I/O reading part works only for a single sector at a time, and fails otherwise. Is it the SCSI HDD implementation? The DMA? SCSILIB?
 
-By enabling `LOG_DATA` in `hd.cpp`, it looks like both the single-sector read of sector 18F0 (containing the file descriptor of `cio` and the first LSN) and the 38-sector read starting from 18F1 are read just fine.
+By enabling `LOG_GENERAL | LOG_COMMAND` in `hd.cpp`, it looks like both the single-sector read of sector 18F0 (containing the file descriptor of `cio` and the first LSN) and the 38-sector read starting from 18F1 are read just fine.
 
 A possible cause is that the multi-sector read should trigger the 1K-large transfers as mentioned in [SectorSize.md](SectorSize.md). Because that condition is hardcoded to less than that, too few data (or none at all) is transferred. The destination address when `scsilib_read_sector` is hit (i.e. 801A784) is around 87F7990 which is wide enough to store such large transfers.
+
+After some investigation, including the "discovery" of a 1KiB FIFO right on the board (Renesas IDT7202), it turns out that SCSILIB expect the input pin 2 of the DUART to be low when the FIFO is full. After implementing that logic, all multi-sector reads now work as expected.
