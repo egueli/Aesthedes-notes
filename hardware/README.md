@@ -52,6 +52,8 @@ There is a "front" and a "back" backplane, made to accommodate different card de
 | Microsys FDC  | [305](cards/microsys/README.md#slot-305) | P1 only         |                |
 | Aesthedes I/O | [320](cards/aes_io/README.md#slot-320)   |                 | Both           |
 
+The PME@302's SCSI port is connected to a Priam V738 SCSI hard disk.
+
 ### Crate 5
 
 There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards. The two backplanes are connected together via an interposer card.
@@ -66,6 +68,8 @@ There is a "front" and a "back" backplane, made to accommodate 6U and 6U+ cards.
 | Aesthedes CRTC | [518](cards/aes_crtc/README.md#slot-518) |                 | P2 only        |
 | Aesthedes CRTC | [519](cards/aes_crtc/README.md#slot-519) |                 | P2 only        |
 | Aesthedes CRTC | [520](cards/aes_crtc/README.md#slot-520) |                 | P2 only        |
+
+The PME@504's SCSI port is connected to a Quantum SCSI hard disk.
 
 
 ### Crate 6
