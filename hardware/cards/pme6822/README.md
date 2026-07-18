@@ -38,7 +38,7 @@ There is a DUART controller, MC2681P, mapped at 0x00060000. It provides an RS-23
 
 Its input and output ports are connected to various parts of the board:
 * IP2 is connected to the FIFO's "full" state, active low. See "FIFO" section below. In other words, reading 0 guarantees that the CPU can read no less than 1024 byte from the FIFO.
-* IP3 is used by the Aesthedes' SCSI driver, for unknown reasons. Its expected value is function of the "fast" data tranfers enabled, and the DMA data direction (OP2).
+* IP3 is connected to the FIFO's "empty" state, active low. It is also high if the current data direction is read, i.e. OP2 is high.
 * OP2 is set by the Aesthedes' SCSI driver to indicate a DMA read (low) or a write (high).
 
 
@@ -69,7 +69,7 @@ A dual-port 1KiB FIFO memory (Renesas IDT7202 LA80) is be used for DMA transfers
 
 When the FIFO is full and the SCSI controller wants to push a byte, its DACK/ pin won't be asserted, causing the SCSI bus to wait until the CPU starts processing the FIFO. Then DACK/ is asserted again.
 
-The "full" state of the FIFO can be inspected by reading IP2 of the DUART.
+The "full" and "empty" states of the FIFO can be inspected by reading IP2 and IP3 of the DUART, respectively.
 
 ## Slot 504
 
