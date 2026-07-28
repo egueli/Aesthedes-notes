@@ -1189,3 +1189,7 @@ Program-like addresses:
   * [Figure out why does the SCSILIB driver reads a bit that doesn't exist](Reg5bit5.md)
   * [Persuade SCSILIB to not read HDD sectors in huge, buffer-overflowing 1KiB blocks](SectorSize.md)
   * [Fix a "cannot load CIO trap handler" error](cio.md)
+
+* [Run the other PME 68-22 in slot 302](pme6822_302.md)
+
+* [Let the two PME boards talk to each other](link_302_504.md)
