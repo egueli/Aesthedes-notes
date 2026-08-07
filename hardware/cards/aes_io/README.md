@@ -15,6 +15,32 @@ The main chips are:
 * 3x HD6821P / HD68421P PIA (Peripheral Interface Adapter) 
 * 2x HD6850 / HD68450 ACIA
 
+## Memory map
+
+The card uses 32 bytes of the address map. There are jumpers to configure the base address. Example base addresses are $04fc9000 and $04fc9020.
+
+Because there are 8-bit peripherals mapped into the 32-bit VME bus, the chips are mapped at odd addresses only. Moreover, the two address lines RS0 and RS1 appear exchanged. Finally, each PIA is mapped at offsets $0, $8 and $10 respectively. Here is the full memory map:
+
+| Offset | Card-internal offset | Name                                |
+| ------ | -------------------- | ----------------------------------- |
+| $1     | $0                   | PIA A Peripheral Register A / DDR A |
+| $3     | $1                   | PIA A Peripheral Register B / DDR B |
+| $5     | $2                   | PIA A Control Register A            |
+| $7     | $3                   | PIA A Control Register B            |
+| $9     | $4                   | PIA B Peripheral Register A / DDR A |
+| $B     | $5                   | PIA B Peripheral Register B / DDR B |
+| $D     | $6                   | PIA B Control Register A            |
+| $F     | $7                   | PIA B Control Register B            |
+| $11    | $8                   | PIA C Peripheral Register A / DDR A |
+| $13    | $9                   | PIA C Peripheral Register B / DDR B |
+| $15    | $A                   | PIA C Control Register A            |
+| $17    | $B                   | PIA C Control Register B            |
+
+
+It is unclear whether the interrupt lines are connected to the bus or not. The Aesthedes software polls the PIA status registers when waiting for an external event.
+
+## Connectors
+
 There are four side connectors:
 
 * Three of them are IDC 13x2 connectors. Each of them breaks out the I/O connection of each PIA (PA0..7, PB0..7, CA1/2, CB1/2).
@@ -24,7 +50,7 @@ Between each PIA and its connector, there are two pairs of jumpers in a square p
 
 They are aligned to pins 1, 2, 19 and 20 of the PIA. I'll call them J1, J2, J19 and J20.
 
-## Parallel connector pinout
+### Parallel connector pinout
 
 In the pictures of the PCB component side, pin 1 is at bottom-left. The table below reflects such layout.
 
