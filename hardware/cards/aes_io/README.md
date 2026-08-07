@@ -15,6 +15,12 @@ The main chips are:
 * 3x HD6821P / HD68421P PIA (Peripheral Interface Adapter) 
 * 2x HD6850 / HD68450 ACIA
 
+There are four side connectors:
+
+* Three of them are IDC 13x2 connectors. Each of them breaks out the I/O connection of each PIA (PA0..7, PB0..7, CA1/2, CB1/2).
+* The fourth connector is for the two ACIAs.
+
+
 ## Memory map
 
 The card uses 32 bytes of the address map. There are jumpers to configure the base address. Example base addresses are $04fc9000 and $04fc9020.
@@ -39,18 +45,17 @@ Because there are 8-bit peripherals mapped into the 32-bit VME bus, the chips ar
 
 It is unclear whether the interrupt lines are connected to the bus or not. The Aesthedes software polls the PIA status registers when waiting for an external event.
 
-## Connectors
+## Parallel ports
 
-There are four side connectors:
+Most of the I/O pins of each PIA is broken out to the respective connector.
 
-* Three of them are IDC 13x2 connectors. Each of them breaks out the I/O connection of each PIA (PA0..7, PB0..7, CA1/2, CB1/2).
-* The fourth connector is for the two ACIAs.
+All pins of port B have external pull-up resistors.
 
 Between each PIA and its connector, there are two pairs of jumpers in a square pattern. They can connect the four pins horizontally or vertically. They seem to be connected to the CAx/CBx pins.
 
 They are aligned to pins 1, 2, 19 and 20 of the PIA. I'll call them J1, J2, J19 and J20.
 
-### Parallel connector pinout
+### Pinout
 
 In the pictures of the PCB component side, pin 1 is at bottom-left. The table below reflects such layout.
 
