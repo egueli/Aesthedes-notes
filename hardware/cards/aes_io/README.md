@@ -29,51 +29,51 @@ They are aligned to pins 1, 2, 19 and 20 of the PIA. I'll call them J1, J2, J19 
 In the pictures of the PCB component side, pin 1 is at bottom-left. The table below reflects such layout.
 
 | Name | PinL | PinR | Name |
-|-----:|-----:|------|------|
-|    ? |  26  |  25  |  ?   |
-|  X19 |  24  |  23  |   X1 |
-|  PB0 |  22  |  21  |  PB1 |
-|  PB2 |  20  |  19  |  PB3 |
-|  PB4 |  18  |  17  |  PB5 |
-|  PB6 |  16  |  15  |  PB7 |
-|    ? |  14  |  13  |    ? |
-|  PA7 |  12  |  11  |  PA6 |
-|  PA5 |  10  |   9  |  PA4 |
-|  PA3 |   8  |   7  |  PA2 |
-|  PA1 |   6  |   5  |  PA0 |
-|   X2 |   4  |   3  |  X20 |
-|    ? |   2  |   1  |    ? |
+| ---: | ---: | ---- | ---- |
+|    ? |   26 | 25   | ?    |
+|  X19 |   24 | 23   | X1   |
+|  PB0 |   22 | 21   | PB1  |
+|  PB2 |   20 | 19   | PB3  |
+|  PB4 |   18 | 17   | PB5  |
+|  PB6 |   16 | 15   | PB7  |
+|    ? |   14 | 13   | ?    |
+|  PA7 |   12 | 11   | PA6  |
+|  PA5 |   10 | 9    | PA4  |
+|  PA3 |    8 | 7    | PA2  |
+|  PA1 |    6 | 5    | PA0  |
+|   X2 |    4 | 3    | X20  |
+|    ? |    2 | 1    | ?    |
 
 Same pinout, in numerical order:
 
 | Pin | Name |
-|---:|---|
-| 1 | ? |
-| 2 | ? |
-| 3 | X20 |
-| 4 | X2 |
-| 5 | PA0 |
-| 6 | PA1 |
-| 7 | PA2 |
-| 8 | PA3 |
-| 9 | PA4 |
-| 10 | PA5 |
-| 11 | PA6 |
-| 12 | PA7 |
-| 13 | ? |
-| 14 | ? |
-| 15 | PB7 |
-| 16 | PB6 |
-| 17 | PB5 |
-| 18 | PB4 |
-| 19 | PB3 |
-| 20 | PB2 |
-| 21 | PB1 |
-| 22 | PB0 |
-| 23 | X1 |
-| 24 | X19 |
-| 25 | ? |
-| 26 | ? |
+| --: | ---- |
+|   1 | ?    |
+|   2 | ?    |
+|   3 | X20  |
+|   4 | X2   |
+|   5 | PA0  |
+|   6 | PA1  |
+|   7 | PA2  |
+|   8 | PA3  |
+|   9 | PA4  |
+|  10 | PA5  |
+|  11 | PA6  |
+|  12 | PA7  |
+|  13 | ?    |
+|  14 | ?    |
+|  15 | PB7  |
+|  16 | PB6  |
+|  17 | PB5  |
+|  18 | PB4  |
+|  19 | PB3  |
+|  20 | PB2  |
+|  21 | PB1  |
+|  22 | PB0  |
+|  23 | X1   |
+|  24 | X19  |
+|  25 | ?    |
+|  26 | ?    |
 
 * X20: if J19/J20 are horizontal, this is CA2 else CB1.
 * X19: if J19/J20 are horizontal, this is CB1 else CA2.
@@ -87,42 +87,42 @@ Same pinout, in numerical order:
 The pinout is rotationally symmetric: it is set up in such a way that it may be reversed to allow Port B to be connected to Port A (and related control lines) and vice versa. In a such a setup, i.e. when pin 1 of the flat cable is on the wrong side on one end, the mapping would be as follows:
 
 | Pin, normal | Name, normal | Name, reversed | Pin, reversed |
-|---:|--:|---|---|
-| 1 | ? | ? | 26 |
-| 2 | ? | ? | 25 |
-| 3 | X20 | X19 | 24 |
-| 4 | X2 | X1 | 23 |
-| 5 | PA0 | PB0 | 22 |
-| 6 | PA1 | PB1 | 21 |
-| 7 | PA2 | PB2 | 20 |
-| 8 | PA3 | PB3 | 19 |
-| 9 | PA4 | PB4 | 18 |
-| 10 | PA5 | PB5 | 17 |
-| 11 | PA6 | PB6 | 16 |
-| 12 | PA7 | PB7 | 15 |
-| 13 | ? | ? | 14 |
-| 14 | ? | ? | 13 |
-| 15 | PB7 | PA7 | 12 |
-| 16 | PB6 | PA6 | 11 |
-| 17 | PB5 | PA5 | 10 |
-| 18 | PB4 | PA4 | 9 |
-| 19 | PB3 | PA3 | 8 |
-| 20 | PB2 | PA2 | 7 |
-| 21 | PB1 | PA1 | 6 |
-| 22 | PB0 | PA0 | 5 |
-| 23 | X1 | X2 | 4 |
-| 24 | X19 | X20 | 3 |
-| 25 | ? | ? | 2 |
-| 26 | ? | ? | 1 |
+| ----------: | -----------: | -------------- | ------------- |
+|           1 |            ? | ?              | 26            |
+|           2 |            ? | ?              | 25            |
+|           3 |          X20 | X19            | 24            |
+|           4 |           X2 | X1             | 23            |
+|           5 |          PA0 | PB0            | 22            |
+|           6 |          PA1 | PB1            | 21            |
+|           7 |          PA2 | PB2            | 20            |
+|           8 |          PA3 | PB3            | 19            |
+|           9 |          PA4 | PB4            | 18            |
+|          10 |          PA5 | PB5            | 17            |
+|          11 |          PA6 | PB6            | 16            |
+|          12 |          PA7 | PB7            | 15            |
+|          13 |            ? | ?              | 14            |
+|          14 |            ? | ?              | 13            |
+|          15 |          PB7 | PA7            | 12            |
+|          16 |          PB6 | PA6            | 11            |
+|          17 |          PB5 | PA5            | 10            |
+|          18 |          PB4 | PA4            | 9             |
+|          19 |          PB3 | PA3            | 8             |
+|          20 |          PB2 | PA2            | 7             |
+|          21 |          PB1 | PA1            | 6             |
+|          22 |          PB0 | PA0            | 5             |
+|          23 |           X1 | X2             | 4             |
+|          24 |          X19 | X20            | 3             |
+|          25 |            ? | ?              | 2             |
+|          26 |            ? | ?              | 1             |
 
 Do note that in a reverse-mapping setup the X* wires are exchanged, achieving the same effect of switching the J1/J2 and J19/20 jumper pairs. In fact, here's how the control lines would be wired:
 
 | Pin, normal | Name, normal | Name, reversed | Pin, reversed |
-|---:|--:|---|---|
-| 3 | CA2 | CB1 | 24 |
-| 4 | CA1 | CB2 | 23 |
-| 23 | CB2 | CA1 | 4 |
-| 24 | CB1 | CA2 | 3 |
+| ----------: | -----------: | -------------- | ------------- |
+|           3 |          CA2 | CB1            | 24            |
+|           4 |          CA1 | CB2            | 23            |
+|          23 |          CB2 | CA1            | 4             |
+|          24 |          CB1 | CA2            | 3             |
 
 # Slots
 
