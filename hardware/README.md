@@ -30,6 +30,10 @@ How to read the diagram:
   * This numbering scheme is similar to the one used in the original [wiring diagram of the Aesthedes 1](https://www.egueli.com/aesthedes/pics/hcm/Aesthedesbekabeling.jpg). I didn't have that diagram at hand when I numbered the cards, so I went by memory.
 * Most of the cards have no edge panel, silkscreen or other indication describing the connectors. To keep track of their wiring, I labeled each connector top-to-bottom, alphabetically starting with A. The PME 68-22M cards are the only ones with clear labels, SCSI and RS-232, so I labeled them S and R respectively.
 
+## Cards overview
+
+Most of the cards are custom-made for the Aesthedes. Each card has a name and a serial number. The name is like C100/xxxx where "xxxx" is an increasing number: higher numbers denote more recent cards. Lower numbers seem to be used for Aesthedes 1 and carried over to the Aesthedes 2, and higher numbers may be specific to the Aesthedes 2. The name is printed on PCB silkscreen, while the serial number is either stamped or written by hand.
+
 ## Connections
 
 ![System diagram of the "Hilversum" machine](system_diagram.svg)
@@ -89,6 +93,13 @@ There is a single backplane for all the 6U+ cards. The top DIN 41612 connector h
 
 (**) This card has a 2x32 connector on the bottom backplane but no pin seems connected to any PCB trace.
 
+### Inter-crate cabling
+
+Each crate has a CPU, and each CPU has at least an I/O chip that connects it to another CPU.
+
+Between I/O card at 320 and at 516, there are two flat cables running from one's connector A and the other's connector B and vice versa.
+
+Do note that both flat cables are reversed on one end: pin 1 is on the top side, far from the pin 1 marking on the connector it's attached to. This is intentional, to allow 8-bit parallel data on one side to be received by the other by configuring the I/O ports in the same way at both ends.
 
 # Desk 
 
