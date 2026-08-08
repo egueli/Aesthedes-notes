@@ -1193,3 +1193,5 @@ Program-like addresses:
 * [Run the other PME 68-22 in slot 302](pme6822_302.md)
 
 * [Let the two PME boards talk to each other](link_302_504.md)
+
+* [Figure out how the keyboard input works](keyboard.md)
