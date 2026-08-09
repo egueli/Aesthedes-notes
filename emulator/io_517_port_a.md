@@ -27,4 +27,23 @@ Then, it polls the port A status register:
 
 Looks like it expects some incoming data on port A, strobed on CA1. That's offset 0x000ba446 in `fcontrol` process.
 
-By stepping through instructions, it looks like it expects a sequence of 6 or 7 bytes.
+By stepping through instructions, it looks like it expects a sequence of 6 bytes, all with MSB set. There is a timeout wait of 6.48ms (assuming a 16 MHz CPU) between two bytes; if a timeout occurs, the function returns early.
+
+Once the 6 bytes are received, the first byte is ANDed with $7C then divided by 4 (so, 5 bits) then stored to A7+$26.
+
+The lower 2 bits are shifted left by 14 bits, then added to the second byte after being shifted left by 7 bits (overwriting the least significant of the original 2 bits?) then added to the third byte.
+
+```
+00000000 11111111 22222222 33333333 44444444 55555555
+.6543210 76543210 76543210 ......10 76543210 76543210
+ |---||- -------- -------|       |- -------- -------|
+ (A7+26)       (A7+2A)                 (A7+3A)   
+
+(A7+26) = $8089912
+(A7+2A) = $80899CC
+(A7+3A) = $80899C8
+```
+
+Those look like X-Y coordinates combined with info like buttons pressed.
+
+Is that a mouse? No, it's the bitpad (aka digitizer)!!
