@@ -264,9 +264,9 @@ SN: 784 (note: I may have mixed up the SNs of 516 and 517)
 
 Connections:
 
-	A: to Digipad
-	B: to Keyboard
-	C: to Bitpad
+	A: to Bitpad (mouse)
+	B: to Keyboard LEDs
+	C: to Keyboard
 	D: unplugged
 
 ### Photos
