@@ -2,19 +2,19 @@ keycodes:
   - id: 4
     command: 0x0d4d
     led: null
-    description: null
+    description: "(no action)"
   - id: 5
     command: 0x0d51
     led: null
-    description: null
+    description: "(no action)"
   - id: 8
     command: 0x0d49
     led: null
-    description: null
+    description: "(no action)"
   - id: 11
     command: 0x09cc
     led: null
-    description: null
+    description: "(no action)"
   - id: 12
     command: 0x09c5
     led: [0x14, 0x4015, 0x4013, 0x4012]
@@ -26,11 +26,11 @@ keycodes:
   - id: 14
     command: 0x09c9
     led: null
-    description: null
+    description: "(no action)"
   - id: 15
     command: 0x09cb
     led: null
-    description: null
+    description: "(no action)"
   - id: 18
     command: 0x0a8e
     led: [0xd, 0x14b, 0x14d, 0x331, 0x308, 0x30a, 0x38a, 0x388, 0x398, 0x3a8]
@@ -38,7 +38,7 @@ keycodes:
   - id: 19
     command: 0x0a94
     led: null
-    description: null
+    description: "(no action)"
   - id: 20
     command: 0x0a8d
     led: [0x4, 0x4003, 0x4000, 0x400a, 0x400b]
@@ -46,43 +46,43 @@ keycodes:
   - id: 21
     command: 0x0a91
     led: null
-    description: null
+    description: "(no action)"
   - id: 22
     command: 0x0a92
     led: null
-    description: null
+    description: "(no action)"
   - id: 23
     command: 0x0a93
     led: null
-    description: null
+    description: "(no action)"
   - id: 36
     command: 0x0d4e
     led: null
-    description: null
+    description: "(no action)"
   - id: 37
     command: 0x0d52
     led: null
-    description: null
+    description: "(no action)"
   - id: 40
     command: 0x0d4a
     led: null
-    description: null
+    description: "(no action)"
   - id: 68
     command: 0x0d4f
     led: null
-    description: null
+    description: "(no action)"
   - id: 69
     command: 0x0d54
     led: null
-    description: null
+    description: "(no action)"
   - id: 72
     command: 0x0d4b
     led: null
-    description: null
+    description: "(no action)"
   - id: 76
     command: 0x09c7
     led: null
-    description: null
+    description: "(no action)"
   - id: 77
     command: 0x09c8
     led: [0x14, 0x15, 0x4013, 0x12]
@@ -90,7 +90,7 @@ keycodes:
   - id: 78
     command: 0x09ca
     led: null
-    description: null
+    description: "(no action)"
   - id: 82
     command: 0x0a9d
     led: [0x4, 0x4003, 0x4000, 0xa, 0x400b]
@@ -102,15 +102,15 @@ keycodes:
   - id: 84
     command: 0x0a97
     led: null
-    description: null
+    description: "Replay Current Task"
   - id: 85
     command: 0x0a98
     led: null
-    description: null
+    description: "(no action)"
   - id: 86
     command: 0x0a9a
     led: null
-    description: null
+    description: "(no action)"
   - id: 87
     command: 0x0a9e
     led: [0x4004, 0x4003, 0x0, 0xa, 0x400b]
@@ -118,15 +118,15 @@ keycodes:
   - id: 100
     command: 0x0d50
     led: null
-    description: null
+    description: "(no action)"
   - id: 104
     command: 0x0d4c
     led: null
-    description: null
+    description: "(no action)"
   - id: 118
     command: 0x0a99
     led: null
-    description: null
+    description: "(no action)"
   - id: 196
     command: 0x070f
     led: [0xc3, 0xc3]
@@ -134,19 +134,19 @@ keycodes:
   - id: 197
     command: 0x0710
     led: null
-    description: null
+    description: "Select Toolstrength Frame Buffer"
   - id: 198
     command: 0x0715
     led: [0xc2, 0xc2]
-    description: "Select Toolstrength Frame Buffer"
+    description: "(shows \"Press ENTER to continue\")"
   - id: 199
     command: 0x0f3f
     led: null
-    description: null
+    description: "(no action)"
   - id: 200
     command: 0x070e
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 201
     command: 0x070d
     led: null
@@ -166,7 +166,7 @@ keycodes:
   - id: 206
     command: 0x0709
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 207
     command: 0x070a
     led: null
@@ -178,7 +178,7 @@ keycodes:
   - id: 210
     command: 0x06b2
     led: null
-    description: null
+    description: "(no action)"
   - id: 211
     command: 0x06a7
     led: null
@@ -186,7 +186,7 @@ keycodes:
   - id: 212
     command: 0x0ed9
     led: null
-    description: null
+    description: "(no action)"
   - id: 213
     command: 0x0edc
     led: null
@@ -194,7 +194,7 @@ keycodes:
   - id: 215
     command: 0x06b1
     led: null
-    description: null
+    description: "(no action)"
   - id: 260
     command: 0x0716
     led: null
@@ -202,7 +202,7 @@ keycodes:
   - id: 261
     command: 0x0717
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 262
     command: 0x0713
     led: null
@@ -218,7 +218,7 @@ keycodes:
   - id: 265
     command: 0x0721
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 266
     command: 0x0720
     led: null
@@ -230,7 +230,7 @@ keycodes:
   - id: 268
     command: 0x0e15
     led: null
-    description: null
+    description: "(no action)"
   - id: 270
     command: 0x071d
     led: null
@@ -238,7 +238,7 @@ keycodes:
   - id: 271
     command: 0x071e
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 272
     command: 0x0e12
     led: null
@@ -246,7 +246,7 @@ keycodes:
   - id: 274
     command: 0x06b3
     led: null
-    description: null
+    description: "(no action)"
   - id: 275
     command: 0x06a5
     led: null
@@ -254,7 +254,7 @@ keycodes:
   - id: 276
     command: 0x0eda
     led: null
-    description: null
+    description: "(no action)"
   - id: 277
     command: 0x0edd
     led: null
@@ -262,7 +262,7 @@ keycodes:
   - id: 279
     command: 0x06af
     led: null
-    description: null
+    description: "(no action)"
   - id: 324
     command: 0x072b
     led: null
@@ -270,7 +270,7 @@ keycodes:
   - id: 328
     command: 0x072a
     led: null
-    description: null
+    description: "Display : FrameBuffer + Levels"
   - id: 329
     command: 0x0728
     led: null
