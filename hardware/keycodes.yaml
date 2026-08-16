@@ -158,7 +158,7 @@ keycodes:
   - id: 203
     command: 0x070b
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 204
     command: 0x0e14
     led: null
@@ -226,7 +226,7 @@ keycodes:
   - id: 267
     command: 0x071f
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 268
     command: 0x0e15
     led: null
@@ -274,11 +274,11 @@ keycodes:
   - id: 329
     command: 0x0728
     led: null
-    description: null
+    description: "Display : FrameBuffer"
   - id: 357
     command: 0x072c
     led: null
-    description: null
+    description: "Display : FrameBuffer + (Camera Outside)"
   - id: 358
     command: 0x0714
     led: null
