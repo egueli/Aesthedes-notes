@@ -294,7 +294,7 @@ keycodes:
   - id: 363
     command: 0x072e
     led: null
-    description: null
+    description: "Display : Levels + (Camera Outside)"
   - id: 366
     command: 0x0727
     led: null
