@@ -298,11 +298,11 @@ keycodes:
   - id: 366
     command: 0x0727
     led: null
-    description: null
+    description: "Display : Level Colours"
   - id: 367
     command: 0x072d
     led: null
-    description: null
+    description: "Display : Levels + (Camera Inside)"
   - id: 368
     command: 0x0e13
     led: null
