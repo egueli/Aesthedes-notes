@@ -72,6 +72,15 @@ def print_c_array(pairs: list[tuple[int, int]]) -> None:
     print("};")
 
 
+def print_yaml(pairs: list[tuple[int, int]]) -> None:
+    print("keycodes:")
+    for keycode, command in pairs:
+        print(f"  - id: {keycode}")
+        print(f"    command: {command:#06x}")
+        print(f"    led: null")
+        print(f"    description: null")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Read a 16-bit keycode table and print non-0xFFFF mappings."
@@ -85,9 +94,9 @@ def main() -> None:
     parser.add_argument(
         "-f",
         "--format",
-        choices=("csv", "markdown", "c"),
+        choices=("csv", "markdown", "c", "yaml"),
         default="csv",
-        help="Output format: csv (default), markdown, or c",
+        help="Output format: CSV (default), Markdown, C array or YAML",
     )
     parser.add_argument(
         "-u",
@@ -114,8 +123,10 @@ def main() -> None:
         print_csv(pairs)
     elif args.format == "markdown":
         print_markdown(pairs)
-    else:
+    elif args.format == "c":
         print_c_array(pairs)
+    else:
+        print_yaml(pairs)
 
 
 if __name__ == "__main__":
