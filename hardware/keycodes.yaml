@@ -210,7 +210,7 @@ keycodes:
   - id: 263
     command: 0x0f3d
     led: null
-    description: null
+    description: (no action)
   - id: 264
     command: 0x0722
     led: null
@@ -242,7 +242,7 @@ keycodes:
   - id: 272
     command: 0x0e12
     led: null
-    description: null
+    description: "(empty Done)"
   - id: 274
     command: 0x06b3
     led: null
@@ -282,15 +282,15 @@ keycodes:
   - id: 358
     command: 0x0714
     led: null
-    description: null
+    description: "(flickers Display frame buffer before modification)"
   - id: 359
     command: 0x0f3e
     led: null
-    description: null
+    description: "(no action)"
   - id: 362
     command: 0x0729
     led: null
-    description: null
+    description: "Display : Camera"
   - id: 363
     command: 0x072e
     led: null
