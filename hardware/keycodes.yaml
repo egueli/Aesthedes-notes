@@ -306,107 +306,107 @@ keycodes:
   - id: 368
     command: 0x0e13
     led: null
-    description: null
+    description: "(empty Done)"
   - id: 370
     command: 0x06b4
     led: null
-    description: null
+    description: "(no action)"
   - id: 371
     command: 0x06a6
     led: null
-    description: null
+    description: "Define Grid Size"
   - id: 372
     command: 0x0edb
     led: null
-    description: null
+    description: "(scrolls commands up)"
   - id: 373
     command: 0x0ede
     led: null
-    description: null
+    description: "(no action)"
   - id: 375
     command: 0x06b0
     led: null
-    description: null
+    description: "Define Gravity"
   - id: 513
     command: 0x044d
     led: null
-    description: null
+    description: "Layer 1"
   - id: 514
     command: 0x044c
     led: null
-    description: null
+    description: "Layer 0"
   - id: 516
     command: 0x01fc
     led: null
-    description: null
+    description: "(no action)"
   - id: 518
     command: 0x08a0
     led: null
-    description: null
+    description: "(no action)"
   - id: 519
     command: 0x0899
     led: null
-    description: null
+    description: "(no action)"
   - id: 520
     command: 0x01fb
     led: null
-    description: null
+    description: "(no action)"
   - id: 521
     command: 0x01fd
     led: null
-    description: null
+    description: "(no action)"
   - id: 522
     command: 0x07a5
     led: null
-    description: null
+    description: "(no action)"
   - id: 523
     command: 0x01f9
     led: null
-    description: null
+    description: "(scrolls commands up)"
   - id: 524
     command: 0x08fd
     led: null
-    description: null
+    description: "Same X Points"
   - id: 525
     command: 0x08ff
     led: null
-    description: null
+    description: "Same Y Points"
   - id: 526
     command: 0x0905
     led: null
-    description: null
+    description: "(scrolls commands up)"
   - id: 529
     command: 0x07df
     led: null
-    description: null
+    description: "Connect Points"
   - id: 530
     command: 0x07db
     led: null
-    description: null
+    description: "Connect Chain"
   - id: 531
     command: 0x07e5
     led: null
-    description: null
+    description: "Cut By Cursor"
   - id: 532
     command: 0x0dad
     led: null
-    description: null
+    description: "Dimension LL"
   - id: 533
     command: 0x0daf
     led: null
-    description: null
+    description: "Dimension LL"
   - id: 535
     command: 0x07d1
     led: null
-    description: null
+    description: "Union"
   - id: 545
     command: 0x044f
     led: null
-    description: null
+    description: "Layer 3"
   - id: 546
     command: 0x044e
     led: null
-    description: null
+    description: "Layer 2"
   - id: 548
     command: 0x0034
     led: null
@@ -418,7 +418,7 @@ keycodes:
   - id: 550
     command: 0x08a1
     led: null
-    description: null
+    description: "(shows Display frame buffer before modification)"
   - id: 551
     command: 0x089a
     led: null
@@ -442,11 +442,11 @@ keycodes:
   - id: 556
     command: 0x08fe
     led: null
-    description: null
+    description: "Same X Object"
   - id: 557
     command: 0x0900
     led: null
-    description: null
+    description: "Same Y Object"
   - id: 558
     command: 0x0906
     led: null
@@ -458,31 +458,31 @@ keycodes:
   - id: 562
     command: 0x07dd
     led: null
-    description: null
+    description: "Connect By Line"
   - id: 563
     command: 0x07e7
     led: null
-    description: null
+    description: "Cut By Line"
   - id: 564
     command: 0x0db0
     led: null
-    description: null
+    description: "Dimension PP"
   - id: 565
     command: 0x0db1
     led: null
-    description: null
+    description: "Dimension PP"
   - id: 567
     command: 0x07d2
     led: null
-    description: null
+    description: "Intersection"
   - id: 577
     command: 0x0451
     led: null
-    description: null
+    description: "Layer 5"
   - id: 578
     command: 0x0450
     led: null
-    description: null
+    description: "Layer 4"
   - id: 580
     command: 0x0035
     led: null
@@ -502,11 +502,11 @@ keycodes:
   - id: 609
     command: 0x0453
     led: null
-    description: null
+    description: "Layer 7"
   - id: 610
     command: 0x0452
     led: null
-    description: null
+    description: "Layer 6"
   - id: 612
     command: 0x0036
     led: null
@@ -518,11 +518,11 @@ keycodes:
   - id: 614
     command: 0x089d
     led: null
-    description: null
+    description: "Measure Surface"
   - id: 615
     command: 0x089b
     led: null
-    description: null
+    description: "Measure Point to Object"
   - id: 616
     command: 0x0039
     led: null
@@ -542,7 +542,7 @@ keycodes:
   - id: 622
     command: 0x0907
     led: null
-    description: null
+    description: "Point on Point"
   - id: 625
     command: 0x07ea
     led: null
@@ -554,19 +554,19 @@ keycodes:
   - id: 627
     command: 0x07e8
     led: null
-    description: null
+    description: "Cut By Spline"
   - id: 628
     command: 0x0dae
     led: null
-    description: null
+    description: "Dimension LL"
   - id: 629
     command: 0x0db2
     led: null
-    description: null
+    description: "Dimension PP"
   - id: 631
     command: 0x07d3
     led: null
-    description: null
+    description: "Difference"
   - id: 641
     command: 0x0455
     led: null
@@ -582,11 +582,11 @@ keycodes:
   - id: 646
     command: 0x089e
     led: null
-    description: null
+    description: "Measure Volume"
   - id: 647
     command: 0x089f
     led: null
-    description: null
+    description: "Define Scale"
   - id: 648
     command: 0x01f7
     led: null
@@ -614,19 +614,19 @@ keycodes:
   - id: 654
     command: 0x0908
     led: null
-    description: null
+    description: "Object on Point"
   - id: 657
     command: 0x07a2
     led: null
-    description: null
+    description: "Change Starting Point"
   - id: 658
     command: 0x07dc
     led: null
-    description: null
+    description: "Connect Object"
   - id: 659
     command: 0x07e6
     led: null
-    description: null
+    description: "Cut By Object"
   - id: 660
     command: 0x0db3
     led: null
@@ -634,7 +634,7 @@ keycodes:
   - id: 661
     command: 0x0db4
     led: null
-    description: null
+    description: "(shows Gap)"
   - id: 663
     command: 0x07d4
     led: null
@@ -642,11 +642,11 @@ keycodes:
   - id: 673
     command: 0x0457
     led: null
-    description: null
+    description: "Layer 11"
   - id: 674
     command: 0x0456
     led: null
-    description: null
+    description: "Layer 10"
   - id: 676
     command: 0x07aa
     led: null
@@ -714,11 +714,11 @@ keycodes:
   - id: 705
     command: 0x0459
     led: null
-    description: null
+    description: "Layer 13"
   - id: 706
     command: 0x0458
     led: null
-    description: null
+    description: "Layer 12"
   - id: 708
     command: 0x07ac
     led: null
@@ -786,11 +786,11 @@ keycodes:
   - id: 727
     command: 0x0afb
     led: null
-    description: null
+    description: "Layer 15"
   - id: 737
     command: 0x045b
     led: null
-    description: null
+    description: "Layer 14"
   - id: 738
     command: 0x045a
     led: null
@@ -862,11 +862,11 @@ keycodes:
   - id: 769
     command: 0x045d
     led: null
-    description: null
+    description: "Layer 17"
   - id: 770
     command: 0x045c
     led: null
-    description: null
+    description: "Layer 16"
   - id: 772
     command: 0x0797
     led: null
@@ -942,7 +942,7 @@ keycodes:
   - id: 1029
     command: 0x00f0
     led: null
-    description: null
+    description: "CTL"
   - id: 1030
     command: 0x00f3
     led: null
@@ -950,7 +950,7 @@ keycodes:
   - id: 1031
     command: 0x00f2
     led: null
-    description: null
+    description: "CAP"
   - id: 1032
     command: 0x04f0
     led: null
