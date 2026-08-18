@@ -650,19 +650,19 @@ keycodes:
   - id: 676
     command: 0x07aa
     led: null
-    description: null
+    description: "Barcodes"
   - id: 677
     command: 0x07a3
     led: null
-    description: null
+    description: "Draw Circle"
   - id: 678
     command: 0x079a
     led: null
-    description: null
+    description: "Draw Rectangle"
   - id: 679
     command: 0x0799
     led: null
-    description: null
+    description: "Draw Polygon"
   - id: 680
     command: 0x0777
     led: null
@@ -786,15 +786,15 @@ keycodes:
   - id: 727
     command: 0x0afb
     led: null
-    description: "Layer 15"
+    description: null
   - id: 737
     command: 0x045b
     led: null
-    description: "Layer 14"
+    description: "Layer 15"
   - id: 738
     command: 0x045a
     led: null
-    description: null
+    description: "Layer 14"
   - id: 740
     command: 0x0961
     led: null
@@ -946,11 +946,11 @@ keycodes:
   - id: 1030
     command: 0x00f3
     led: null
-    description: null
+    description: "CAP"
   - id: 1031
     command: 0x00f2
     led: null
-    description: "CAP"
+    description: null
   - id: 1032
     command: 0x04f0
     led: null
