@@ -422,23 +422,23 @@ keycodes:
   - id: 551
     command: 0x089a
     led: null
-    description: null
+    description: "Measure Perimeter"
   - id: 552
     command: 0x0037
     led: null
-    description: null
+    description: "(no action)"
   - id: 553
     command: 0x0259
     led: null
-    description: null
+    description: "(no action)"
   - id: 554
     command: 0x01f5
     led: null
-    description: null
+    description: "(no action)"
   - id: 555
     command: 0x0209
     led: null
-    description: null
+    description: "(no action)"
   - id: 556
     command: 0x08fe
     led: null
@@ -450,11 +450,11 @@ keycodes:
   - id: 558
     command: 0x0906
     led: null
-    description: null
+    description: "(no action)"
   - id: 561
     command: 0x07e9
     led: null
-    description: null
+    description: "(no action)"
   - id: 562
     command: 0x07dd
     led: null
@@ -486,19 +486,19 @@ keycodes:
   - id: 580
     command: 0x0035
     led: null
-    description: null
+    description: "(no action)"
   - id: 581
     command: 0x0032
     led: null
-    description: null
+    description: "(no action)"
   - id: 584
     command: 0x0038
     led: null
-    description: null
+    description: "(no action)"
   - id: 585
     command: 0x0030
     led: null
-    description: null
+    description: "(no action)"
   - id: 609
     command: 0x0453
     led: null
@@ -510,11 +510,11 @@ keycodes:
   - id: 612
     command: 0x0036
     led: null
-    description: null
+    description: "(no action)"
   - id: 613
     command: 0x0033
     led: null
-    description: null
+    description: "(no action)"
   - id: 614
     command: 0x089d
     led: null
@@ -526,19 +526,19 @@ keycodes:
   - id: 616
     command: 0x0039
     led: null
-    description: null
+    description: "(no action)"
   - id: 617
     command: 0x002e
     led: null
-    description: null
+    description: "(no action)"
   - id: 620
     command: 0x0901
     led: null
-    description: null
+    description: "(no action)"
   - id: 621
     command: 0x0902
     led: null
-    description: null
+    description: "(no action)"
   - id: 622
     command: 0x0907
     led: null
@@ -546,11 +546,11 @@ keycodes:
   - id: 625
     command: 0x07ea
     led: null
-    description: null
+    description: "(no action)"
   - id: 626
     command: 0x07de
     led: null
-    description: null
+    description: "(no action)"
   - id: 627
     command: 0x07e8
     led: null
@@ -570,15 +570,15 @@ keycodes:
   - id: 641
     command: 0x0455
     led: null
-    description: null
+    description: "Layer 9"
   - id: 642
     command: 0x0454
     led: null
-    description: null
+    description: "Layer 8"
   - id: 644
     command: 0x020a
     led: null
-    description: null
+    description: "L99"
   - id: 646
     command: 0x089e
     led: null
@@ -590,27 +590,27 @@ keycodes:
   - id: 648
     command: 0x01f7
     led: null
-    description: null
+    description: "(no action)"
   - id: 649
     command: 0x01f8
     led: null
-    description: null
+    description: "(no action)"
   - id: 650
     command: 0x020b
     led: null
-    description: null
+    description: "L=1"
   - id: 651
     command: 0x01fa
     led: null
-    description: null
+    description: "(no action)"
   - id: 652
     command: 0x0903
     led: null
-    description: null
+    description: "(no action)"
   - id: 653
     command: 0x0904
     led: null
-    description: null
+    description: "(no action)"
   - id: 654
     command: 0x0908
     led: null
@@ -630,7 +630,7 @@ keycodes:
   - id: 660
     command: 0x0db3
     led: null
-    description: null
+    description: "(no action)"
   - id: 661
     command: 0x0db4
     led: null
@@ -638,7 +638,7 @@ keycodes:
   - id: 663
     command: 0x07d4
     led: null
-    description: null
+    description: "Regions"
   - id: 673
     command: 0x0457
     led: null
@@ -1022,7 +1022,7 @@ keycodes:
   - id: 1065
     command: 0x04f3
     led: null
-    description: null
+    description: "Color page: Next"
   - id: 1068
     command: 0x04e5
     led: null
