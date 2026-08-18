@@ -666,11 +666,11 @@ keycodes:
   - id: 680
     command: 0x0777
     led: null
-    description: null
+    description: "Copy"
   - id: 681
     command: 0x07a4
     led: null
-    description: null
+    description: "Draw Spiral"
   - id: 682
     command: 0x07a8
     led: null
