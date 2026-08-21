@@ -698,7 +698,7 @@ keycodes:
   - id: 690
     command: 0x0786
     led: null
-    description: null
+    description: "(no action)"
   - id: 692
     command: 0x0835
     led: null
@@ -706,11 +706,11 @@ keycodes:
   - id: 694
     command: 0x0afc
     led: null
-    description: "(causes GS fatal error)"
+    description: "(no action)"
   - id: 695
     command: 0x0afa
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 705
     command: 0x0459
     led: null
@@ -722,11 +722,11 @@ keycodes:
   - id: 708
     command: 0x07ac
     led: null
-    description: null
+    description: "(no action)"
   - id: 709
     command: 0x07ab
     led: null
-    description: null
+    description: "(no action)"
   - id: 710
     command: 0x07a0
     led: null
@@ -746,11 +746,11 @@ keycodes:
   - id: 714
     command: 0x0787
     led: null
-    description: "(causes GS fatal error)"
+    description: "(no action)"
   - id: 715
     command: 0x0584
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 716
     command: 0x078f
     led: null
@@ -782,11 +782,11 @@ keycodes:
   - id: 726
     command: 0x0afd
     led: null
-    description: null
+    description: "(no action)"
   - id: 727
     command: 0x0afb
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 737
     command: 0x045b
     led: null
@@ -822,11 +822,11 @@ keycodes:
   - id: 746
     command: 0x01f6
     led: null
-    description: "(causes GS fatal error)"
+    description: "(no action)"
   - id: 747
     command: 0x0583
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 748
     command: 0x076d
     led: null
@@ -850,7 +850,7 @@ keycodes:
   - id: 757
     command: 0x057e
     led: null
-    description: null
+    description: "(no action)"
   - id: 758
     command: 0x0af2
     led: null
@@ -858,7 +858,7 @@ keycodes:
   - id: 759
     command: 0x0af4
     led: null
-    description: null
+    description: "Modify Window Chain"
   - id: 769
     command: 0x045d
     led: null
@@ -898,11 +898,11 @@ keycodes:
   - id: 779
     command: 0x0585
     led: null
-    description: "Scale Object"
+    description: "(no action)"
   - id: 780
     command: 0x076e
     led: null
-    description: "Set Origin"
+    description: "Scale Object"
   - id: 781
     command: 0x076f
     led: null
@@ -910,7 +910,7 @@ keycodes:
   - id: 782
     command: 0x0781
     led: null
-    description: null
+    description: "Set Origin"
   - id: 785
     command: 0x0788
     led: null
@@ -926,11 +926,11 @@ keycodes:
   - id: 789
     command: 0x083c
     led: null
-    description: null
+    description: "(no action)"
   - id: 790
     command: 0x0af3
     led: null
-    description: null
+    description: "Modify Window Chain"
   - id: 791
     command: 0x0af5
     led: null
@@ -946,11 +946,11 @@ keycodes:
   - id: 1030
     command: 0x00f3
     led: null
-    description: "CAP"
+    description: null
   - id: 1031
     command: 0x00f2
     led: null
-    description: null
+    description: "CAP"
   - id: 1032
     command: 0x04f0
     led: null
@@ -1550,139 +1550,139 @@ keycodes:
   - id: 1485
     command: 0x066b
     led: null
-    description: null
+    description: "(prompts \"Files to delete :\")"
   - id: 1486
     command: 0x066d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1489
     command: 0x0e7d
     led: null
-    description: null
+    description: "Remove unused libraries"
   - id: 1490
     command: 0x0e79
     led: null
-    description: null
+    description: "Remove Item"
   - id: 1491
     command: 0x0e77
     led: null
-    description: null
+    description: "Add Item"
   - id: 1494
     command: 0x058f
     led: null
-    description: null
+    description: "Level Scan"
   - id: 1540
     command: 0x002b
     led: null
-    description: null
+    description: "(no action)"
   - id: 1541
     command: 0x002d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1542
     command: 0x002a
     led: null
-    description: null
+    description: "(no action)"
   - id: 1543
     command: 0x002f
     led: null
-    description: null
+    description: "(no action)"
   - id: 1544
     command: 0x0676
     led: null
-    description: null
+    description: "(no action, but lots of memory reads around 0880xxxx)"
   - id: 1545
     command: 0x064f
     led: null
-    description: null
+    description: "(no action)"
   - id: 1546
     command: 0x064e
     led: null
-    description: null
+    description: "(no action)"
   - id: 1547
     command: 0x064d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1548
     command: 0x0644
     led: null
-    description: null
+    description: "(no action)"
   - id: 1549
     command: 0x066c
     led: null
-    description: null
+    description: "(no action)"
   - id: 1554
     command: 0x0e7a
     led: null
-    description: null
+    description: "Rename Item"
   - id: 1555
     command: 0x0e78
     led: null
-    description: null
+    description: "Get Item For Update"
   - id: 1558
     command: 0x0591
     led: null
-    description: null
+    description: "(no action)"
   - id: 1572
     command: 0x0045
     led: null
-    description: null
+    description: "(no action)"
   - id: 1573
     command: 0x025b
     led: null
-    description: null
+    description: "(no action)"
   - id: 1574
     command: 0x0265
     led: null
-    description: null
+    description: "(no action)"
   - id: 1575
     command: 0x0266
     led: null
-    description: null
+    description: "(no action)"
   - id: 1590
     command: 0x0590
     led: null
-    description: null
+    description: "(no action)"
   - id: 1604
     command: 0x025e
     led: null
-    description: null
+    description: "(no action)"
   - id: 1605
     command: 0x025f
     led: null
-    description: null
+    description: "(shows table with 0-7 and 0.00; other keystrokes may cause no action)"
   - id: 1606
     command: 0x0260
     led: null
-    description: null
+    description: "(no action)"
   - id: 1607
     command: 0x003d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1804
     command: 0x0537
     led: null
-    description: null
+    description: "(no action)"
   - id: 1806
     command: 0x0472
     led: null
-    description: null
+    description: "Layer 38"
   - id: 1807
     command: 0x0473
     led: null
-    description: null
+    description: "Layer 39"
   - id: 1808
     command: 0x0523
     led: null
-    description: null
+    description: "(no action)"
   - id: 1809
     command: 0x0529
     led: null
-    description: null
+    description: "(no action)"
   - id: 1810
     command: 0x052f
     led: null
-    description: null
+    description: "(no action)"
   - id: 1836
     command: 0x0538
     led: null
