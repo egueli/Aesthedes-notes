@@ -410,11 +410,11 @@ keycodes:
   - id: 548
     command: 0x0034
     led: null
-    description: null
+    description: "(no action)"
   - id: 549
     command: 0x0031
     led: null
-    description: null
+    description: "(no action)"
   - id: 550
     command: 0x08a1
     led: null
@@ -674,7 +674,7 @@ keycodes:
   - id: 682
     command: 0x07a8
     led: null
-    description: null
+    description: "Modify Spiral"
   - id: 683
     command: 0x0586
     led: null
@@ -682,19 +682,19 @@ keycodes:
   - id: 684
     command: 0x078b
     led: null
-    description: null
+    description: "Move Point"
   - id: 685
     command: 0x077a
     led: null
-    description: null
+    description: "Copy and Rotate"
   - id: 686
     command: 0x077b
     led: null
-    description: null
+    description: "Copy and OutLine"
   - id: 689
     command: 0x078d
     led: null
-    description: null
+    description: "Modify By Point"
   - id: 690
     command: 0x0786
     led: null
@@ -702,11 +702,11 @@ keycodes:
   - id: 692
     command: 0x0835
     led: null
-    description: null
+    description: "Display"
   - id: 694
     command: 0x0afc
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 695
     command: 0x0afa
     led: null
@@ -730,23 +730,23 @@ keycodes:
   - id: 710
     command: 0x07a0
     led: null
-    description: null
+    description: "Midpoint"
   - id: 711
     command: 0x0795
     led: null
-    description: null
+    description: "Connected Lines"
   - id: 712
     command: 0x0782
     led: null
-    description: null
+    description: "Fill Object"
   - id: 713
     command: 0x0783
     led: null
-    description: null
+    description: "Unfill Object"
   - id: 714
     command: 0x0787
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 715
     command: 0x0584
     led: null
@@ -758,7 +758,7 @@ keycodes:
   - id: 717
     command: 0x0778
     led: null
-    description: null
+    description: "Copy and Move"
   - id: 718
     command: 0x0779
     led: null
@@ -766,19 +766,19 @@ keycodes:
   - id: 721
     command: 0x078e
     led: null
-    description: null
+    description: "Modify By Line"
   - id: 722
     command: 0x0771
     led: null
-    description: null
+    description: "OutLine Spline"
   - id: 724
     command: 0x0836
     led: null
-    description: null
+    description: "Display"
   - id: 725
     command: 0x083a
     led: null
-    description: null
+    description: "Measure Gravity Center"
   - id: 726
     command: 0x0afd
     led: null
@@ -802,27 +802,27 @@ keycodes:
   - id: 741
     command: 0x0962
     led: null
-    description: null
+    description: "UnGroup"
   - id: 742
     command: 0x0770
     led: null
-    description: null
+    description: "OutLine"
   - id: 743
     command: 0x0791
     led: null
-    description: null
+    description: "Insert Point"
   - id: 744
     command: 0x0963
     led: null
-    description: null
+    description: "Flatten"
   - id: 745
     command: 0x0964
     led: null
-    description: null
+    description: "Add To Group"
   - id: 746
     command: 0x01f6
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 747
     command: 0x0583
     led: null
@@ -834,19 +834,19 @@ keycodes:
   - id: 749
     command: 0x078c
     led: null
-    description: null
+    description: "Move Point On Line"
   - id: 753
     command: 0x0793
     led: null
-    description: null
+    description: "Insert Corner"
   - id: 754
     command: 0x0785
     led: null
-    description: null
+    description: "Unspline Object"
   - id: 756
     command: 0x0839
     led: null
-    description: null
+    description: "Display"
   - id: 757
     command: 0x057e
     led: null
@@ -854,7 +854,7 @@ keycodes:
   - id: 758
     command: 0x0af2
     led: null
-    description: null
+    description: "Modify Window Chain"
   - id: 759
     command: 0x0af4
     led: null
@@ -870,51 +870,51 @@ keycodes:
   - id: 772
     command: 0x0797
     led: null
-    description: null
+    description: "Digitize"
   - id: 773
     command: 0x07a1
     led: null
-    description: null
+    description: "Change Direction"
   - id: 774
     command: 0x079f
     led: null
-    description: null
+    description: "Divide Line"
   - id: 775
     command: 0x0792
     led: null
-    description: null
+    description: "Make Corner"
   - id: 776
     command: 0x0838
     led: null
-    description: null
+    description: "Display"
   - id: 777
     command: 0x07a6
     led: null
-    description: null
+    description: "Inbetween"
   - id: 778
     command: 0x0798
     led: null
-    description: null
+    description: "Sketch"
   - id: 779
     command: 0x0585
     led: null
-    description: null
+    description: "Scale Object"
   - id: 780
     command: 0x076e
     led: null
-    description: null
+    description: "Set Origin"
   - id: 781
     command: 0x076f
     led: null
-    description: null
+    description: "Smooth Object"
   - id: 782
     command: 0x0781
     led: null
-    description: null
+    description: "Spline Object"
   - id: 785
     command: 0x0788
     led: null
-    description: null
+    description: "Display"
   - id: 786
     command: 0x0784
     led: null
@@ -930,7 +930,7 @@ keycodes:
   - id: 790
     command: 0x0af3
     led: null
-    description: null
+    description: "Modify Window Chain"
   - id: 791
     command: 0x0af5
     led: null
