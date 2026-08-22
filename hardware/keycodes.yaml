@@ -966,27 +966,27 @@ keycodes:
   - id: 1035
     command: 0x04f8
     led: null
-    description: null
+    description: "Color: set memory 1"
   - id: 1036
     command: 0x04de
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1037
     command: 0x04ed
     led: null
-    description: null
+    description: "(redraws Data Color Monitor)"
   - id: 1038
     command: 0x04b1
     led: null
-    description: null
+    description: "(sets Brightness to 100, then freezes)"
   - id: 1039
     command: 0x04ef
     led: null
-    description: null
+    description: "(no action)"
   - id: 1040
     command: 0x04d6
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1041
     command: 0x04ce
     led: null
@@ -1062,7 +1062,7 @@ keycodes:
   - id: 1097
     command: 0x04f7
     led: null
-    description: null
+    description: "(\"Color: get memory 2\", then system freezes"
   - id: 1098
     command: 0x04fd
     led: null
@@ -1358,23 +1358,23 @@ keycodes:
   - id: 1256
     command: 0x0507
     led: null
-    description: null
+    description: "(no action)"
   - id: 1260
     command: 0x04e4
     led: null
-    description: null
+    description: "(sets Brightness to 100, then freezes)"
   - id: 1264
     command: 0x04dc
     led: null
-    description: null
+    description: "(sets Saturation to 100, then freezes)"
   - id: 1265
     command: 0x04d4
     led: null
-    description: null
+    description: "(sets Hue to 300, then freezes)"
   - id: 1266
     command: 0x0501
     led: null
-    description: null
+    description: "(shows \"Press ENTER to confirm\")"
   - id: 1268
     command: 0x0486
     led: null
@@ -1418,35 +1418,35 @@ keycodes:
   - id: 1352
     command: 0x0673
     led: null
-    description: null
+    description: "(no action)"
   - id: 1354
     command: 0x0656
     led: null
-    description: null
+    description: "From Disk"
   - id: 1355
     command: 0x0655
     led: null
-    description: null
+    description: "To Disk"
   - id: 1356
     command: 0x0641
     led: null
-    description: null
+    description: "(shows files list in Data Disk Monitor)"
   - id: 1357
     command: 0x0645
     led: null
-    description: null
+    description: "(no action)"
   - id: 1358
     command: 0x064b
     led: null
-    description: null
+    description: "(no action)"
   - id: 1361
     command: 0x0e7b
     led: null
-    description: null
+    description: "List Library"
   - id: 1363
     command: 0x0e75
     led: null
-    description: null
+    description: "Copy Named Item"
   - id: 1364
     command: 0x0488
     led: null
@@ -1458,7 +1458,7 @@ keycodes:
   - id: 1366
     command: 0x058d
     led: null
-    description: null
+    description: "Level Scan"
   - id: 1380
     command: 0x0027
     led: null
@@ -1470,15 +1470,15 @@ keycodes:
   - id: 1382
     command: 0x000d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1383
     command: 0x00f6
     led: null
-    description: null
+    description: "(no action)"
   - id: 1412
     command: 0x0008
     led: null
-    description: null
+    description: "no CAP"
   - id: 1413
     command: 0x0021
     led: null
@@ -1486,31 +1486,31 @@ keycodes:
   - id: 1415
     command: 0x00f1
     led: null
-    description: null
+    description: "CAP"
   - id: 1416
     command: 0x0674
     led: null
-    description: null
+    description: "(shows \"ERROR : Unknown Error 221 (Press ENTER)\")"
   - id: 1417
     command: 0x065f
     led: null
-    description: null
+    description: "Set and Activate Trafo"
   - id: 1418
     command: 0x0650
     led: null
-    description: null
+    description: "(no action)"
   - id: 1420
     command: 0x0642
     led: null
-    description: null
+    description: "(changes page in files list)"
   - id: 1421
     command: 0x066a
     led: null
-    description: null
+    description: "(no action)"
   - id: 1422
     command: 0x064c
     led: null
-    description: null
+    description: "(no action)"
   - id: 1425
     command: 0x0e7c
     led: null
