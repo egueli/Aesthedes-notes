@@ -434,7 +434,7 @@ keycodes:
   - id: 554
     command: 0x01f5
     led: null
-    description: "(no action)"
+    description: "Enter"
   - id: 555
     command: 0x0209
     led: null
