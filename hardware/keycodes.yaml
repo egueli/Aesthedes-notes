@@ -1686,23 +1686,23 @@ keycodes:
   - id: 1836
     command: 0x0538
     led: null
-    description: null
+    description: "(no action)"
   - id: 1840
     command: 0x0524
     led: null
-    description: null
+    description: "(no action)"
   - id: 1841
     command: 0x052a
     led: null
-    description: null
+    description: "(no action)"
   - id: 1842
     command: 0x0530
     led: null
-    description: null
+    description: "(no action)"
   - id: 1868
     command: 0x0535
     led: null
-    description: null
+    description: "(no action)"
   - id: 1870
     command: 0x0470
     led: null
@@ -1714,19 +1714,19 @@ keycodes:
   - id: 1872
     command: 0x0521
     led: null
-    description: null
+    description: "(no action)"
   - id: 1873
     command: 0x0527
     led: null
-    description: null
+    description: "(no action)"
   - id: 1874
     command: 0x052d
     led: null
-    description: null
+    description: "(no action)"
   - id: 1900
     command: 0x0536
     led: null
-    description: null
+    description: "(no action)"
   - id: 1902
     command: 0x046e
     led: null
@@ -1738,19 +1738,19 @@ keycodes:
   - id: 1904
     command: 0x0522
     led: null
-    description: null
+    description: "(no action)"
   - id: 1905
     command: 0x0528
     led: null
-    description: null
+    description: "(no action)"
   - id: 1906
     command: 0x052e
     led: null
-    description: null
+    description: "(no action)"
   - id: 1932
     command: 0x0533
     led: null
-    description: null
+    description: "(no action)"
   - id: 1934
     command: 0x046c
     led: null
@@ -1762,19 +1762,19 @@ keycodes:
   - id: 1936
     command: 0x051f
     led: null
-    description: null
+    description: "(no action)"
   - id: 1937
     command: 0x0525
     led: null
-    description: null
+    description: "(no action)"
   - id: 1938
     command: 0x052b
     led: null
-    description: null
+    description: "(no action)"
   - id: 1964
     command: 0x0534
     led: null
-    description: null
+    description: "(no action)"
   - id: 1965
     command: 0x046b
     led: null
@@ -1782,15 +1782,15 @@ keycodes:
   - id: 1968
     command: 0x0520
     led: null
-    description: null
+    description: "(no action)"
   - id: 1969
     command: 0x0526
     led: null
-    description: null
+    description: "(no action)"
   - id: 1970
     command: 0x052c
     led: null
-    description: null
+    description: "(no action)"
   - id: 1971
     command: 0x046a
     led: null
@@ -1806,19 +1806,19 @@ keycodes:
   - id: 2004
     command: 0x0515
     led: null
-    description: null
+    description: "(no action)"
   - id: 2005
     command: 0x0516
     led: null
-    description: null
+    description: "(no action)"
   - id: 2006
     command: 0x0518
     led: null
-    description: null
+    description: "(no action)"
   - id: 2007
     command: 0x0517
     led: null
-    description: null
+    description: "(no action)"
   - id: 2029
     command: 0x0467
     led: null
@@ -1830,7 +1830,7 @@ keycodes:
   - id: 2038
     command: 0x0519
     led: null
-    description: null
+    description: "(no action)"
   - id: 2061
     command: 0x0465
     led: null
@@ -1842,23 +1842,23 @@ keycodes:
   - id: 2068
     command: 0x051a
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 2069
     command: 0x051b
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 2070
     command: 0x051d
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 2071
     command: 0x051c
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 2092
     command: 0x0549
     led: null
-    description: null
+    description: "(no action)"
   - id: 2093
     command: 0x0463
     led: null
@@ -1874,15 +1874,15 @@ keycodes:
   - id: 2096
     command: 0x054a
     led: null
-    description: null
+    description: "(no action)"
   - id: 2097
     command: 0x0547
     led: null
-    description: null
+    description: "(no action)"
   - id: 2098
     command: 0x0548
     led: null
-    description: null
+    description: "(no action)"
   - id: 2099
     command: 0x0462
     led: null
@@ -1890,15 +1890,15 @@ keycodes:
   - id: 2100
     command: 0x053d
     led: null
-    description: null
+    description: "(no action)"
   - id: 2101
     command: 0x053e
     led: null
-    description: null
+    description: "(no action)"
   - id: 2103
     command: 0x0545
     led: null
-    description: null
+    description: "(no action)"
   - id: 2125
     command: 0x0461
     led: null
@@ -1914,7 +1914,7 @@ keycodes:
   - id: 2128
     command: 0x0544
     led: null
-    description: null
+    description: "(no action)"
   - id: 2131
     command: 0x0460
     led: null
@@ -1922,23 +1922,23 @@ keycodes:
   - id: 2132
     command: 0x0579
     led: null
-    description: null
+    description: "(no action)"
   - id: 2133
     command: 0x057d
     led: null
-    description: null
+    description: "Transfer to Level"
   - id: 2134
     command: 0x0580
     led: null
-    description: null
+    description: "(sets LOC)"
   - id: 2135
     command: 0x057c
     led: null
-    description: null
+    description: "(no action)"
   - id: 2156
     command: 0x054b
     led: null
-    description: null
+    description: "(no action)"
   - id: 2157
     command: 0x045f
     led: null
@@ -1954,15 +1954,15 @@ keycodes:
   - id: 2160
     command: 0x0543
     led: null
-    description: null
+    description: "(no action)"
   - id: 2161
     command: 0x0542
     led: null
-    description: null
+    description: "(no action)"
   - id: 2162
     command: 0x0541
     led: null
-    description: null
+    description: "(no action)"
   - id: 2163
     command: 0x045e
     led: null
@@ -1970,171 +1970,171 @@ keycodes:
   - id: 2164
     command: 0x057a
     led: null
-    description: null
+    description: "Layer 17"
   - id: 2166
     command: 0x057f
     led: null
-    description: null
+    description: "Select Level By Object"
   - id: 2167
     command: 0x057b
     led: null
-    description: null
+    description: "(no action)"
   - id: 2182
     command: 0x0a2c
     led: null
-    description: null
+    description: "(shows \"Enter PassWord or CANCEL :\")"
   - id: 2183
     command: 0x0a2b
     led: null
-    description: null
+    description: "(no action)"
   - id: 2212
     command: 0x05e0
     led: null
-    description: null
+    description: "KILL Line"
   - id: 2214
     command: 0x0a2a
     led: null
-    description: null
+    description: "(no action)"
   - id: 2215
     command: 0x0a29
     led: null
-    description: null
+    description: "(no action)"
   - id: 2216
     command: 0x05e1
     led: null
-    description: null
+    description: "KILL Object"
   - id: 2218
     command: 0x0c84
     led: null
-    description: null
+    description: "(no action)"
   - id: 2219
     command: 0x0c87
     led: null
-    description: null
+    description: "(no action)"
   - id: 2220
     command: 0x0c2d
     led: null
-    description: null
+    description: "(no action)"
   - id: 2221
     command: 0x0c2a
     led: null
-    description: null
+    description: "(no action)"
   - id: 2222
     command: 0x0c20
     led: null
-    description: null
+    description: "(no action)"
   - id: 2224
     command: 0x0c34
     led: null
-    description: null
+    description: "(shows \"No Tasks Running\")"
   - id: 2227
     command: 0x0b58
     led: null
-    description: null
+    description: "(shows properties related to text rendering; lots of memory accesses at around 0x0880xxxx)"
   - id: 2244
     command: 0x05df
     led: null
-    description: null
+    description: "KILL Point"
   - id: 2248
     command: 0x0790
     led: null
-    description: null
+    description: "Make Point"
   - id: 2250
     command: 0x0c83
     led: null
-    description: null
+    description: "(causes lots of memory reads at 0x005xxxxx)"
   - id: 2251
     command: 0x0c86
     led: null
-    description: null
+    description: "(no action)"
   - id: 2252
     command: 0x0c2c
     led: null
-    description: null
+    description: "(no action)"
   - id: 2253
     command: 0x0c29
     led: null
-    description: null
+    description: "(no action)"
   - id: 2254
     command: 0x0c1f
     led: null
-    description: null
+    description: "(causes GS fatal error)"
   - id: 2256
     command: 0x0c33
     led: null
-    description: null
+    description: "(no action)"
   - id: 2259
     command: 0x0b57
     led: null
-    description: null
+    description: "(opens a menu about font family and spacing; lots of memory accesses at around 0x0880xxxx)"
   - id: 2262
     command: 0x0bb7
     led: null
-    description: null
+    description: "(opens a menu about outputs, params and defaults)"
   - id: 2263
     command: 0x0b59
     led: null
-    description: null
+    description: "(opens a menu about text: Edit hyphenation, Download from serial etc.)"
   - id: 2278
     command: 0x0ce8
     led: null
-    description: null
+    description: "(no action)"
   - id: 2279
     command: 0x0ce6
     led: null
-    description: null
+    description: "(opens a menu called MODEM-FUNCTIONS V2.3)"
   - id: 2312
     command: 0x05de
     led: null
-    description: null
+    description: "KILL All Levels"
   - id: 2314
     command: 0x0c82
     led: null
-    description: null
+    description: "(shows \"Interactive Vectorscan\"; unable to escape)"
   - id: 2315
     command: 0x0c85
     led: null
-    description: null
+    description: "(no action)"
   - id: 2316
     command: 0x0c2b
     led: null
-    description: null
+    description: "(no action)"
   - id: 2317
     command: 0x0c28
     led: null
-    description: null
+    description: "(no action)"
   - id: 2318
     command: 0x0c1e
     led: null
-    description: null
+    description: "(shows \"Interactive HP Plotter\"; unable to escape)"
   - id: 2320
     command: 0x0c32
     led: null
-    description: null
+    description: "(no action)"
   - id: 2323
     command: 0x0b55
     led: null
-    description: null
+    description: "(shows a menu about text spacing, incl. \"Didot  line spacing\")"
   - id: 2327
     command: 0x0b56
     led: null
-    description: null
+    description: "(shows a menu about text alignment: Left, Right, Center, Auto size, Auto space)"
   - id: 2342
     command: 0x0ce7
     led: null
-    description: null
+    description: "(no action)"
   - id: 2375
     command: 0x0ce5
     led: null
-    description: null
+    description: "(no action)"
   - id: 2376
     command: 0x05dd
     led: null
-    description: null
+    description: "KILL Level"
   - id: 2378
     command: 0x0c81
     led: null
-    description: null
+    description: "(shows \"Interactive Pixelscan\"; unable to escape)"
   - id: 2381
     command: 0x0c27
     led: null
