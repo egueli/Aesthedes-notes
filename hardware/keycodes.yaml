@@ -362,7 +362,7 @@ keycodes:
   - id: 523
     command: 0x01f9
     led: null
-    description: "(scrolls commands up)"
+    description: "ESC"
   - id: 524
     command: 0x08fd
     led: null
@@ -410,11 +410,11 @@ keycodes:
   - id: 548
     command: 0x0034
     led: null
-    description: "(no action)"
+    description: "7"
   - id: 549
     command: 0x0031
     led: null
-    description: "(no action)"
+    description: "1"
   - id: 550
     command: 0x08a1
     led: null
@@ -426,7 +426,7 @@ keycodes:
   - id: 552
     command: 0x0037
     led: null
-    description: "(no action)"
+    description: "7"
   - id: 553
     command: 0x0259
     led: null
@@ -486,19 +486,19 @@ keycodes:
   - id: 580
     command: 0x0035
     led: null
-    description: "(no action)"
+    description: "5"
   - id: 581
     command: 0x0032
     led: null
-    description: "(no action)"
+    description: "2"
   - id: 584
     command: 0x0038
     led: null
-    description: "(no action)"
+    description: "8"
   - id: 585
     command: 0x0030
     led: null
-    description: "(no action)"
+    description: "0"
   - id: 609
     command: 0x0453
     led: null
@@ -510,11 +510,11 @@ keycodes:
   - id: 612
     command: 0x0036
     led: null
-    description: "(no action)"
+    description: "6"
   - id: 613
     command: 0x0033
     led: null
-    description: "(no action)"
+    description: "3"
   - id: 614
     command: 0x089d
     led: null
@@ -526,19 +526,19 @@ keycodes:
   - id: 616
     command: 0x0039
     led: null
-    description: "(no action)"
+    description: "9"
   - id: 617
     command: 0x002e
     led: null
-    description: "(no action)"
+    description: "."
   - id: 620
     command: 0x0901
     led: null
-    description: "(no action)"
+    description: "(clears text input)"
   - id: 621
     command: 0x0902
     led: null
-    description: "(no action)"
+    description: "(clear text input)"
   - id: 622
     command: 0x0907
     led: null
@@ -1006,11 +1006,11 @@ keycodes:
   - id: 1060
     command: 0x0071
     led: null
-    description: null
+    description: "q"
   - id: 1061
     command: 0x0061
     led: null
-    description: null
+    description: "a"
   - id: 1062
     command: 0x00f4
     led: null
@@ -1018,7 +1018,7 @@ keycodes:
   - id: 1063
     command: 0x0020
     led: null
-    description: null
+    description: " "
   - id: 1065
     command: 0x04f3
     led: null
@@ -1046,15 +1046,15 @@ keycodes:
   - id: 1092
     command: 0x0077
     led: null
-    description: null
+    description: "w"
   - id: 1093
     command: 0x0073
     led: null
-    description: null
+    description: "s"
   - id: 1094
     command: 0x007a
     led: null
-    description: null
+    description: "z"
   - id: 1096
     command: 0x0502
     led: null
@@ -1114,15 +1114,15 @@ keycodes:
   - id: 1124
     command: 0x0065
     led: null
-    description: null
+    description: "e"
   - id: 1125
     command: 0x0064
     led: null
-    description: null
+    description: "d"
   - id: 1126
     command: 0x0078
     led: null
-    description: null
+    description: "x"
   - id: 1128
     command: 0x0503
     led: null
@@ -1174,15 +1174,15 @@ keycodes:
   - id: 1156
     command: 0x0072
     led: null
-    description: null
+    description: "r"
   - id: 1157
     command: 0x0066
     led: null
-    description: null
+    description: "f"
   - id: 1158
     command: 0x0063
     led: null
-    description: null
+    description: "c"
   - id: 1160
     command: 0x0505
     led: null
@@ -1242,15 +1242,15 @@ keycodes:
   - id: 1188
     command: 0x0074
     led: null
-    description: null
+    description: "t"
   - id: 1189
     command: 0x0067
     led: null
-    description: null
+    description: "g"
   - id: 1190
     command: 0x0076
     led: null
-    description: null
+    description: "v"
   - id: 1192
     command: 0x0506
     led: null
@@ -1282,15 +1282,15 @@ keycodes:
   - id: 1220
     command: 0x0079
     led: null
-    description: null
+    description: "y"
   - id: 1221
     command: 0x0068
     led: null
-    description: null
+    description: "h"
   - id: 1222
     command: 0x0062
     led: null
-    description: null
+    description: "b"
   - id: 1224
     command: 0x0504
     led: null
@@ -1346,15 +1346,15 @@ keycodes:
   - id: 1252
     command: 0x0075
     led: null
-    description: null
+    description: "u"
   - id: 1253
     command: 0x006a
     led: null
-    description: null
+    description: "j"
   - id: 1254
     command: 0x006e
     led: null
-    description: null
+    description: "n"
   - id: 1256
     command: 0x0507
     led: null
@@ -1386,35 +1386,35 @@ keycodes:
   - id: 1284
     command: 0x0069
     led: null
-    description: null
+    description: "i"
   - id: 1285
     command: 0x006b
     led: null
-    description: null
+    description: "k"
   - id: 1286
     command: 0x006d
     led: null
-    description: null
+    description: "m"
   - id: 1316
     command: 0x006f
     led: null
-    description: null
+    description: "o"
   - id: 1317
     command: 0x006c
     led: null
-    description: null
+    description: "l"
   - id: 1318
     command: 0x002c
     led: null
-    description: null
+    description: ","
   - id: 1348
     command: 0x0070
     led: null
-    description: null
+    description: "p"
   - id: 1349
     command: 0x003b
     led: null
-    description: null
+    description: ";"
   - id: 1352
     command: 0x0673
     led: null
@@ -1462,11 +1462,11 @@ keycodes:
   - id: 1380
     command: 0x0027
     led: null
-    description: null
+    description: "'"
   - id: 1381
     command: 0x003f
     led: null
-    description: null
+    description: "?"
   - id: 1382
     command: 0x000d
     led: null
@@ -1482,7 +1482,7 @@ keycodes:
   - id: 1413
     command: 0x0021
     led: null
-    description: null
+    description: "!"
   - id: 1415
     command: 0x00f1
     led: null
@@ -1514,39 +1514,39 @@ keycodes:
   - id: 1425
     command: 0x0e7c
     led: null
-    description: null
+    description: "List Library"
   - id: 1427
     command: 0x0e76
     led: null
-    description: null
+    description: "Fix Item"
   - id: 1428
     command: 0x048a
     led: null
-    description: null
+    description: "Layer 62"
   - id: 1429
     command: 0x048b
     led: null
-    description: null
+    description: "Layer 63"
   - id: 1430
     command: 0x058e
     led: null
-    description: null
+    description: "Level Scan"
   - id: 1480
     command: 0x0675
     led: null
-    description: null
+    description: "(shows \"ERROR : Unknown Error 221 (Press ENTER)\")"
   - id: 1481
     command: 0x0669
     led: null
-    description: null
+    description: "(prompts Select Target Device)"
   - id: 1482
     command: 0x0651
     led: null
-    description: null
+    description: "Change CT-level"
   - id: 1484
     command: 0x0643
     led: null
-    description: null
+    description: "(no action)"
   - id: 1485
     command: 0x066b
     led: null
@@ -1574,19 +1574,19 @@ keycodes:
   - id: 1540
     command: 0x002b
     led: null
-    description: "(no action)"
+    description: "+"
   - id: 1541
     command: 0x002d
     led: null
-    description: "(no action)"
+    description: "-"
   - id: 1542
     command: 0x002a
     led: null
-    description: "(no action)"
+    description: "*"
   - id: 1543
     command: 0x002f
     led: null
-    description: "(no action)"
+    description: "/"
   - id: 1544
     command: 0x0676
     led: null
@@ -1626,7 +1626,7 @@ keycodes:
   - id: 1572
     command: 0x0045
     led: null
-    description: "(no action)"
+    description: "E"
   - id: 1573
     command: 0x025b
     led: null
@@ -1658,7 +1658,7 @@ keycodes:
   - id: 1607
     command: 0x003d
     led: null
-    description: "(no action)"
+    description: "="
   - id: 1804
     command: 0x0537
     led: null
