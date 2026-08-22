@@ -1430,7 +1430,7 @@ keycodes:
   - id: 1356
     command: 0x0641
     led: null
-    description: "(shows files list in Data Disk Monitor)"
+    description: "List By Name"
   - id: 1357
     command: 0x0645
     led: null
@@ -1502,7 +1502,7 @@ keycodes:
   - id: 1420
     command: 0x0642
     led: null
-    description: "(changes page in files list)"
+    description: "List By Type"
   - id: 1421
     command: 0x066a
     led: null
