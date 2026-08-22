@@ -938,7 +938,7 @@ keycodes:
   - id: 1028
     command: 0x0009
     led: null
-    description: null
+    description: "(no action)"
   - id: 1029
     command: 0x00f0
     led: null
@@ -946,23 +946,23 @@ keycodes:
   - id: 1030
     command: 0x00f3
     led: null
-    description: null
+    description: "CAP"
   - id: 1031
     command: 0x00f2
     led: null
-    description: "CAP"
+    description: "(no action)"
   - id: 1032
     command: 0x04f0
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1033
     command: 0x04f2
     led: null
-    description: null
+    description: "Color page: Previous"
   - id: 1034
     command: 0x04fc
     led: null
-    description: null
+    description: "Color: get memory 1"
   - id: 1035
     command: 0x04f8
     led: null
@@ -1066,39 +1066,39 @@ keycodes:
   - id: 1098
     command: 0x04fd
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1099
     command: 0x04f9
     led: null
-    description: null
+    description: "Color: set memory 2"
   - id: 1100
     command: 0x04df
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1101
     command: 0x04b2
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1102
     command: 0x04b4
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1103
     command: 0x04b6
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1104
     command: 0x04d7
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1105
     command: 0x04cf
     led: null
-    description: null
+    description: "(freezes the system)"
   - id: 1107
     command: 0x04c1
     led: null
-    description: null
+    description: "(Sets layer color to blue, then freezes)"
   - id: 1108
     command: 0x047e
     led: null
@@ -1110,7 +1110,7 @@ keycodes:
   - id: 1111
     command: 0x04c0
     led: null
-    description: null
+    description: "(Sets layer color to purple, then freezes)"
   - id: 1124
     command: 0x0065
     led: null
@@ -1126,15 +1126,15 @@ keycodes:
   - id: 1128
     command: 0x0503
     led: null
-    description: null
+    description: "(no action)"
   - id: 1129
     command: 0x04f6
     led: null
-    description: null
+    description: "(no action)"
   - id: 1132
     command: 0x04e0
     led: null
-    description: null
+    description: "(Sets layer 32's color to 20% brightness, then freezes)"
   - id: 1133
     command: 0x04b3
     led: null
@@ -2138,80 +2138,80 @@ keycodes:
   - id: 2381
     command: 0x0c27
     led: null
-    description: null
+    description: "Output Window"
   - id: 2382
     command: 0x0c1d
     led: null
-    description: null
+    description: "(shows \"Interactive Versatec\"; unable to escape)"
   - id: 2384
     command: 0x0c31
     led: null
-    description: null
+    description: "(no action)"
   - id: 2436
     command: 0x0bb9
     led: null
-    description: null
+    description: "(opens SYSTEM-SERVICES menu)"
   - id: 2438
     command: 0x0a2e
     led: null
-    description: null
+    description: "(no action)"
   - id: 2439
     command: 0x0a2d
     led: null
-    description: null
+    description: "(no action)"
   - id: 2440
     command: 0x0bba
     led: null
-    description: null
+    description: "(no action)"
   - id: 2441
     command: 0x0bbb
     led: null
-    description: null
+    description: "(no action)"
   - id: 2442
     command: 0x0bbc
     led: null
-    description: null
+    description: "(no action)"
   - id: 2443
     command: 0x0bbd
     led: null
-    description: null
+    description: "(no action)"
   - id: 2444
     command: 0x0bc1
     led: null
-    description: null
+    description: "(no action; freezes emulator badly)"
   - id: 2445
     command: 0x0bc0
     led: null
-    description: null
+    description: "(no action)"
   - id: 2446
     command: 0x0bbf
     led: null
-    description: null
+    description: "(no action)"
   - id: 2447
     command: 0x0bbe
     led: null
-    description: null
+    description: "(no action)"
   - id: 2448
     command: 0x0bc2
     led: null
-    description: null
+    description: "(no action)"
   - id: 2449
     command: 0x0bc3
     led: null
-    description: null
+    description: "(no action)"
   - id: 2450
     command: 0x0bc4
     led: null
-    description: null
+    description: "Set Color Numeric"
   - id: 2451
     command: 0x0bc5
     led: null
-    description: null
+    description: "Edit Inks"
   - id: 2454
     command: 0x0bc7
     led: null
-    description: null
+    description: "(shows SYSTEM INFORMATION with version numbers)"
   - id: 2455
     command: 0x0bc6
     led: null
-    description: null
+    description: "Set Window Fill"
