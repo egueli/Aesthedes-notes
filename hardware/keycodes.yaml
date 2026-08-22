@@ -998,11 +998,11 @@ keycodes:
   - id: 1044
     command: 0x047a
     led: null
-    description: null
+    description: "Layer 46"
   - id: 1045
     command: 0x047b
     led: null
-    description: null
+    description: "Layer 47"
   - id: 1060
     command: 0x0071
     led: null
@@ -1038,11 +1038,11 @@ keycodes:
   - id: 1076
     command: 0x047c
     led: null
-    description: null
+    description: "Layer 48"
   - id: 1077
     command: 0x047d
     led: null
-    description: null
+    description: "Layer 49"
   - id: 1092
     command: 0x0077
     led: null
@@ -1102,11 +1102,11 @@ keycodes:
   - id: 1108
     command: 0x047e
     led: null
-    description: null
+    description: "Layer 50"
   - id: 1109
     command: 0x047f
     led: null
-    description: null
+    description: "Layer 51"
   - id: 1111
     command: 0x04c0
     led: null
@@ -1162,11 +1162,11 @@ keycodes:
   - id: 1140
     command: 0x0480
     led: null
-    description: null
+    description: "Layer 52"
   - id: 1141
     command: 0x0481
     led: null
-    description: null
+    description: "Layer 53"
   - id: 1143
     command: 0x04bf
     led: null
@@ -1230,11 +1230,11 @@ keycodes:
   - id: 1172
     command: 0x0482
     led: null
-    description: null
+    description: "Layer 54"
   - id: 1173
     command: 0x0483
     led: null
-    description: null
+    description: "Layer 55"
   - id: 1175
     command: 0x04c4
     led: null
@@ -1338,11 +1338,11 @@ keycodes:
   - id: 1236
     command: 0x0484
     led: null
-    description: null
+    description: "Layer 56"
   - id: 1237
     command: 0x0485
     led: null
-    description: null
+    description: "Layer 57"
   - id: 1252
     command: 0x0075
     led: null
@@ -1378,11 +1378,11 @@ keycodes:
   - id: 1268
     command: 0x0486
     led: null
-    description: null
+    description: "Layer 58"
   - id: 1269
     command: 0x0487
     led: null
-    description: null
+    description: "Layer 59"
   - id: 1284
     command: 0x0069
     led: null
@@ -1450,11 +1450,11 @@ keycodes:
   - id: 1364
     command: 0x0488
     led: null
-    description: null
+    description: "Layer 60"
   - id: 1365
     command: 0x0489
     led: null
-    description: null
+    description: "Layer 61"
   - id: 1366
     command: 0x058d
     led: null
@@ -1706,11 +1706,11 @@ keycodes:
   - id: 1870
     command: 0x0470
     led: null
-    description: null
+    description: "Layer 36"
   - id: 1871
     command: 0x0471
     led: null
-    description: null
+    description: "Layer 37"
   - id: 1872
     command: 0x0521
     led: null
@@ -1730,11 +1730,11 @@ keycodes:
   - id: 1902
     command: 0x046e
     led: null
-    description: null
+    description: "Layer 34"
   - id: 1903
     command: 0x046f
     led: null
-    description: null
+    description: "Layer 35"
   - id: 1904
     command: 0x0522
     led: null
@@ -1754,11 +1754,11 @@ keycodes:
   - id: 1934
     command: 0x046c
     led: null
-    description: null
+    description: "Layer 32"
   - id: 1935
     command: 0x046d
     led: null
-    description: null
+    description: "Layer 33"
   - id: 1936
     command: 0x051f
     led: null
@@ -1778,7 +1778,7 @@ keycodes:
   - id: 1965
     command: 0x046b
     led: null
-    description: null
+    description: "Layer 31"
   - id: 1968
     command: 0x0520
     led: null
@@ -1794,15 +1794,15 @@ keycodes:
   - id: 1971
     command: 0x046a
     led: null
-    description: null
+    description: "Layer 30"
   - id: 1997
     command: 0x0469
     led: null
-    description: null
+    description: "Layer 29"
   - id: 2003
     command: 0x0468
     led: null
-    description: null
+    description: "Layer 28"
   - id: 2004
     command: 0x0515
     led: null
@@ -1822,11 +1822,11 @@ keycodes:
   - id: 2029
     command: 0x0467
     led: null
-    description: null
+    description: "Layer 27"
   - id: 2035
     command: 0x0466
     led: null
-    description: null
+    description: "Layer 26"
   - id: 2038
     command: 0x0519
     led: null
@@ -1834,11 +1834,11 @@ keycodes:
   - id: 2061
     command: 0x0465
     led: null
-    description: null
+    description: "Layer 25"
   - id: 2067
     command: 0x0464
     led: null
-    description: null
+    description: "Layer 24"
   - id: 2068
     command: 0x051a
     led: null
@@ -1862,15 +1862,15 @@ keycodes:
   - id: 2093
     command: 0x0463
     led: null
-    description: null
+    description: "Layer 23"
   - id: 2094
     command: 0x0474
     led: null
-    description: null
+    description: "Layer 40"
   - id: 2095
     command: 0x0475
     led: null
-    description: null
+    description: "Layer 41"
   - id: 2096
     command: 0x054a
     led: null
@@ -1886,7 +1886,7 @@ keycodes:
   - id: 2099
     command: 0x0462
     led: null
-    description: null
+    description: "Layer 22"
   - id: 2100
     command: 0x053d
     led: null
@@ -1902,15 +1902,15 @@ keycodes:
   - id: 2125
     command: 0x0461
     led: null
-    description: null
+    description: "Layer 21"
   - id: 2126
     command: 0x0476
     led: null
-    description: null
+    description: "Layer 42"
   - id: 2127
     command: 0x0477
     led: null
-    description: null
+    description: "Layer 43"
   - id: 2128
     command: 0x0544
     led: null
@@ -1918,7 +1918,7 @@ keycodes:
   - id: 2131
     command: 0x0460
     led: null
-    description: null
+    description: "Layer 20"
   - id: 2132
     command: 0x0579
     led: null
@@ -1942,15 +1942,15 @@ keycodes:
   - id: 2157
     command: 0x045f
     led: null
-    description: null
+    description: "Layer 19"
   - id: 2158
     command: 0x0478
     led: null
-    description: null
+    description: "Layer 44"
   - id: 2159
     command: 0x0479
     led: null
-    description: null
+    description: "Layer 45"
   - id: 2160
     command: 0x0543
     led: null
@@ -1966,7 +1966,7 @@ keycodes:
   - id: 2163
     command: 0x045e
     led: null
-    description: null
+    description: "Layer 18"
   - id: 2164
     command: 0x057a
     led: null
