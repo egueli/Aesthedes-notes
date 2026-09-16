@@ -78,7 +78,9 @@ The PME@504's SCSI port is connected to a Quantum SCSI hard disk.
 
 ### Crate 6
 
-There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins.
+There is a single backplane for all the 6U+ cards. The top DIN 41612 connector has 3x32 pins, the bottom one has 2x32 pins, likely a G-64 bus.
+
+For a G-64 bus pinout, see Table 2.4 of [CERN OADC G64 module](https://cds.cern.ch/record/2833363/files/PS-CO-Note-93-79-Tech.pdf).
 
 | Type                | Card location                                 | Backplane usage     |
 | ------------------- | --------------------------------------------- | ------------------- |

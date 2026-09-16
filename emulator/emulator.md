@@ -1195,3 +1195,5 @@ Program-like addresses:
 * [Let the two PME boards talk to each other](link_302_504.md)
 
 * [Figure out how the keyboard input works](keyboard.md)
+
+* [Emulate enough of the 68K-based graphics card to finish loading a design](68k.md)
