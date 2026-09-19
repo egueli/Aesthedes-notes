@@ -1196,4 +1196,7 @@ Program-like addresses:
 
 * [Figure out how the keyboard input works](keyboard.md)
 
-* [Emulate enough of the 68K-based graphics card to finish loading a design](68k.md)
+* Be able to load a design from disk
+  * [Emulate enough of the keyboard to type the design name](io_517.md)
+  * [Emulate enough of the 68K-based graphics card to not freeze](68k.md)
+  * [Stop the runaway memory read](design_load.md)
