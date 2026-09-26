@@ -182,4 +182,7 @@ Looks like $87D8062 does not hit $87D80D4; let's see why. A branch instruction a
 
 That function checks the return value of two other functions ($87D8C12 and $87D9D9A) and the value of two global variables ($802C220 and $802C224).
 
-Both those functions do reads/writes to $4FCB001 and $4FCB101 respectively. The logs with VME enabled confirm this. They might be the two side GPUs, that are currently not emulated at all.
+Both those functions do reads/writes to $4FCB001 (at $87D8C50) and $4FCB101 respectively. The logs with VME enabled confirm this. They might be the two side GPUs, that are currently not emulated at all.
+
+I added a very simple emulation, that returns $FF at every read, and now it seems to load `ebt` completely! At least, we see "waiting" in the central B/W screen.
+
