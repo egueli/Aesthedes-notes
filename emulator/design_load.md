@@ -140,8 +140,7 @@ It looks like $802C412 is supposed to contain a pointer to an array, but it is z
 Let's see which instruction writes to it last:
 
 ```
-wpset 802c412,4,w
-bpset 87db9fc
+wpset 802c412,4,w; bpset 87db9fc
 ```
 
 Only the OS writes zero there, to clear the memory at startup, then no one else does. According to Ghidra's cross references, it should have been written by either $87DD238 or $87DD9CE, but none are executed.

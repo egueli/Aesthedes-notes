@@ -1200,3 +1200,6 @@ Program-like addresses:
   * [Emulate enough of the keyboard to type the design name](io_517.md)
   * [Emulate enough of the 68K-based graphics card to not freeze](68k.md)
   * [Stop the runaway memory read](design_load.md)
+
+* See some actual graphics
+  * [Make the side monitors work](side_monitors.md)
