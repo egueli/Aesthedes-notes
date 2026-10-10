@@ -101,7 +101,9 @@ Each crate has a CPU, and each CPU has at least an I/O chip that connects it to 
 
 Between I/O card at 320 and at 516, there are two flat cables running from one's connector A and the other's connector B and vice versa.
 
-Do note that both flat cables are reversed on one end: pin 1 is on the top side, far from the pin 1 marking on the connector it's attached to. This is intentional, to allow 8-bit parallel data on one side to be received by the other by configuring the I/O ports in the same way at both ends.
+Between 516 and 616, there is a flat cable from connector C and connector A, whose protocol is documented [here](multilevel_protocol.md).
+
+Do note that these flat cables are reversed on one end: pin 1 is on the top side, far from the pin 1 marking on the connector it's attached to. This is intentional, to allow 8-bit parallel data on one side to be received by the other by configuring the I/O ports in the same way at both ends.
 
 # Desk 
 
