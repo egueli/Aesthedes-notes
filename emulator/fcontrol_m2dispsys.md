@@ -1,5 +1,7 @@
 # `fcontrol` <-> `m2dispsys` command protocol
 
+(note: this document is AI-generated)
+
 ## Summary
 
 The Ghidra evidence supports the theory that `fcontrol` sends commands to
@@ -38,15 +40,14 @@ header words to the shared data area, then calls the `SetEvent` wrapper
 | Word offset | Contents | Confidence |
 |---|---|---|
 | 0 | Command/opcode (`DAT_00024814` low word) | High |
-| 1 | A second command-related word (value supplied in `D0.w`) | Meaning not established |
+| 1 | A second command-related word (value supplied in `D0.w`) | Exact role not established |
 | 2 | Argument count (`DAT_00024824` low word) | High; receiver uses it as the number of typed arguments |
 | 3 | Zero/reserved | High |
 | 4 onward | Encoded arguments | High; consumed by the receiver's typed-argument reader |
 
-The event call uses OS-9 `F$Event` operation 10 in the wrapper and passes the
-event ID plus an additional value of 4. The wrapper is called `SetEvent` by
-its caller. The precise meaning of that additional value is not needed to
-identify the notification mechanism.
+The event call uses OS-9 `F$Event` operation 10 in the wrapper. The event value
+is a separate per-command field; it is not the opcode or an argument. The
+wrapper is called `SetEvent` by its caller.
 
 The setup and send paths therefore have two distinct roles:
 
@@ -102,6 +103,8 @@ This command sets the RGB color for one multi-level screen intensity level.
 The `m2dispsys` dispatcher handles opcode `0x0321` in `opcode_321`; the
 corresponding `fcontrol` command is identified as `0007/0321`.
 
+The observed event value for this opcode is `2`.
+
 The command has four dword arguments:
 
 | Argument | Meaning | Valid/used value |
@@ -114,6 +117,13 @@ The command has four dword arguments:
 The handler reads four arguments and passes them to `send_set_color_command`.
 That routine builds a four-byte payload (level, red, green, blue) and sends it
 as PIA command `3` via `send_pia_command_packet`.
+
+### `0007/0065` — purpose unknown
+
+This command is observed with event value `0` and no arguments. Its purpose is
+not yet known. One possibility is that it saves or selects the level most
+recently sent with `0007/0321`, but this is only a hypothesis and has not been
+confirmed from the handler or its effects.
 
 ## Relation to the PIA output paths
 
@@ -141,7 +151,7 @@ does not establish that a given command was sent in the captured trace.
   cursor).
 - Ghidra's decompiler has imperfect parameter names and signatures around
   register-based OS-9 calls. The event operation numbers and data flow are
-  corroborated by the disassembly; names such as “second command-related word”
-  are intentionally cautious where semantics remain unclear.
+  corroborated by the disassembly; the meaning of the second header word and
+  the purpose of `0007/0065` remain open questions.
 - The code supports a shared-memory-plus-event protocol. It does not show the
   OS-9 event carrying the opcode itself.

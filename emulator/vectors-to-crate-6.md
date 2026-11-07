@@ -43,6 +43,56 @@ The following MAME debugger commands must be entered for `:crate5:04:pme6822:mai
 print d@0802caf0
 (should print 8708140; if not, change the occurrence below)
 
-wpset 0x8708140,0x100,w,1,{ printf "%08X %08X\n",wpaddr,wpdata ; g }
-bpset 0x086f6988,1,{ printf "F$Event fn=%04X D0=%08X D2=%08X D3=%08X A0=%08X\n%08X %08X %08X %08X %08X %08X %08X %08X",d1,d0,d2,d3,a0,d@8708140,d@8708144,d@8708148,d@870814C,d@8708150,d@8708154,d@8708158,d@870815C ; g }
+bpset 0x086f6988,1,{ printf "F$Event Ev$Set id=%08X value=%08X payload: %04X/%04X argc=%d %04X %08X %08X %08X %08X %08X %08X",d0,d2,w@8708140,w@8708142,w@8708144,w@87081446,d@8708148,d@870814C,d@8708150,d@8708154,d@8708158,d@870815C ; g }
 ```
+
+These are sent at startup, before loading the drawing:
+
+```
+F$Event Ev$Set id=00020001 value=00000002 payload: 0007/0362 argc=0 0000 000100FD 00010000 00000000 0001003F 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000000 payload: 0007/0065 argc=0 0000 000100FD 00010000 00000000 0001003F 00010001 00010001
+F$Event Ev$Set id=00010000 value=00000002 payload: 0007/0065 argc=0 0000 000100FD 00010000 00000000 0001003F 00010001 00010001
+F$Event Ev$Set id=00010000 value=00000000 payload: 0006/0065 argc=0 0000 0001001F 00010000 00000000 0001003F 00010001 00010001
+F$Event Ev$Set id=00010000 value=00000002 payload: 0006/0065 argc=0 0000 0001001F 00010000 00000000 0001003F 00010001 00010001
+F$Event Ev$Set id=00010000 value=00000000 payload: 0006/0065 argc=0 0000 00020000 00000002 00000000 0001003F 00010001 00010001
+```
+
+At loading:
+
+```
+F$Event Ev$Set id=00020001 value=00000002 payload: 0007/0321 argc=4 0000 00010000 00010000 00010000 00010000 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000000 payload: 0007/0065 argc=0 0000 00010000 00010000 00010000 00010000 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000002 payload: 0007/0321 argc=4 0000 00010001 000100FF 000100FF 000100FF 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000000 payload: 0007/0065 argc=0 0000 00010001 000100FF 000100FF 000100FF 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000002 payload: 0007/0321 argc=4 0000 00010002 00010005 00010005 00010005 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000000 payload: 0007/0065 argc=0 0000 00010002 00010005 00010005 00010005 00010001 00010001
+...
+F$Event Ev$Set id=00020001 value=00000002 payload: 0007/0321 argc=4 0000 0001003F 000100FF 000100FF 000100FF 00010001 00010001
+F$Event Ev$Set id=00020001 value=00000000 payload: 0007/0065 argc=0 0000 0001003F 000100FF 000100FF 000100FF 00010001 00010001
+```
+
+The only opcodes seen are the one to set the level colors (0007/0321, see protocol doc), and 0007/0065 with no arguments. No trace of vectors or shapes. Which is surprising, because `m2dispys` drives the EF9365 with shapes and those must come from somewhere. A separate communication channel maybe?
+
+Or maybe the shared data area is used in different ways than with events? Let's add a watchpoint on any writes:
+
+```
+wpset 8708140:crate5:04:pme6822:maincpu,4,w
+```
+
+The first write by userspace is by 087C46F0, which Ghidra doesn't recognize as neither `fcontrol` nor `m2dispsys`?
+
+Going to find out which module it is. I search for the OS-9 header in the vicinity:
+```
+find 8600000:crate5:04:pme6822:maincpu,1C46F0,w.4afc,w.0001
+```
+Closest match is at 870A710. From the memory view, a string pops up: `m2gsys`. Maybe that's the module that actually handles the graphic vectors, while `m2dispsys` is the low-level interface to the displays?
+
+Later we'll try loading `m2gsys` into Ghidra and analyzing it; but first, let's which other writes are done and let's match them with the Ev$Sets done by `fcontrol` (especially, see which ones _don't_ match):
+
+```
+wpset 8708140:crate5:04:pme6822:maincpu,20,w,1,{ printf "write @ %08X: %04X (PC=%08X)",wpaddr,wpdata,PC ; g }
+bpset 86f6988:crate5:04:pme6822:maincpu,1,{ printf "F$Event Ev$Set id=%08X value=%08X",d0,d2 ; g }
+```
+
+We do see writes to the data area without a related F$Event; those may be issued by `m2gsys`. Most interestingly, we see the EF9365 being driven just after those writes. Is it possible that `m2gsys` is only sending draw commands for the side display and not for the multilevel? And how to let it send those commands? A disassembly is in order.
+
