@@ -39,8 +39,8 @@ header words to the shared data area, then calls the `SetEvent` wrapper
 
 | Word offset | Contents | Confidence |
 |---|---|---|
-| 0 | Command/opcode (`DAT_00024814` low word) | High |
-| 1 | A second command-related word (value supplied in `D0.w`) | Exact role not established |
+| 0 | First header/control word (`DAT_00024814` low word); its exact role is not established | High |
+| 1 | Command/opcode supplied in `D0.w`; this is the word dispatched by `m2dispsys` | High |
 | 2 | Argument count (`DAT_00024824` low word) | High; receiver uses it as the number of typed arguments |
 | 3 | Zero/reserved | High |
 | 4 onward | Encoded arguments | High; consumed by the receiver's typed-argument reader |
@@ -71,9 +71,28 @@ notification.
 
 After waking, `FUN_m2dispsys__087e780e` reads the header words and initializes
 the argument cursor to the data immediately after the four-word header.
-`receive_opcode()` returns the first header word, which the main loop dispatches
-as the opcode. Thus the opcode is read from the shared command block, not
-directly from a PIA register.
+`receive_opcode()` returns the second header word (buffer offset `+2`), which
+the main loop dispatches as the opcode. Thus, for the observed `0007/0321`
+messages, `0x0321` is dispatched; `0x0007` is the first header/control word.
+The opcode is read from the shared command block, not directly from a PIA
+register.
+
+## `m2gsys` sender
+
+`m2gsys` uses the same shared-buffer-plus-event pattern. In
+`FUN_m2gsys__087c46d0`, the first header word comes from a module global and
+the caller's `D0.w` is written at buffer offset `+2`. The shared wrapper
+`FUN_m2gsys__0870b614` preserves that caller value while obtaining the
+connection state, so the caller's `D0.w` is the dispatched opcode.
+
+In the regenerated user-mode call graph, the inspected `m2gsys` senders use
+opcodes `0x00c9`, `0x0194`, `0x0195`, `0x0262`, `0x02be`, `0x00d4`, and
+`0x00d5`. These do not match the PIA-reaching opcode set found in the
+`m2dispsys` handlers: `0x0321`, `0x0322`, `0x0353`–`0x035c`, `0x035e`–`0x0360`,
+`0x0362`, and `0x0366`. For `0x00d4` and `0x00d5`, the calls from
+`FUN_m2gsys__08736a68` additionally require both state bytes at `A6-0x48e4`
+and `A6-0x48e6` to be zero, and their respective per-level flag at
+`A6+0x8865+level` or `A6+0x88a5+level` to be nonzero.
 
 ## Argument encoding
 
@@ -151,7 +170,7 @@ does not establish that a given command was sent in the captured trace.
   cursor).
 - Ghidra's decompiler has imperfect parameter names and signatures around
   register-based OS-9 calls. The event operation numbers and data flow are
-  corroborated by the disassembly; the meaning of the second header word and
-  the purpose of `0007/0065` remain open questions.
+  corroborated by the disassembly. The role of the first header word and the
+  purpose of `0007/0065` remain open questions.
 - The code supports a shared-memory-plus-event protocol. It does not show the
   OS-9 event carrying the opcode itself.
